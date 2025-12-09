@@ -1,3 +1,11 @@
+<!-- 
+ 
+TODO:
+- Aankomst + Vertrek informatie
+- Tarieven, borg
+
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,6 +48,11 @@
         .owl-dots {
             display: none;
         }
+
+        .voorzieningen li,
+        .voorzieningen p  {
+          color: white;
+        }
     </style>
   </head>
   <body>
@@ -65,7 +78,8 @@
                       <ul class="list-unstyled menu">
                         <li class="active"><a href="index.html">Home</a></li>
                         <li><a href="rooms.html">Het huisje</a></li>
-                        <li><a href="about.html">Voorzieningen</a></li>
+                        <li><a href="about.html">Aankomst &amp; Vertrek</a></li>
+                        <li><a href="about.html">Tarieven &amp; Voorwaarden</a></li>
                         <li><a href="events.html">Het Park</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="reservation.html">Reserveren</a></li>
@@ -726,7 +740,7 @@
               >
             </li>
           </ul>
-          <div class="tab-content py-5" id="myTabContent">
+          <div class="tab-content py-5 voorzieningen" id="myTabContent">
             <div
               class="tab-pane fade show active text-left"
               id="mains"
@@ -737,73 +751,73 @@
                 <div class="col-md-6">
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Woonkamer</span>
-                    <h3 class="text-white">
-                      Murgh Tikka Masala
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Hoekbank</li>
+                      <li>Eethoek met 4 stoelen</li>
+                      <li>Kinderstoel &amp; Peuterstoel</li>
+                      <li>Televisie met Chromecast</li>
+                      <li>Speelgoed (0-10 jaar)</li>
+                      <li>Airco (koelen + verwarmen)</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Keuken</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Fish Moilee</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Nespresso koffiemachine</li>
+                      <li>Waterkoker</li>
+                      <li>XXL Airfryer</li>
+                      <li>4-pits Gaskookplaat</li>
+                      <li>Koelkast (zonder vriezer)</li>
+                      <li>Volledig servies voor 6-8 personen</li>
+                      <li>Kinderservies aanwezig</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Slaapkamer 1</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Safed Gosht</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Boxspring (200x140 cm)</li>
+                      <li>Kussens en dekbed aanwezig</li>
+                      <li>2 grote kledingkasten</li>
+                      <li>Ventilator</li>
+                      <li>Televisie</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Slaapkamer 2</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">French Toast Combo</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Stapelbed (200x60 cm)</li>
+                      <li>Kussens en dekbedden aanwezig</li>
+                      <li>Campingbedje + dik matras + dekbed</li>
+                      <li>Ruime ladekast</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Badkamer</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Vegie Omelet</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Douche</li>
+                      <li>Toilet</li>
+                      <li>Wastafel</li>
+                      <li>Spiegelkast</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Tuin &amp; Schuur</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white"
-                        >Chorizo &amp; Egg Omelet</a
-                      >
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Koelkast met vriesvak</li>
+                      <li>Wasmachine &amp; Droger</li>
+                      <li>Droogrek, Bolderkar</li>
+                      <li>Trampoline, Divers speelgoed</li>
+                      <li>Weber houtskool BBQ, Vuurkorf</li>
+                      <li>Luxe partytent met loungehoek en heater</li>
+                      <li>Ruimte eettafel met 6 stoelen (+2)</li>
+                      <li>Grasveldje met ruimte voor een tent</li>
+                    </ul>
+                  </div>
+                  <div class="food-menu mb-5">
+                    <span class="d-block text-primary h4 mb-3">En nog meer!</span>
+                    <p>Als huurder kun je gebruik maken van alle faciliteiten op de camping. Zoals de zwembaden, binnenspeeltuin, animatie, pumptrack en nog veel meer! Je gebruikt hiervoor de armbandjes die aanwezig zijn in het huisje.</p>
                   </div>
                 </div>
               </div>
@@ -819,105 +833,88 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="food-menu mb-5">
-                    <span class="d-block text-primary h4 mb-3">Waterpark</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Banana Split</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <span class="d-block text-primary h4 mb-3">Waterpark (buiten)</span>
+                    <ul>
+                      <li>4 glijbanen waarvan één met trechter</li>
+                      <li>2 buitenbaden waarvan één overdekt bij slecht/koud weer</li>
+                      <li>2 kinderzwembaden waarvan één overdekt bij slecht/koud weer</li>
+                      <li>Ruimte ligweide met ligbedden en stoelen en tafels</li>
+                      <li>Omkleedhokjes en toiletten</li>
+                      <li>Snackbar</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
-                    <span class="d-block text-primary h4 mb-3">Waterparadijs</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Sticky Toffee Pudding</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <span class="d-block text-primary h4 mb-3">Waterparadijs (binnen)</span>
+                    <ul>
+                      <li>4 glijbanen</li>
+                      <li>Groot baby/peuterbad</li>
+                      <li>Binnenzwembad</li>
+                      <li>Stoelen en tafels</li>
+                      <li>Omkleedhokjes en toiletten</li>
+                      <li>Snackbar</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Binnenspeeltuin</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Pecan</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Diverse glijbanen waarvan één hele steile voor de echte durfals!</li>
+                      <li>Speeltoestellen voor kids van 0 t/m 11 jaar</li>
+                      <li>Stoelen en tafels</li>
+                      <li>Snackbar</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Speeleiland en strand</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Pecan</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Groot klimtoestel op het eiland</li>
+                      <li>Trekpont</li>
+                      <li>Stapstenen</li>
+                      <li>Zandstrand met parasols</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Pumptrack</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Apple Strudel</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Voor BMX, mountainbike, stuntstep, skates of skateboard</li>
+                      <li>Kleine baan beschikbaar voor de kleintjes</li>
+                      <li>Fietsen te huur vanaf &euro;10,00</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Minigolf</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Pancakes</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Tegen betaling van &euro;7,50 p.p.</li>
+                      <li>Adventure Golf met 18 holes</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Supermarkt</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Ice Cream Sundae</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Verse broodjes</li>
+                      <li>Snacks, lunch, diner, lokale producten</li>
+                      <li>Koffie to-go</li>
+                      <li>Campingbenodigdheden</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
-                    <span class="d-block text-primary h4 mb-3">Snackbar</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Ice Cream Sundae</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <span class="d-block text-primary h4 mb-3">Snackbar &amp; Pizzeria</span>
+                    <ul>
+                      <li>Snackbar CaraHoedje</li>
+                      <li>Pizzeria CaraHoedje</li>
+                      <li>(Soft) ijs</li>
+                      <li>Zitgelegenheid binnen en buiten</li>
+                      <li>Sportcafé voor voetbal of F1</li>
+                    </ul>
                   </div>
                   <div class="food-menu mb-5">
                     <span class="d-block text-primary h4 mb-3">Restaurants</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Ice Cream Sundae</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <ul>
+                      <li>Pannenkoekenhuis Wafelien (incl. animatie)</li>
+                      <li>Restaurant/Café Het Klokhuis</li>
+                      <li>Reserveren via de receptie</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -932,76 +929,26 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="food-menu mb-5">
-                    <span class="d-block text-primary h4 mb-3">$32.00</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Spring Water</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <span class="d-block text-primary h4 mb-3">Het strand</span>
+                    <p>Op zo'n 10 minuten rijden met de auto ligt Schoorl met haar prachtige duinen en bossen. Ook kunnen wij Hargen aan Zee aanraden voor een rustiger strand. Ook hier kun je prachtig wandelen of fietsen in het duingebied.</p>
                   </div>
                   <div class="food-menu mb-5">
-                    <span class="d-block text-primary h4 mb-3">$14.00</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white"
-                        >Coke, Diet Coke, Coke Zero</a
-                      >
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <span class="d-block text-primary h4 mb-3">Alkmaar</span>
+                    <p>Bezoek de Kaasmarkt (elke zaterdag in apr t/m sept) of verken het prachtige historische centrum.</p>
                   </div>
                   <div class="food-menu mb-5">
-                    <span class="d-block text-primary h4 mb-3">$93.00</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Orange Fanta</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <span class="d-block text-primary h4 mb-3">Dierenpark Hoenderdaell</span>
+                    <p>Wildpark met een habitat voor de opvang van grote katachtigen, een maki-eiland en roofvogeldemonstraties.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="food-menu mb-5">
-                    <span class="d-block text-primary h4 mb-3">$18.00</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Lemonade, Lemon Squash</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <span class="d-block text-primary h4 mb-3">Schagen</span>
+                    <p>Voor leuke terrasjes kun je terecht in Schagen! Ook is hier iedere donderdag de weekmarkt. Altijd leuk om even een kijkje te nemen.</p>
                   </div>
                   <div class="food-menu mb-5">
-                    <span class="d-block text-primary h4 mb-3">$38.35</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white">Sparkling Mineral Water</a>
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
-                  </div>
-                  <div class="food-menu mb-5">
-                    <span class="d-block text-primary h4 mb-3">$69.00</span>
-                    <h3 class="text-white">
-                      <a href="#" class="text-white"
-                        >Lemon, Lime &amp; Bitters</a
-                      >
-                    </h3>
-                    <p class="text-white text-opacity-7">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
+                    <span class="d-block text-primary h4 mb-3">Museum Broekerveiling</span>
+                    <p>Lokaal geschiedenismuseum met tentoonstellingen, een 19e-eeuws veilinghuis aan water, rondvaarten en een café.</p>
                   </div>
                 </div>
               </div>
@@ -1280,11 +1227,12 @@
             <p>
               <span class="d-block"
                 ><span class="ion-ios-location h5 mr-3 text-primary"></span
-                >Address:</span
+                >Adres:</span
               >
               <span>
-                198 West 21th Street, <br />
-                Suite 721 New York NY 10016</span
+                Bongerdlaan 3<br />
+                1747 CA Tuitjenhorn<br />
+                Noord-Holland</span
               >
             </p>
             <p>

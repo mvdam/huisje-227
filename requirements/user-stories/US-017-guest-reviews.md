@@ -28,3 +28,10 @@
 - [FR-038](../02-homepage.md) — Carousel responsive behavior
 - [FR-039](../02-homepage.md) — Real guest reviews required
 - [FR-040](../02-homepage.md) — Real or removed author images
+
+## Status
+
+- [x] Partially implemented — 2026-04-08
+- Only 1 real review (Fam. Eshuis) is displayed as a static blockquote
+- Carousel not implemented — only 1 real review exists in source content
+- **Blocked**: Additional real guest reviews needed from property owners to build a carousel

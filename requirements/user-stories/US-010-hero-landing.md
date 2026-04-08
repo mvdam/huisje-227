@@ -25,3 +25,7 @@
 - [FR-010](../02-homepage.md) — Hero section with background image and overlay
 - [FR-011](../02-homepage.md) — Tagline and heading display
 - [FR-013](../02-homepage.md) — Parallax scrolling via Stellar.js
+
+## Status
+
+- [x] Implemented — 2026-04-08

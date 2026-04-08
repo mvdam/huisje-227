@@ -23,3 +23,8 @@
 ## Related Requirements
 
 - [FR-012](../02-homepage.md) — Mouse scroll indicator with smooth-scroll
+
+## Status
+
+- [x] Implemented — 2026-04-08
+- Note: Scroll duration uses browser native smooth scroll (not exactly 500ms)

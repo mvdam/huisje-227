@@ -24,3 +24,7 @@
 
 - [FR-043](../02-homepage.md) — CTA text and button
 - [FR-044](../02-homepage.md) — CTA background image overlay
+
+## Status
+
+- [x] Implemented — 2026-04-08

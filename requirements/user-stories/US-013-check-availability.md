@@ -29,3 +29,8 @@
 - [FR-017](../02-homepage.md) — Children select options with values
 - [FR-018](../02-homepage.md) — Form submission to backend
 - [FR-019](../02-homepage.md) — Submit button label
+
+## Status
+
+- [x] Implemented — 2026-04-08
+- Note: Form navigates to /reserveren with query params (no backend)

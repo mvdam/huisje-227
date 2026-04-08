@@ -23,3 +23,7 @@
 
 - [FR-024](../02-homepage.md) — Feature card content
 - [FR-025](../02-homepage.md) — Card layout with image, title, subtitle
+
+## Status
+
+- [x] Implemented — 2026-04-08

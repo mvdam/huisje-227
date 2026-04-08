@@ -23,3 +23,7 @@
 
 - [FR-041](../02-homepage.md) — Activity card content
 - [FR-042](../02-homepage.md) — Responsive grid layout
+
+## Status
+
+- [x] Implemented — 2026-04-08

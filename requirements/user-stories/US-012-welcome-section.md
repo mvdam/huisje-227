@@ -26,3 +26,8 @@
 - [FR-021](../02-homepage.md) — Video lightbox (Fancybox)
 - [FR-022](../02-homepage.md) — Welcome section images
 - [FR-023](../02-homepage.md) — "Lees meer" link target
+
+## Status
+
+- [x] Implemented — 2026-04-08
+- Note: Video opens in custom React modal (not Fancybox, which is a jQuery plugin)

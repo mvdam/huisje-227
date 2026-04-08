@@ -32,3 +32,7 @@
 - [FR-033](../02-homepage.md) — "Het park" tab content
 - [FR-034](../02-homepage.md) — "De omgeving" tab content
 - [FR-035](../02-homepage.md) — White text styling on dark overlay
+
+## Status
+
+- [x] Implemented — 2026-04-08

@@ -1,0 +1,285 @@
+/* ===== Hero Section ===== */
+.huisje-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: -90px;
+  padding-top: 90px;
+}
+
+.huisje-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.huisje-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.huisje-hero-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.huisje-breadcrumb {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.huisje-breadcrumb a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.huisje-breadcrumb a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.huisje-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.huisje-breadcrumb-current {
+  color: #fff;
+}
+
+/* ===== Availability Form ===== */
+.huisje-availability {
+  background: #f5f5f5;
+  padding: 2.5rem 1.5rem;
+}
+
+.huisje-availability-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-end;
+}
+
+.huisje-availability-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 180px;
+}
+
+.huisje-availability-field label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.huisje-availability-field input,
+.huisje-availability-field select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.huisje-availability-btn {
+  padding: 0.65rem 1.8rem;
+  background: #1a7f37;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+
+.huisje-availability-btn:hover {
+  background: #15692d;
+}
+
+/* ===== Section Container ===== */
+.huisje-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.huisje-section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.huisje-section-subtext {
+  color: #666;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ===== Intro ===== */
+.huisje-intro {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.huisje-intro-text {
+  flex: 1;
+}
+
+.huisje-intro-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.huisje-intro-text p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.huisje-intro-image {
+  flex: 1;
+}
+
+.huisje-intro-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===== Facility Cards ===== */
+.huisje-facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.huisje-facility-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.huisje-facility-card h3 {
+  color: #1a7f37;
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #1a7f37;
+}
+
+.huisje-facility-card ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.huisje-facility-card li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.huisje-facility-card .huisje-sub-list {
+  list-style: circle;
+  padding-left: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+/* ===== CTA ===== */
+.huisje-cta {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.huisje-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.huisje-cta-inner {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1.5rem;
+}
+
+.huisje-cta h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.huisje-btn-primary {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: #1a7f37;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.huisje-btn-primary:hover {
+  background: #15692d;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .huisje-facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .huisje-hero-heading {
+    font-size: 2.2rem;
+  }
+
+  .huisje-intro {
+    flex-direction: column;
+  }
+
+  .huisje-intro-image img {
+    height: 300px;
+  }
+
+  .huisje-facilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .huisje-availability-form {
+    flex-direction: column;
+  }
+
+  .huisje-availability-field {
+    flex: 1 1 100%;
+  }
+}

@@ -32,3 +32,7 @@
 - [FR-051](../03-het-huisje.md) — Check-availability form in Dutch
 - [FR-052](../03-het-huisje.md) — Real property content (replace template rooms)
 - [FR-053](../03-het-huisje.md) — Replace or remove "Great Offers" section
+
+## Status
+
+- [x] Implemented — 8 April 2026

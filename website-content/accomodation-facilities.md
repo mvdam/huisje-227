@@ -8,7 +8,7 @@ Dit document bevat een opsomming van alle faciliteiten per ruimte.
 - Eettafel met 4 stoelen en één peuterstoel en één kinderstoel
 - Kast met spelletjes en speelgoed (o.a. Duplo)
 - Smart TV met Chromecast (Netflix, Videoland, Youtube, etc etc)
-- Airco voor verarming en koeling
+- Airco voor verwarming en koeling
 - Veel lichtinval
 - Openslaande deuren
 

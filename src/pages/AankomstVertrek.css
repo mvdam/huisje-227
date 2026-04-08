@@ -1,0 +1,199 @@
+/* ===== Hero Section ===== */
+.aankomst-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: -90px;
+  padding-top: 90px;
+}
+
+.aankomst-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.aankomst-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.aankomst-hero-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.aankomst-breadcrumb {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.aankomst-breadcrumb a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.aankomst-breadcrumb a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.aankomst-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.aankomst-breadcrumb-current {
+  color: #fff;
+}
+
+/* ===== Section Container ===== */
+.aankomst-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+/* ===== Intro ===== */
+.aankomst-intro p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+  font-size: 1.05rem;
+}
+
+/* ===== Section Heading ===== */
+.aankomst-section-heading {
+  color: #1a7f37;
+  font-size: 1.8rem;
+  margin: 0 0 2rem;
+}
+
+/* ===== Info Cards ===== */
+.aankomst-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.aankomst-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.aankomst-card h3 {
+  color: #1a7f37;
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #1a7f37;
+}
+
+.aankomst-card p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 0.8rem;
+}
+
+.aankomst-card p:last-child {
+  margin-bottom: 0;
+}
+
+.aankomst-card ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.aankomst-card li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.aankomst-card a {
+  color: #1a7f37;
+  text-decoration: none;
+}
+
+.aankomst-card a:hover {
+  color: #15692d;
+  text-decoration: underline;
+}
+
+.aankomst-card strong {
+  color: #333;
+}
+
+/* ===== CTA ===== */
+.aankomst-cta {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.aankomst-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.aankomst-cta-inner {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1.5rem;
+}
+
+.aankomst-cta h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.aankomst-btn-primary {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: #1a7f37;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.aankomst-btn-primary:hover {
+  background: #15692d;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .aankomst-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .aankomst-hero-heading {
+    font-size: 2.2rem;
+  }
+}

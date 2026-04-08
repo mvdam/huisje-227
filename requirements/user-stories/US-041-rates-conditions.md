@@ -30,3 +30,7 @@
 - [FR-071](../05-aankomst-vertrek-tarieven.md) — Rates and deposit details
 - [FR-072](../05-aankomst-vertrek-tarieven.md) — Terms and conditions
 - [FR-073](../05-aankomst-vertrek-tarieven.md) — Hero and breadcrumb
+
+## Status
+
+- [x] Implemented — 2026-04-08

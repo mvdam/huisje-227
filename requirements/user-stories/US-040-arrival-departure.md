@@ -30,3 +30,7 @@
 
 - [FR-070](../05-aankomst-vertrek-tarieven.md) — Arrival/departure information page
 - [FR-073](../05-aankomst-vertrek-tarieven.md) — Hero and breadcrumb
+
+## Status
+
+- [x] Implemented — 2026-04-08

@@ -1,0 +1,211 @@
+/* ===== Hero Section ===== */
+.tarieven-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: -90px;
+  padding-top: 90px;
+}
+
+.tarieven-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.tarieven-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.tarieven-hero-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.tarieven-breadcrumb {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.tarieven-breadcrumb a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.tarieven-breadcrumb a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.tarieven-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tarieven-breadcrumb-current {
+  color: #fff;
+}
+
+/* ===== Section Container ===== */
+.tarieven-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+/* ===== Price Banner ===== */
+.tarieven-price-banner {
+  background: #1a7f37;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.tarieven-price-label {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.tarieven-price-amount {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ===== Section Heading ===== */
+.tarieven-section-heading {
+  color: #1a7f37;
+  font-size: 1.8rem;
+  margin: 0 0 2rem;
+}
+
+/* ===== Info Cards ===== */
+.tarieven-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.tarieven-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.tarieven-card h3 {
+  color: #1a7f37;
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #1a7f37;
+}
+
+.tarieven-card p {
+  color: #555;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.tarieven-card p:last-child {
+  margin-bottom: 0;
+}
+
+.tarieven-contact-item {
+  font-weight: 600;
+  color: #333;
+}
+
+.tarieven-contact-item a {
+  color: #1a7f37;
+  text-decoration: none;
+}
+
+.tarieven-contact-item a:hover {
+  color: #15692d;
+  text-decoration: underline;
+}
+
+/* ===== CTA ===== */
+.tarieven-cta {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.tarieven-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.tarieven-cta-inner {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1.5rem;
+}
+
+.tarieven-cta h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.tarieven-btn-primary {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: #1a7f37;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.tarieven-btn-primary:hover {
+  background: #15692d;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .tarieven-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tarieven-hero-heading {
+    font-size: 2.2rem;
+  }
+
+  .tarieven-price-amount {
+    font-size: 2.5rem;
+  }
+
+  .tarieven-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

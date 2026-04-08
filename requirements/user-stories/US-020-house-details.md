@@ -17,7 +17,14 @@
 - The page displays a hero section with heading "Het huisje" and breadcrumb (Home > Het huisje)
 - Property-specific descriptions and images are shown (not template hotel room types)
 - A check-availability form with Dutch labels is present
-- Content describes living room, bedrooms, kitchen, bathroom, garden, and facilities
+- Content describes each area of the property with facility lists sourced from `website-content/accomodation-facilities.md`:
+  - **Woonkamer**: hoekbank, eettafel, spelletjes, Smart TV met Chromecast, airco, openslaande deuren
+  - **Keuken**: koelkast, 4-pits gaskookplaat, Nespresso, waterkoker, XL Airfryer, servies voor 6-8 personen
+  - **Slaapkamer 1**: 2-persoons boxspring (200x140cm), TV met Chromecast, ventilator
+  - **Slaapkamer 2**: stapelbed (200x60cm), campingbedje met matras, ladekast
+  - **Badkamer**: toilet, douche, spoelbak, spiegelkast
+  - **Schuur** (separate section): wasmachine, droger, koelkast met vriesvak, buitenspeelgoed, fietsen en steppen
+  - **Tuin**: luxe partytent met loungebank/heater/verlichting, eettafel met 6 stoelen, tuinhaard/vuurkorf, kogel BBQ, grasveldje voor tent
 
 ## Related Requirements
 

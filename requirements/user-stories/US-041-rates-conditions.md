@@ -15,8 +15,12 @@
 
 ## Acceptance Criteria
 
-- Rate/tariff information is clearly displayed (per night/week, seasonal pricing if applicable)
-- Deposit ("borg") amount and conditions are stated
+- Rate/tariff information is clearly displayed: €1300 per week
+- Deposit ("borg") amount is stated: €300, teruggestort binnen 5 dagen na vertrek
+- Payment terms are explained: 20% aanbetaling bij boeking (via Tikkie of contant), restbedrag 6 weken voor aankomst
+- Cleaning fee option is stated: eindschoonmaak €50 extra (optioneel)
+- Guest data requirements are explained: naam, geboortedatum, en zwemdiploma van alle reizigers
+- Maximum rental period is noted (max 6 weken per seizoen, campingvoorwaarden)
 - Booking terms and conditions are provided in Dutch
 - All content, headings, and labels are in Dutch
 - The page has a hero with Dutch heading and breadcrumb trail

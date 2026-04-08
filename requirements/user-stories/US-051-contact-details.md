@@ -15,7 +15,8 @@
 ## Acceptance Criteria
 
 - The real property address is displayed: Bongerdlaan 3, 1747 CA Tuitjenhorn
-- A real phone number is displayed
+- The park phone number is displayed: 022-6391481
+- Contact persons are listed with phone numbers: Nikki (0653308199) and Martin (0651190382)
 - A real email address is displayed
 - All labels and headings are in Dutch
 - No template placeholder data is shown

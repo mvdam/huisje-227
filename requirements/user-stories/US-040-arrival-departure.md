@@ -14,11 +14,16 @@
 
 ## Acceptance Criteria
 
-- A dedicated page (or section) provides arrival/departure details
+- A dedicated page (or section) provides arrival/departure details sourced from `website-content/booking-info.md`
 - All content, headings, and labels are in Dutch
-- Check-in and check-out times are clearly stated
-- Directions to the property are provided
-- Key handover / access procedures are explained
+- Check-in time is stated: maandag na 12:00
+- Check-out time is stated: maandag voor 10:00
+- Sleutelkluisje procedure is explained (code provided on booking confirmation)
+- Parking procedure is explained (code for slagboom, reception phone number as fallback)
+- Linen policy is stated: bedlinnen en keukenlinnen zelf meenemen, dekbedden en kussens aanwezig
+- WiFi information is provided: netwerknaam en wachtwoord
+- Swimming band policy is stated: bandjes inbegrepen, verloren bandje kost €20
+- Cleaning policy is stated: eindschoonmaak door huurder, of €50 extra door verhuurder
 - The page has a hero with Dutch heading and breadcrumb trail
 
 ## Related Requirements

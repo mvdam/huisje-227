@@ -17,8 +17,11 @@
 - A tabbed interface displays three categories: "Het huisje", "Het park", "De omgeving"
 - "Het huisje" tab is active by default
 - "Het huisje" lists amenities for: Woonkamer, Keuken, Slaapkamer 1, Slaapkamer 2, Badkamer, Tuin & Schuur
-- "Het park" lists facilities: Waterpark, Waterparadijs, Binnenspeeltuin, Speeleiland, Pumptrack, Minigolf, Supermarkt, Snackbar & Pizzeria, Restaurants
-- "De omgeving" lists nearby attractions: Het strand, Alkmaar, Dierenpark Hoenderdaell, Schagen, Museum Broekerveiling
+- "Het park" lists facilities sourced from `website-content/park-facilities.md`: Zwembaden (binnen/buiten), Adventure Golf, Pumptrackbaan, Fietsverhuur, Jeu de Boulesbaan, Restaurants (Het Klokhuis, Wafelien, CaraHoedje Pizza, CaraHoedje Snack), Animatie, Binnenspeeltuin (Holle Bolle Boom), Parkshop/Supermarkt, Speeleiland, Visvijver, Tienerlounge
+- "De omgeving" lists nearby attractions sourced from `website-content/surroundings-info.md`, organized by category:
+  - Ontdekken: Vlindorado, Museum Broekerveiling, Land van Fluwel, Zeeaquarium, Van Blanckendaell Park, Tuinderij de Marlequi, Sprookjeswonderland, Dierenpark Hoenderdaell
+  - Actieve uitjes: SKEEF waterskiën, Urban Trickz, Wandelen/fietsen in Schoorl/Petten, SkagaVenture
+  - Gezellig: Bioscoop, Overdekt winkelen, Steden (Alkmaar, Hoorn, Schagen), Kaasmarkt Alkmaar, Strandwandeling Petten
 - All tab labels, headings, and descriptions are in Dutch
 - Text is readable (white on dark overlay background)
 

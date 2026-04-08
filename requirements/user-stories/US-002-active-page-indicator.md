@@ -22,3 +22,7 @@
 ## Related Requirements
 
 - [FR-002](../01-navigation.md) — Active class on current page menu item
+
+## Status
+
+- [x] Implemented — 8 April 2026

@@ -23,3 +23,7 @@
 
 - [FR-001](../01-navigation.md) — Navigation menu link targets
 - [FR-006](../01-navigation.md) — Consistent navigation across all pages
+
+## Status
+
+- [x] Implemented — 8 April 2026

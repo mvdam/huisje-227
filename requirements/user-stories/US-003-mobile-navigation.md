@@ -24,3 +24,7 @@
 ## Related Requirements
 
 - [FR-003](../01-navigation.md) — Mobile menu toggle with fade animation
+
+## Status
+
+- [x] Implemented — 8 April 2026

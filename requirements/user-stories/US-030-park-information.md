@@ -35,3 +35,7 @@
 - [FR-060](../04-het-park.md) — Hero section and breadcrumb
 - [FR-061](../04-het-park.md) — Real park activity content
 - [FR-062](../04-het-park.md) — Remove template pagination
+
+## Status
+
+- [x] Implemented — 2026-04-08

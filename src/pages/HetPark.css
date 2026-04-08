@@ -1,0 +1,232 @@
+/* ===== Hero Section ===== */
+.park-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: -90px;
+  padding-top: 90px;
+}
+
+.park-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.park-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.park-hero-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.park-breadcrumb {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.park-breadcrumb a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.park-breadcrumb a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.park-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.park-breadcrumb-current {
+  color: #fff;
+}
+
+/* ===== Section Container ===== */
+.park-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.park-section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.park-section-subtext {
+  color: #666;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ===== Intro ===== */
+.park-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.park-intro p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+}
+
+.park-intro .park-address {
+  font-weight: 600;
+  color: #333;
+}
+
+/* ===== Facility Cards ===== */
+.park-facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.park-facility-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.park-facility-card h3 {
+  color: #1a7f37;
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #1a7f37;
+}
+
+.park-facility-card ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.park-facility-card li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.park-facility-card p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 0.8rem;
+}
+
+.park-sub-list {
+  list-style: circle;
+  padding-left: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+/* ===== Pricing Table ===== */
+.park-pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.park-pricing-table th,
+.park-pricing-table td {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e0e0e0;
+  color: #555;
+}
+
+.park-pricing-table th {
+  background: #1a7f37;
+  color: #fff;
+  font-weight: 600;
+}
+
+.park-pricing-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* ===== CTA ===== */
+.park-cta {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.park-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.park-cta-inner {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1.5rem;
+}
+
+.park-cta h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.park-btn-primary {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: #1a7f37;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.park-btn-primary:hover {
+  background: #15692d;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .park-facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .park-hero-heading {
+    font-size: 2.2rem;
+  }
+
+  .park-facilities-grid {
+    grid-template-columns: 1fr;
+  }
+}

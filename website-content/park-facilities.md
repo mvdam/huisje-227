@@ -94,7 +94,7 @@ Er zijn 4 verschillende eetgelegenheden:
 - Klimtoestellen en glijbanen
 - Ballenbak
 - Arcade machines
-- Eet- en dinkgelegenheid
+- Eet- en drinkgelegenheid
 - Diverse stoelen, tafels en banken
 
 ## Parkshop / Supermarkt

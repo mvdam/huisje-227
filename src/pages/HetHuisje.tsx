@@ -115,7 +115,7 @@ export default function HetHuisje() {
         <div className="huisje-hero-overlay" />
         <div className="huisje-hero-content">
           <h1 className="huisje-hero-heading">Het huisje</h1>
-          <nav aria-label="Breadcrumb">
+          <nav aria-label="Kruimelpad">
             <ol className="huisje-breadcrumb">
               <li>
                 <Link to="/">Home</Link>

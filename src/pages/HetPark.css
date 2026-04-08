@@ -16,21 +16,22 @@
 .park-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--color-overlay);
 }
 
 .park-hero-content {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 .park-hero-heading {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 3.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
   margin: 0 0 1rem;
+  color: var(--color-text-light);
 }
 
 .park-breadcrumb {
@@ -44,38 +45,39 @@
 }
 
 .park-breadcrumb a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-light-80);
   text-decoration: none;
 }
 
 .park-breadcrumb a:hover {
-  color: #fff;
+  color: var(--color-text-light);
   text-decoration: underline;
 }
 
 .park-breadcrumb-separator {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-light-60);
 }
 
 .park-breadcrumb-current {
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 /* ===== Section Container ===== */
 .park-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
 }
 
 .park-section-heading {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
 }
 
 .park-section-subtext {
-  color: #666;
+  color: var(--color-text-secondary);
   max-width: 700px;
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -85,10 +87,11 @@
 .park-intro h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--color-text-primary);
 }
 
 .park-intro p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin-bottom: 1.5rem;
   max-width: 900px;
@@ -96,7 +99,7 @@
 
 .park-intro .park-address {
   font-weight: 600;
-  color: #333;
+  color: var(--color-text-primary);
 }
 
 /* ===== Facility Cards ===== */
@@ -107,18 +110,24 @@
 }
 
 .park-facility-card {
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 8px;
-  padding: 1.5rem;
+  background: var(--color-bg-base);
+  box-shadow: var(--neu-shadow-raised);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.park-facility-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-shadow-raised-lg);
 }
 
 .park-facility-card h3 {
-  color: #1a7f37;
+  color: var(--color-primary);
   font-size: 1.2rem;
   margin: 0 0 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #1a7f37;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .park-facility-card ul {
@@ -130,11 +139,11 @@
 .park-facility-card li {
   margin-bottom: 0.4rem;
   line-height: 1.5;
-  color: #555;
+  color: var(--color-text-secondary);
 }
 
 .park-facility-card p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0 0 0.8rem;
 }
@@ -151,24 +160,26 @@
   border-collapse: collapse;
   margin-top: 1rem;
   font-size: 0.95rem;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .park-pricing-table th,
 .park-pricing-table td {
   text-align: left;
   padding: 0.6rem 0.8rem;
-  border: 1px solid #e0e0e0;
-  color: #555;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
 }
 
 .park-pricing-table th {
-  background: #1a7f37;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-text-light);
   font-weight: 600;
 }
 
 .park-pricing-table tr:nth-child(even) {
-  background: #f9f9f9;
+  background: var(--color-bg-surface);
 }
 
 /* ===== CTA ===== */
@@ -184,7 +195,7 @@
 .park-cta-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--color-overlay);
 }
 
 .park-cta-inner {
@@ -194,7 +205,7 @@
 }
 
 .park-cta h2 {
-  color: #fff;
+  color: var(--color-text-light);
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -202,16 +213,24 @@
 .park-btn-primary {
   display: inline-block;
   padding: 0.9rem 2.5rem;
-  background: #1a7f37;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-text-light);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 12px;
   font-weight: 600;
   font-size: 1.1rem;
+  border: none;
+  box-shadow: var(--neu-shadow-raised);
+  min-height: 44px;
+  transition: all 0.25s ease;
 }
 
 .park-btn-primary:hover {
-  background: #15692d;
+  background: var(--color-primary-dark);
+  box-shadow: var(--neu-shadow-pressed);
+  transform: translateY(1px);
+  color: var(--color-text-light);
+  text-decoration: none;
 }
 
 /* ===== Responsive ===== */
@@ -228,5 +247,12 @@
 
   .park-facilities-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (hover: none) {
+  .park-hero,
+  .park-cta {
+    background-attachment: scroll;
   }
 }

@@ -7,4 +7,6 @@ main .page-content {
   padding-right: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
 }

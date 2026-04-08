@@ -16,21 +16,22 @@
 .aankomst-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--color-overlay);
 }
 
 .aankomst-hero-content {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 .aankomst-hero-heading {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 3.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
   margin: 0 0 1rem;
+  color: var(--color-text-light);
 }
 
 .aankomst-breadcrumb {
@@ -44,33 +45,33 @@
 }
 
 .aankomst-breadcrumb a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-light-80);
   text-decoration: none;
 }
 
 .aankomst-breadcrumb a:hover {
-  color: #fff;
+  color: var(--color-text-light);
   text-decoration: underline;
 }
 
 .aankomst-breadcrumb-separator {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-light-60);
 }
 
 .aankomst-breadcrumb-current {
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 /* ===== Section Container ===== */
 .aankomst-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
 }
 
 /* ===== Intro ===== */
 .aankomst-intro p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin-bottom: 1.5rem;
   max-width: 900px;
@@ -79,7 +80,7 @@
 
 /* ===== Section Heading ===== */
 .aankomst-section-heading {
-  color: #1a7f37;
+  color: var(--color-primary);
   font-size: 1.8rem;
   margin: 0 0 2rem;
 }
@@ -92,22 +93,28 @@
 }
 
 .aankomst-card {
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 8px;
-  padding: 1.5rem;
+  background: var(--color-bg-base);
+  box-shadow: var(--neu-shadow-raised);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.aankomst-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-shadow-raised-lg);
 }
 
 .aankomst-card h3 {
-  color: #1a7f37;
+  color: var(--color-primary);
   font-size: 1.2rem;
   margin: 0 0 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #1a7f37;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .aankomst-card p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0 0 0.8rem;
 }
@@ -125,21 +132,21 @@
 .aankomst-card li {
   margin-bottom: 0.4rem;
   line-height: 1.5;
-  color: #555;
+  color: var(--color-text-secondary);
 }
 
 .aankomst-card a {
-  color: #1a7f37;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 .aankomst-card a:hover {
-  color: #15692d;
+  color: var(--color-primary-dark);
   text-decoration: underline;
 }
 
 .aankomst-card strong {
-  color: #333;
+  color: var(--color-text-primary);
 }
 
 /* ===== CTA ===== */
@@ -155,7 +162,7 @@
 .aankomst-cta-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--color-overlay);
 }
 
 .aankomst-cta-inner {
@@ -165,7 +172,7 @@
 }
 
 .aankomst-cta h2 {
-  color: #fff;
+  color: var(--color-text-light);
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -173,16 +180,24 @@
 .aankomst-btn-primary {
   display: inline-block;
   padding: 0.9rem 2.5rem;
-  background: #1a7f37;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-text-light);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 12px;
   font-weight: 600;
   font-size: 1.1rem;
+  border: none;
+  box-shadow: var(--neu-shadow-raised);
+  min-height: 44px;
+  transition: all 0.25s ease;
 }
 
 .aankomst-btn-primary:hover {
-  background: #15692d;
+  background: var(--color-primary-dark);
+  box-shadow: var(--neu-shadow-pressed);
+  transform: translateY(1px);
+  color: var(--color-text-light);
+  text-decoration: none;
 }
 
 /* ===== Responsive ===== */
@@ -195,5 +210,12 @@
 @media (max-width: 768px) {
   .aankomst-hero-heading {
     font-size: 2.2rem;
+  }
+}
+
+@media (hover: none) {
+  .aankomst-hero,
+  .aankomst-cta {
+    background-attachment: scroll;
   }
 }

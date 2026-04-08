@@ -12,7 +12,7 @@ export default function Tarieven() {
         <div className="tarieven-hero-overlay" />
         <div className="tarieven-hero-content">
           <h1 className="tarieven-hero-heading">Tarieven &amp; Voorwaarden</h1>
-          <nav aria-label="Breadcrumb">
+          <nav aria-label="Kruimelpad">
             <ol className="tarieven-breadcrumb">
               <li>
                 <Link to="/">Home</Link>

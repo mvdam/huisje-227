@@ -12,7 +12,7 @@ export default function HetPark() {
         <div className="park-hero-overlay" />
         <div className="park-hero-content">
           <h1 className="park-hero-heading">Het Park</h1>
-          <nav aria-label="Breadcrumb">
+          <nav aria-label="Kruimelpad">
             <ol className="park-breadcrumb">
               <li>
                 <Link to="/">Home</Link>

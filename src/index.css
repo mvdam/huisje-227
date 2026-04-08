@@ -1,13 +1,111 @@
+:root {
+  /* Colors */
+  --color-bg-base: #e8e0d4;
+  --color-bg-surface: #efe8dd;
+  --color-primary: #4d7a52;
+  --color-primary-dark: #3d6342;
+  --color-secondary: #8f6150;
+  --color-secondary-dark: #7a5242;
+  --color-text-primary: #2d2926;
+  --color-text-secondary: #5a5450;
+  --color-text-light: #f5f0eb;
+  --color-shadow-light: #f5ede3;
+  --color-shadow-dark: #c9c1b5;
+  --color-shadow-light-sm: rgba(245, 237, 227, 0.7);
+  --color-shadow-dark-sm: rgba(201, 193, 181, 0.7);
+  --color-border: #d4cdc3;
+  --color-overlay: rgba(45, 41, 38, 0.55);
+
+  --color-text-light-80: rgba(245, 240, 235, 0.8);
+  --color-text-light-60: rgba(245, 240, 235, 0.6);
+  --color-text-light-70: rgba(245, 240, 235, 0.7);
+  --color-primary-10: rgba(77, 122, 82, 0.1);
+  --color-primary-20: rgba(77, 122, 82, 0.2);
+  --color-overlay-heavy: rgba(45, 41, 38, 0.92);
+  --color-overlay-dark: rgba(45, 41, 38, 0.75);
+  --color-tab-bg: rgba(245, 240, 235, 0.1);
+  --color-tab-border: rgba(245, 240, 235, 0.2);
+
+  /* Neumorphic shadows */
+  --neu-shadow-raised: 6px 6px 12px var(--color-shadow-dark), -6px -6px 12px var(--color-shadow-light);
+  --neu-shadow-pressed: inset 4px 4px 8px var(--color-shadow-dark), inset -4px -4px 8px var(--color-shadow-light);
+  --neu-shadow-raised-sm: 3px 3px 6px var(--color-shadow-dark-sm), -3px -3px 6px var(--color-shadow-light-sm);
+  --neu-shadow-pressed-sm: inset 2px 2px 4px var(--color-shadow-dark-sm), inset -2px -2px 4px var(--color-shadow-light-sm);
+  --neu-shadow-raised-lg: 8px 8px 16px var(--color-shadow-dark), -8px -8px 16px var(--color-shadow-light);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Source Sans 3', 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.1rem, 2vw, 1.3rem); }
+
+a {
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+[type="submit"]:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+input, select, textarea {
+  background: var(--color-bg-base);
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--neu-shadow-pressed);
+  padding: 0.7rem 1rem;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media (max-width: 576px) {
+  :root {
+    --neu-shadow-raised: var(--neu-shadow-raised-sm);
+    --neu-shadow-pressed: var(--neu-shadow-pressed-sm);
+    --neu-shadow-raised-lg: 5px 5px 10px var(--color-shadow-dark-sm), -5px -5px 10px var(--color-shadow-light-sm);
+  }
 }

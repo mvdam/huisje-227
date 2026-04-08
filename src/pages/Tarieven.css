@@ -16,21 +16,22 @@
 .tarieven-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--color-overlay);
 }
 
 .tarieven-hero-content {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 .tarieven-hero-heading {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 3.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
   margin: 0 0 1rem;
+  color: var(--color-text-light);
 }
 
 .tarieven-breadcrumb {
@@ -44,36 +45,38 @@
 }
 
 .tarieven-breadcrumb a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-light-80);
   text-decoration: none;
 }
 
 .tarieven-breadcrumb a:hover {
-  color: #fff;
+  color: var(--color-text-light);
   text-decoration: underline;
 }
 
 .tarieven-breadcrumb-separator {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-light-60);
 }
 
 .tarieven-breadcrumb-current {
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 /* ===== Section Container ===== */
 .tarieven-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
 }
 
 /* ===== Price Banner ===== */
 .tarieven-price-banner {
-  background: #1a7f37;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-text-light);
   text-align: center;
   padding: 3rem 1.5rem;
+  box-shadow: var(--neu-shadow-raised);
+  border-radius: 16px;
 }
 
 .tarieven-price-label {
@@ -86,15 +89,16 @@
 }
 
 .tarieven-price-amount {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 3.5rem;
   font-weight: 700;
   margin: 0;
+  color: var(--color-text-light);
 }
 
 /* ===== Section Heading ===== */
 .tarieven-section-heading {
-  color: #1a7f37;
+  color: var(--color-primary);
   font-size: 1.8rem;
   margin: 0 0 2rem;
 }
@@ -107,22 +111,28 @@
 }
 
 .tarieven-card {
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 8px;
+  background: var(--color-bg-base);
+  box-shadow: var(--neu-shadow-raised);
+  border-radius: 16px;
   padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarieven-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-shadow-raised-lg);
 }
 
 .tarieven-card h3 {
-  color: #1a7f37;
+  color: var(--color-primary);
   font-size: 1.2rem;
   margin: 0 0 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #1a7f37;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .tarieven-card p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin: 0 0 1rem;
 }
@@ -133,16 +143,16 @@
 
 .tarieven-contact-item {
   font-weight: 600;
-  color: #333;
+  color: var(--color-text-primary);
 }
 
 .tarieven-contact-item a {
-  color: #1a7f37;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 .tarieven-contact-item a:hover {
-  color: #15692d;
+  color: var(--color-primary-dark);
   text-decoration: underline;
 }
 
@@ -159,7 +169,7 @@
 .tarieven-cta-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--color-overlay);
 }
 
 .tarieven-cta-inner {
@@ -169,7 +179,7 @@
 }
 
 .tarieven-cta h2 {
-  color: #fff;
+  color: var(--color-text-light);
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -177,16 +187,24 @@
 .tarieven-btn-primary {
   display: inline-block;
   padding: 0.9rem 2.5rem;
-  background: #1a7f37;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-text-light);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 12px;
   font-weight: 600;
   font-size: 1.1rem;
+  border: none;
+  box-shadow: var(--neu-shadow-raised);
+  min-height: 44px;
+  transition: all 0.25s ease;
 }
 
 .tarieven-btn-primary:hover {
-  background: #15692d;
+  background: var(--color-primary-dark);
+  box-shadow: var(--neu-shadow-pressed);
+  transform: translateY(1px);
+  color: var(--color-text-light);
+  text-decoration: none;
 }
 
 /* ===== Responsive ===== */
@@ -207,5 +225,12 @@
 
   .tarieven-cards-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (hover: none) {
+  .tarieven-hero,
+  .tarieven-cta {
+    background-attachment: scroll;
   }
 }

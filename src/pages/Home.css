@@ -16,14 +16,14 @@
 .home-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--color-overlay);
 }
 
 .home-hero-content {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 .home-hero-tagline {
@@ -34,10 +34,11 @@
 }
 
 .home-hero-heading {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 3.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
   margin: 0;
+  color: var(--color-text-light);
 }
 
 .home-scroll-indicator {
@@ -49,7 +50,7 @@
   cursor: pointer;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-text-light);
   font-size: 2rem;
   animation: home-bounce 2s infinite;
 }
@@ -62,7 +63,7 @@
 
 /* ===== Availability Form ===== */
 .home-availability {
-  background: #f5f5f5;
+  background: var(--color-bg-surface);
   padding: 2.5rem 1.5rem;
 }
 
@@ -85,50 +86,65 @@
   font-weight: 600;
   margin-bottom: 0.3rem;
   font-size: 0.85rem;
-  color: #333;
+  color: var(--color-text-primary);
 }
 
 .home-availability-field input,
 .home-availability-field select {
-  padding: 0.6rem 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 12px;
   font-size: 1rem;
-  background: #fff;
+  background: var(--color-bg-base);
+  box-shadow: var(--neu-shadow-pressed);
+  color: var(--color-text-primary);
+  min-height: 44px;
+}
+
+.home-availability-field input:focus-visible,
+.home-availability-field select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .home-availability-btn {
   padding: 0.65rem 1.8rem;
-  background: #1a7f37;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-text-light);
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
+  box-shadow: var(--neu-shadow-raised);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
   align-self: flex-end;
+  min-height: 44px;
+  transition: all 0.25s ease;
 }
 
 .home-availability-btn:hover {
-  background: #15692d;
+  background: var(--color-primary-dark);
+  box-shadow: var(--neu-shadow-pressed);
+  transform: translateY(1px);
 }
 
 /* ===== Section Container ===== */
 .home-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
 }
 
 .home-section-heading {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
 }
 
 .home-section-subtext {
-  color: #666;
+  color: var(--color-text-secondary);
   max-width: 700px;
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -137,7 +153,7 @@
 /* ===== Welcome Section ===== */
 .home-welcome {
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -148,10 +164,11 @@
 .home-welcome-text h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--color-text-primary);
 }
 
 .home-welcome-text p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
@@ -166,19 +183,27 @@
 .home-btn-primary {
   display: inline-block;
   padding: 0.7rem 1.6rem;
-  background: #1a7f37;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-text-light);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 12px;
   font-weight: 600;
+  border: none;
+  box-shadow: var(--neu-shadow-raised);
+  min-height: 44px;
+  transition: all 0.25s ease;
 }
 
 .home-btn-primary:hover {
-  background: #15692d;
+  background: var(--color-primary-dark);
+  box-shadow: var(--neu-shadow-pressed);
+  transform: translateY(1px);
+  color: var(--color-text-light);
+  text-decoration: none;
 }
 
 .home-video-link {
-  color: #1a7f37;
+  color: var(--color-secondary);
   text-decoration: none;
   font-weight: 600;
   background: none;
@@ -189,6 +214,7 @@
 }
 
 .home-video-link:hover {
+  color: var(--color-secondary-dark);
   text-decoration: underline;
 }
 
@@ -200,7 +226,7 @@
 
 .home-welcome-img-main {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 16px;
   object-fit: cover;
   height: 400px;
 }
@@ -212,32 +238,46 @@
   width: 180px;
   height: 180px;
   object-fit: cover;
-  border-radius: 8px;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  border: 4px solid var(--color-bg-surface);
+  box-shadow: var(--neu-shadow-raised);
 }
 
 /* ===== Highlights ===== */
 .home-highlights-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
+}
+
+.home-highlight-card {
+  background: var(--color-bg-base);
+  box-shadow: var(--neu-shadow-raised);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-highlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-shadow-raised-lg);
 }
 
 .home-highlight-card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .home-highlight-card h3 {
   margin: 1rem 0 0.3rem;
   font-size: 1.2rem;
+  color: var(--color-text-primary);
 }
 
 .home-highlight-card p {
-  color: #666;
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
@@ -256,7 +296,7 @@
 }
 
 .home-gallery-track::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: var(--color-border);
   border-radius: 3px;
 }
 
@@ -270,14 +310,14 @@
   width: 100%;
   height: 280px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 /* ===== Lightbox ===== */
 .home-lightbox-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: var(--color-overlay-heavy);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -290,7 +330,7 @@
   right: 30px;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-text-light);
   font-size: 2.5rem;
   cursor: pointer;
   z-index: 1001;
@@ -303,7 +343,7 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #fff;
+  color: var(--color-text-light);
   font-size: 3rem;
   cursor: pointer;
   z-index: 1001;
@@ -317,13 +357,13 @@
   max-width: 90vw;
   max-height: 85vh;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: 12px;
 }
 
 .home-video-player {
   max-width: 90vw;
   max-height: 85vh;
-  border-radius: 4px;
+  border-radius: 12px;
 }
 
 /* ===== Amenities ===== */
@@ -333,13 +373,13 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 .home-amenities-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: var(--color-overlay-dark);
 }
 
 .home-amenities-inner {
@@ -347,11 +387,11 @@
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
 }
 
 .home-amenities .home-section-subtext {
-  color: #ccc;
+  color: var(--color-text-light-70);
 }
 
 .home-tabs {
@@ -362,20 +402,22 @@
 
 .home-tab-btn {
   padding: 0.8rem 1.8rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--color-tab-bg);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-tab-border);
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
+  min-height: 44px;
+  transition: all 0.25s ease;
 }
 
-.home-tab-btn:first-child { border-radius: 4px 0 0 4px; }
-.home-tab-btn:last-child { border-radius: 0 4px 4px 0; }
+.home-tab-btn:first-child { border-radius: 12px 0 0 12px; }
+.home-tab-btn:last-child { border-radius: 0 12px 12px 0; }
 
 .home-tab-btn.active {
-  background: #1a7f37;
-  border-color: #1a7f37;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .home-tab-content {
@@ -385,7 +427,7 @@
 }
 
 .home-tab-column h4 {
-  color: #1a7f37;
+  color: var(--color-primary);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   margin-top: 1.5rem;
@@ -399,7 +441,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.85rem;
-  border-bottom: 2px solid #1a7f37;
+  border-bottom: 2px solid var(--color-primary);
   padding-bottom: 2px;
 }
 
@@ -412,11 +454,13 @@
 .home-tab-column li {
   margin-bottom: 0.3rem;
   line-height: 1.5;
-  color: #ddd;
+  color: var(--color-text-light);
+  opacity: 0.85;
 }
 
 .home-tab-column p {
-  color: #ddd;
+  color: var(--color-text-light);
+  opacity: 0.85;
   line-height: 1.6;
 }
 
@@ -431,37 +475,51 @@
   font-size: 1.3rem;
   font-style: italic;
   line-height: 1.7;
-  color: #444;
+  color: var(--color-text-secondary);
   margin: 0 0 1rem;
 }
 
 .home-review cite {
   font-style: normal;
   font-weight: 600;
-  color: #333;
+  color: var(--color-text-primary);
 }
 
 /* ===== Park Activities ===== */
 .home-activities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
+}
+
+.home-activity-card {
+  background: var(--color-bg-base);
+  box-shadow: var(--neu-shadow-raised);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-shadow-raised-lg);
 }
 
 .home-activity-card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .home-activity-card h3 {
   margin: 1rem 0 0.5rem;
   font-size: 1.2rem;
+  color: var(--color-text-primary);
 }
 
 .home-activity-card p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
 }
@@ -479,7 +537,7 @@
 .home-cta-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--color-overlay);
 }
 
 .home-cta-inner {
@@ -489,7 +547,7 @@
 }
 
 .home-cta h2 {
-  color: #fff;
+  color: var(--color-text-light);
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -542,7 +600,7 @@
 
   .home-tab-btn {
     flex: 1;
-    border-radius: 4px !important;
+    border-radius: 12px;
     margin-bottom: 0.3rem;
   }
 
@@ -561,5 +619,13 @@
 
   .home-availability-field {
     flex: 1 1 100%;
+  }
+}
+
+@media (hover: none) {
+  .home-hero,
+  .home-cta,
+  .home-amenities {
+    background-attachment: scroll;
   }
 }

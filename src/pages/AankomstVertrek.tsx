@@ -12,7 +12,7 @@ export default function AankomstVertrek() {
         <div className="aankomst-hero-overlay" />
         <div className="aankomst-hero-content">
           <h1 className="aankomst-hero-heading">Aankomst &amp; Vertrek</h1>
-          <nav aria-label="Breadcrumb">
+          <nav aria-label="Kruimelpad">
             <ol className="aankomst-breadcrumb">
               <li>
                 <Link to="/">Home</Link>

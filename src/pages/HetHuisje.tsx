@@ -112,7 +112,7 @@ export default function HetHuisje() {
       {/* 1. Hero */}
       <section
         className="huisje-hero"
-        style={{ backgroundImage: "url(/images/hero_2.jpg)" }}
+        style={{ backgroundImage: "url(/images/hero_3.jpg)" }}
       >
         <div className="huisje-hero-overlay" />
         <div className="huisje-hero-content">

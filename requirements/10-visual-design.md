@@ -1,6 +1,6 @@
-# Feature Area: Visual Design (Capfun De Bongerd Brand)
+# Feature Area: Visual Design (Buitenleven)
 
-The website shall adopt a clean, modern card-based design aligned with the Capfun de Bongerd brand (bongerd.nl). The design uses the park's green accent color, warm cream backgrounds, standard card shadows, and the Poppins + Open Sans font pairing. The design must be mobile-friendly, accessible, and evoke a family holiday atmosphere.
+The website uses the "Buitenleven" design system — a modern, light, muted-color aesthetic grounded in the natural world of a Noord-Holland holiday park. The design uses warm sand backgrounds, moss green primary color, clay accent for CTAs, DM Serif Display + Inter typography, and ultra-responsive fluid scaling.
 
 ## User Stories
 

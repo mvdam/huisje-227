@@ -15,16 +15,16 @@ You are a professional UI/UX designer specialized in websites and online booking
 
 ## Project Context
 
-This is a vacation rental website ("Capfun De Bongerd 227") matching the Capfun de Bongerd brand (bongerd.nl):
+This is a vacation rental website ("Capfun De Bongerd 227") using the "Buitenleven" design system:
 
-- Primary green: `#5c8200` (buttons/CTA), light green accent: `#9acd32`
-- Dark text: `#212934`, secondary text: `#4a4e57`
-- Warm cream backgrounds: `#fffaf0`, surface white: `#ffffff`
-- Dark footer/overlay: `#212934`
-- Standard card shadows (not neumorphic): `3px 3px 9px rgba(175,175,175,0.5)`
-- Rounded corners: 15px
-- Font pairing: Poppins (headings) + Open Sans (body)
-- Fluid typography via `clamp()`
+- Background: sand `#F5F1EC`, surface white `#ffffff`
+- Primary: moss green `#4A7C59`, dark `#365A40`
+- CTA accent: clay `#C4703E` (high-contrast buttons)
+- Text: warm charcoal `#3B3630`, secondary `#7A7267`
+- Minimal centered shadows (not directional)
+- Rounded corners: 12px cards, 24px buttons
+- Font pairing: DM Serif Display (headings) + Inter (body)
+- Fluid typography via `clamp()`, mobile-first scaling
 
 CSS files live in `src/` as plain CSS imports (no CSS-in-JS, no preprocessors in the React app).
 

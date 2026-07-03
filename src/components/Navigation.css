@@ -43,6 +43,8 @@
   border: none;
   cursor: pointer;
   padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .hamburger-bar {
@@ -66,7 +68,7 @@
   padding: 8px 14px;
   color: var(--color-text-primary);
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 15px;
   font-size: 0.95rem;
   transition: color 0.2s, background-color 0.2s;
 }
@@ -111,7 +113,7 @@
 
   .site-nav a {
     padding: 12px 24px;
-    border-radius: 12px;
+    border-radius: 15px;
     min-height: 44px;
     display: flex;
     align-items: center;

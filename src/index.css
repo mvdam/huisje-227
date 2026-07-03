@@ -1,43 +1,50 @@
 :root {
-  /* Colors */
-  --color-bg-base: #e8e0d4;
-  --color-bg-surface: #efe8dd;
-  --color-primary: #4d7a52;
-  --color-primary-dark: #3d6342;
-  --color-secondary: #8f6150;
-  --color-secondary-dark: #7a5242;
-  --color-text-primary: #2d2926;
-  --color-text-secondary: #5a5450;
-  --color-text-light: #f5f0eb;
-  --color-shadow-light: #f5ede3;
-  --color-shadow-dark: #c9c1b5;
-  --color-shadow-light-sm: rgba(245, 237, 227, 0.7);
-  --color-shadow-dark-sm: rgba(201, 193, 181, 0.7);
-  --color-border: #d4cdc3;
-  --color-overlay: rgba(45, 41, 38, 0.55);
+  /* Colors — matching Capfun de Bongerd brand */
+  --color-bg-base: #fffaf0;
+  --color-bg-surface: #ffffff;
+  --color-primary: #5c8200;
+  --color-primary-dark: #4a6900;
+  --color-primary-light: #9acd32;
+  --color-secondary: #212934;
+  --color-secondary-dark: #1a2029;
+  --color-text-primary: #212934;
+  --color-text-secondary: #4a4e57;
+  --color-text-light: #ffffff;
+  --color-shadow-light: rgba(255, 255, 255, 0.8);
+  --color-shadow-dark: rgba(175, 175, 175, 0.5);
+  --color-shadow-light-sm: rgba(255, 255, 255, 0.6);
+  --color-shadow-dark-sm: rgba(175, 175, 175, 0.4);
+  --color-border: #e2e2e2;
+  --color-overlay: rgba(33, 41, 52, 0.7);
 
-  --color-text-light-80: rgba(245, 240, 235, 0.8);
-  --color-text-light-60: rgba(245, 240, 235, 0.6);
-  --color-text-light-70: rgba(245, 240, 235, 0.7);
-  --color-primary-10: rgba(77, 122, 82, 0.1);
-  --color-primary-20: rgba(77, 122, 82, 0.2);
-  --color-overlay-heavy: rgba(45, 41, 38, 0.92);
-  --color-overlay-dark: rgba(45, 41, 38, 0.75);
-  --color-tab-bg: rgba(245, 240, 235, 0.1);
-  --color-tab-border: rgba(245, 240, 235, 0.2);
+  --color-text-light-80: rgba(255, 255, 255, 0.9);
+  --color-text-light-60: rgba(255, 255, 255, 0.75);
+  --color-text-light-70: rgba(255, 255, 255, 0.85);
+  --color-primary-10: rgba(92, 130, 0, 0.1);
+  --color-primary-20: rgba(92, 130, 0, 0.2);
+  --color-overlay-heavy: rgba(33, 41, 52, 0.92);
+  --color-overlay-dark: rgba(33, 41, 52, 0.75);
+  --color-tab-bg: rgba(255, 255, 255, 0.1);
+  --color-tab-border: rgba(255, 255, 255, 0.2);
 
-  /* Neumorphic shadows */
-  --neu-shadow-raised: 6px 6px 12px var(--color-shadow-dark), -6px -6px 12px var(--color-shadow-light);
-  --neu-shadow-pressed: inset 4px 4px 8px var(--color-shadow-dark), inset -4px -4px 8px var(--color-shadow-light);
-  --neu-shadow-raised-sm: 3px 3px 6px var(--color-shadow-dark-sm), -3px -3px 6px var(--color-shadow-light-sm);
-  --neu-shadow-pressed-sm: inset 2px 2px 4px var(--color-shadow-dark-sm), inset -2px -2px 4px var(--color-shadow-light-sm);
-  --neu-shadow-raised-lg: 8px 8px 16px var(--color-shadow-dark), -8px -8px 16px var(--color-shadow-light);
+  /* Card shadows */
+  --shadow-card: 3px 3px 9px 0px rgba(175, 175, 175, 0.5);
+  --shadow-card-hover: 7px 7px 14px 0px rgba(112, 112, 112, 0.5);
+  --shadow-card-sm: 2px 2px 6px 0px rgba(175, 175, 175, 0.4);
+  --shadow-inset: inset 2px 2px 4px rgba(175, 175, 175, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+
+  /* Legacy neumorphic aliases (mapped to new shadow system) */
+  --neu-shadow-raised: var(--shadow-card);
+  --neu-shadow-pressed: var(--shadow-inset);
+  --neu-shadow-raised-sm: var(--shadow-card-sm);
+  --neu-shadow-pressed-sm: var(--shadow-inset);
+  --neu-shadow-raised-lg: var(--shadow-card-hover);
 }
 
 body {
   margin: 0;
-  font-family: 'Source Sans 3', 'Segoe UI', Roboto, sans-serif;
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-family: 'Open Sans', 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.05rem);
   background: var(--color-bg-base);
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
@@ -45,7 +52,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
   color: var(--color-text-primary);
 }
 
@@ -80,9 +87,9 @@ button:focus-visible,
 }
 
 input, select, textarea {
-  background: var(--color-bg-base);
-  border: none;
-  border-radius: 12px;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 15px;
   box-shadow: var(--neu-shadow-pressed);
   padding: 0.7rem 1rem;
   color: var(--color-text-primary);
@@ -104,8 +111,8 @@ code {
 
 @media (max-width: 576px) {
   :root {
-    --neu-shadow-raised: var(--neu-shadow-raised-sm);
-    --neu-shadow-pressed: var(--neu-shadow-pressed-sm);
-    --neu-shadow-raised-lg: 5px 5px 10px var(--color-shadow-dark-sm), -5px -5px 10px var(--color-shadow-light-sm);
+    --neu-shadow-raised: var(--shadow-card-sm);
+    --neu-shadow-pressed: var(--shadow-inset);
+    --neu-shadow-raised-lg: var(--shadow-card);
   }
 }

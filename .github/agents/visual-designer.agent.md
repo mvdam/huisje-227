@@ -15,13 +15,15 @@ You are a professional UI/UX designer specialized in websites and online booking
 
 ## Project Context
 
-This is a vacation rental website ("Capfun De Bongerd 227") using a neumorphic design system with:
+This is a vacation rental website ("Capfun De Bongerd 227") matching the Capfun de Bongerd brand (bongerd.nl):
 
-- Warm neutral palette (sand `#e8e0d4`, sage `#4d7a52`, terracotta `#8f6150`)
-- No pure black (`#2d2926`) or pure white (`#f5f0eb`)
-- Soft shadows for depth (raised/pressed states)
-- Rounded corners (minimum 12px)
-- Font pairing: Playfair Display (headings) + Source Sans 3 (body)
+- Primary green: `#5c8200` (buttons/CTA), light green accent: `#9acd32`
+- Dark text: `#212934`, secondary text: `#4a4e57`
+- Warm cream backgrounds: `#fffaf0`, surface white: `#ffffff`
+- Dark footer/overlay: `#212934`
+- Standard card shadows (not neumorphic): `3px 3px 9px rgba(175,175,175,0.5)`
+- Rounded corners: 15px
+- Font pairing: Poppins (headings) + Open Sans (body)
 - Fluid typography via `clamp()`
 
 CSS files live in `src/` as plain CSS imports (no CSS-in-JS, no preprocessors in the React app).

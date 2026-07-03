@@ -1,4 +1,11 @@
-import { useState, useEffect, useRef, useCallback, FormEvent } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  FormEvent,
+  KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
 
@@ -14,6 +21,26 @@ function VideoLightbox({ src, onClose }: { src: string; onClose: () => void }) {
     closeRef.current?.focus();
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
+      else if (e.key === "Tab") {
+        const focusable =
+          closeRef.current?.parentElement?.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, video, [tabindex]:not([tabindex="-1"])',
+          );
+        if (!focusable || focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
@@ -486,6 +513,9 @@ export default function Home() {
   const [videoOpen, setVideoOpen] = useState(false);
   const galleryRef = useRef<HTMLDivElement>(null);
   const galleryPaused = useRef(false);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const galleryTriggerRef = useRef<Element | null>(null);
+  const videoTriggerRef = useRef<Element | null>(null);
 
   const handleAvailability = (e: FormEvent) => {
     e.preventDefault();
@@ -496,6 +526,27 @@ export default function Home() {
       kinderen,
     });
     navigate(`/reserveren?${params.toString()}`);
+  };
+
+  const handleTabKeyDown = (
+    e: ReactKeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) => {
+    let newIndex: number | null = null;
+    if (e.key === "ArrowRight") {
+      newIndex = (index + 1) % TABS.length;
+    } else if (e.key === "ArrowLeft") {
+      newIndex = (index - 1 + TABS.length) % TABS.length;
+    } else if (e.key === "Home") {
+      newIndex = 0;
+    } else if (e.key === "End") {
+      newIndex = TABS.length - 1;
+    }
+    if (newIndex !== null) {
+      e.preventDefault();
+      setActiveTab(TABS[newIndex].id);
+      tabRefs.current[newIndex]?.focus();
+    }
   };
 
   useEffect(() => {
@@ -611,7 +662,10 @@ export default function Home() {
               <button
                 type="button"
                 className="home-video-link"
-                onClick={() => setVideoOpen(true)}
+                onClick={() => {
+                  videoTriggerRef.current = document.activeElement;
+                  setVideoOpen(true);
+                }}
               >
                 &#9654; Bekijk de video
               </button>
@@ -671,13 +725,41 @@ export default function Home() {
             <div
               className="home-gallery-item"
               key={i}
-              onClick={() => setLightboxIndex(i)}
+              onClick={() => {
+                galleryTriggerRef.current = document.activeElement;
+                setLightboxIndex(i);
+              }}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
+                  galleryTriggerRef.current = document.activeElement;
                   setLightboxIndex(i);
+                } else if (e.key === "ArrowRight") {
+                  e.preventDefault();
+                  const next = (e.currentTarget as HTMLElement)
+                    .nextElementSibling as HTMLElement | null;
+                  if (next) {
+                    next.focus();
+                    next.scrollIntoView({
+                      behavior: "smooth",
+                      block: "nearest",
+                      inline: "center",
+                    });
+                  }
+                } else if (e.key === "ArrowLeft") {
+                  e.preventDefault();
+                  const prev = (e.currentTarget as HTMLElement)
+                    .previousElementSibling as HTMLElement | null;
+                  if (prev) {
+                    prev.focus();
+                    prev.scrollIntoView({
+                      behavior: "smooth",
+                      block: "nearest",
+                      inline: "center",
+                    });
+                  }
                 }
               }}
             >
@@ -693,7 +775,10 @@ export default function Home() {
       {videoOpen && (
         <VideoLightbox
           src="/images/bongerd.mp4"
-          onClose={() => setVideoOpen(false)}
+          onClose={() => {
+            setVideoOpen(false);
+            (videoTriggerRef.current as HTMLElement)?.focus();
+          }}
         />
       )}
 
@@ -701,7 +786,10 @@ export default function Home() {
         <ImageLightbox
           images={SLIDER_IMAGES}
           index={lightboxIndex}
-          onClose={() => setLightboxIndex(null)}
+          onClose={() => {
+            setLightboxIndex(null);
+            (galleryTriggerRef.current as HTMLElement)?.focus();
+          }}
           onPrev={() =>
             setLightboxIndex(
               (lightboxIndex - 1 + SLIDER_IMAGES.length) % SLIDER_IMAGES.length,
@@ -726,15 +814,20 @@ export default function Home() {
             huisje, op het park en in de omgeving.
           </p>
           <div className="home-tabs" role="tablist">
-            {TABS.map((tab) => (
+            {TABS.map((tab, index) => (
               <button
                 key={tab.id}
                 id={`tab-${tab.id}`}
+                ref={(el) => {
+                  tabRefs.current[index] = el;
+                }}
                 role="tab"
                 aria-selected={activeTab === tab.id}
                 aria-controls={`tabpanel-${tab.id}`}
+                tabIndex={activeTab === tab.id ? 0 : -1}
                 className={`home-tab-btn ${activeTab === tab.id ? "active" : ""}`}
                 onClick={() => setActiveTab(tab.id)}
+                onKeyDown={(e) => handleTabKeyDown(e, index)}
               >
                 {tab.label}
               </button>

@@ -1,8 +1,8 @@
-# US-093: Muted Color Palette
+# US-093: Capfun De Bongerd Color Palette
 
 **As a** visitor,
-**I want to** see a calm, muted color palette throughout the site,
-**so that** the design feels sophisticated and restful, fitting for a holiday property.
+**I want to** see the Capfun de Bongerd brand colors throughout the site,
+**so that** the design feels consistent with the park's identity and conveys a fresh, natural holiday vibe.
 
 ## Feature Area
 
@@ -10,20 +10,21 @@
 
 ## Acceptance Criteria
 
-- The site defines a muted color palette using CSS custom properties on `:root`
-- The background base color is a soft warm neutral (muted sand or light warm gray)
-- Accent colors are muted warm-toned hues (e.g., dusty sage, soft terracotta, muted ocean blue)
-- No highly saturated or neon colors are used anywhere on the site
-- Pure black and pure white are replaced with off-black and off-white tones
-- The muted palette is applied consistently across all pages and components
+- The site defines the brand color palette using CSS custom properties on `:root`
+- The background base color is warm cream (`#fffaf0`) with white (`#ffffff`) surfaces for cards
+- The primary accent color is Capfun green (`#5c8200`) used for buttons, links, and highlights
+- A lighter green (`#9acd32`) is available for accents on dark backgrounds
+- Primary text uses dark blue-gray (`#212934`); secondary text uses medium gray (`#4a4e57`)
+- The color palette is applied consistently across all pages and components
+- The overall impression matches the Capfun de Bongerd park's branding (bongerd.nl)
 
 ## Related Requirements
 
 - [FR-VD-010](../10-visual-design.md) — CSS custom properties for color palette
-- [FR-VD-011](../10-visual-design.md) — Warm neutral background base
-- [FR-VD-012](../10-visual-design.md) — Muted warm-toned accent colors
-- [FR-VD-013](../10-visual-design.md) — No pure black/white
+- [FR-VD-011](../10-visual-design.md) — Warm cream background base
+- [FR-VD-012](../10-visual-design.md) — Capfun green primary accent
+- [FR-VD-013](../10-visual-design.md) — Dark blue-gray text colors
 
 ## Status
 
-- [x] Implemented — 2026-04-08
+- [x] Implemented — 2026-07-03

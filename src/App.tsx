@@ -12,19 +12,24 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter>
-      <Navigation />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/het-huisje" element={<HetHuisje />} />
-          <Route path="/aankomst-vertrek" element={<AankomstVertrek />} />
-          <Route path="/tarieven" element={<Tarieven />} />
-          <Route path="/het-park" element={<HetPark />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/reserveren" element={<Reserveren />} />
-          <Route path="*" element={<h1>Pagina niet gevonden</h1>} />
-        </Routes>
-      </main>
+      <div className="App">
+        <a href="#main-content" className="skip-link">
+          Ga naar hoofdinhoud
+        </a>
+        <Navigation />
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/het-huisje" element={<HetHuisje />} />
+            <Route path="/aankomst-vertrek" element={<AankomstVertrek />} />
+            <Route path="/tarieven" element={<Tarieven />} />
+            <Route path="/het-park" element={<HetPark />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/reserveren" element={<Reserveren />} />
+            <Route path="*" element={<h1>Pagina niet gevonden</h1>} />
+          </Routes>
+        </main>
+      </div>
     </BrowserRouter>
   );
 }

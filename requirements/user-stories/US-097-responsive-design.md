@@ -28,4 +28,4 @@
 
 ## Status
 
-- [ ] Not implemented
+- [x] Implemented — 2026-07-03

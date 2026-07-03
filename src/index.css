@@ -1,39 +1,39 @@
 :root {
-  /* Colors — matching Capfun de Bongerd brand */
-  --color-bg-base: #fffaf0;
+  /* Colors — Buitenleven redesign */
+  --color-bg-base: #f5f1ec;
   --color-bg-surface: #ffffff;
-  --color-primary: #5c8200;
-  --color-primary-dark: #4a6900;
-  --color-primary-light: #9acd32;
-  --color-secondary: #212934;
-  --color-secondary-dark: #1a2029;
-  --color-text-primary: #212934;
-  --color-text-secondary: #4a4e57;
+  --color-primary: #4a7c59;
+  --color-primary-dark: #365a40;
+  --color-primary-light: #6b9b78;
+  --color-secondary: #3b3630;
+  --color-secondary-dark: #2a2521;
+  --color-accent: #c4703e;
+  --color-accent-dark: #a85c30;
+  --color-text-primary: #3b3630;
+  --color-text-secondary: #7a7267;
   --color-text-light: #ffffff;
-  --color-shadow-light: rgba(255, 255, 255, 0.8);
-  --color-shadow-dark: rgba(175, 175, 175, 0.5);
-  --color-shadow-light-sm: rgba(255, 255, 255, 0.6);
-  --color-shadow-dark-sm: rgba(175, 175, 175, 0.4);
-  --color-border: #e2e2e2;
-  --color-overlay: rgba(33, 41, 52, 0.7);
+  --color-shadow-dark: rgba(59, 54, 48, 0.08);
+  --color-shadow-dark-sm: rgba(59, 54, 48, 0.05);
+  --color-border: #e8e3de;
+  --color-overlay: rgba(59, 54, 48, 0.7);
 
   --color-text-light-80: rgba(255, 255, 255, 0.9);
   --color-text-light-60: rgba(255, 255, 255, 0.75);
   --color-text-light-70: rgba(255, 255, 255, 0.85);
-  --color-primary-10: rgba(92, 130, 0, 0.1);
-  --color-primary-20: rgba(92, 130, 0, 0.2);
-  --color-overlay-heavy: rgba(33, 41, 52, 0.92);
-  --color-overlay-dark: rgba(33, 41, 52, 0.75);
+  --color-primary-10: rgba(74, 124, 89, 0.1);
+  --color-primary-20: rgba(74, 124, 89, 0.2);
+  --color-overlay-heavy: rgba(59, 54, 48, 0.92);
+  --color-overlay-dark: rgba(59, 54, 48, 0.75);
   --color-tab-bg: rgba(255, 255, 255, 0.1);
   --color-tab-border: rgba(255, 255, 255, 0.2);
 
-  /* Card shadows */
-  --shadow-card: 3px 3px 9px 0px rgba(175, 175, 175, 0.5);
-  --shadow-card-hover: 7px 7px 14px 0px rgba(112, 112, 112, 0.5);
-  --shadow-card-sm: 2px 2px 6px 0px rgba(175, 175, 175, 0.4);
-  --shadow-inset: inset 2px 2px 4px rgba(175, 175, 175, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+  /* Shadows — minimal, only on hover/elevated */
+  --shadow-card: 0 2px 8px rgba(59, 54, 48, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(59, 54, 48, 0.12);
+  --shadow-card-sm: 0 1px 4px rgba(59, 54, 48, 0.06);
+  --shadow-inset: inset 0 1px 3px rgba(59, 54, 48, 0.08);
 
-  /* Legacy neumorphic aliases (mapped to new shadow system) */
+  /* Legacy aliases */
   --neu-shadow-raised: var(--shadow-card);
   --neu-shadow-pressed: var(--shadow-inset);
   --neu-shadow-raised-sm: var(--shadow-card-sm);
@@ -43,22 +43,38 @@
 
 body {
   margin: 0;
-  font-family: 'Open Sans', 'Segoe UI', Roboto, sans-serif;
-  font-size: clamp(1rem, 1.2vw, 1.05rem);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
   background: var(--color-bg-base);
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Serif Display", Georgia, serif;
   color: var(--color-text-primary);
+  font-weight: 400;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.3rem); }
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
 
 a {
   color: var(--color-primary);
@@ -86,27 +102,35 @@ button:focus-visible,
   color: var(--color-text-light);
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   background: var(--color-bg-surface);
   border: 1px solid var(--color-border);
-  border-radius: 15px;
-  box-shadow: var(--neu-shadow-pressed);
-  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 0.75rem 1rem;
   color: var(--color-text-primary);
   font-size: 1rem;
   font-family: inherit;
   min-height: 44px;
   box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-10);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 @media (max-width: 576px) {

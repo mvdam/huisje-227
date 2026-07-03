@@ -23,7 +23,7 @@
   white-space: normal;
   background: var(--color-primary);
   color: var(--color-text-light);
-  border-radius: 15px;
+  border-radius: 12px;
   z-index: 10000;
   text-decoration: none;
   font-weight: 600;

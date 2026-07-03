@@ -83,7 +83,7 @@
 .reserveren-year-tab {
   padding: 0.5rem 1.5rem;
   border: 1px solid var(--color-border);
-  border-radius: 15px;
+  border-radius: 24px;
   background: var(--color-bg-surface);
   color: var(--color-text-primary);
   font-weight: 600;
@@ -110,7 +110,7 @@
 
 .week-block {
   padding: 0.75rem;
-  border-radius: 15px;
+  border-radius: 12px;
   text-align: center;
   font-size: 0.85rem;
   font-weight: 600;
@@ -194,7 +194,7 @@
   width: 100%;
   padding: 0.7rem 1rem;
   border: none;
-  border-radius: 15px;
+  border-radius: 12px;
   font-size: 1rem;
   background: var(--color-bg-base);
   box-shadow: var(--neu-shadow-pressed);
@@ -217,10 +217,10 @@
 .reserveren-btn-primary {
   display: inline-block;
   padding: 0.9rem 2.5rem;
-  background: var(--color-primary);
+  background: var(--color-accent);
   color: var(--color-text-light);
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: 24px;
   font-weight: 600;
   font-size: 1.1rem;
   border: none;
@@ -230,7 +230,7 @@
 }
 
 .reserveren-btn-primary:hover {
-  background: var(--color-primary-dark);
+  background: var(--color-accent-dark);
   box-shadow: var(--neu-shadow-pressed);
   transform: translateY(1px);
 }

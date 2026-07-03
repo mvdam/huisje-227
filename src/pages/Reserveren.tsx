@@ -27,13 +27,17 @@ const MONTH_ABBR = [
 
 function getWeeks(year: number): { start: Date; end: Date }[] {
   const weeks: { start: Date; end: Date }[] = [];
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
   let current = new Date(year, 4, 1); // May 1
   while (current.getDay() !== 6) current.setDate(current.getDate() + 1);
   const endDate = new Date(year, 9, 1); // October 1 (not including)
   while (current < endDate) {
     const weekEnd = new Date(current);
     weekEnd.setDate(weekEnd.getDate() + 7);
-    weeks.push({ start: new Date(current), end: weekEnd });
+    if (weekEnd > today) {
+      weeks.push({ start: new Date(current), end: weekEnd });
+    }
     current = weekEnd;
   }
   return weeks;

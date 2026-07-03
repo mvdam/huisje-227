@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import "./Reserveren.css";
 
 const RESERVED_PERIODS = [
-  { start: "2026-06-15", end: "2026-06-22" },
+  { start: "2026-06-13", end: "2026-06-20" },
   { start: "2026-07-11", end: "2026-07-25" },
   { start: "2026-07-25", end: "2026-08-01" },
   { start: "2026-08-01", end: "2026-08-08" },
@@ -28,7 +28,7 @@ const MONTH_ABBR = [
 function getWeeks(): { start: Date; end: Date }[] {
   const weeks: { start: Date; end: Date }[] = [];
   let current = new Date(2026, 5, 1);
-  while (current.getDay() !== 1) current.setDate(current.getDate() + 1);
+  while (current.getDay() !== 6) current.setDate(current.getDate() + 1);
   const endDate = new Date(2026, 8, 1);
   while (current < endDate) {
     const weekEnd = new Date(current);

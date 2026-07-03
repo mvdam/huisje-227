@@ -32,3 +32,7 @@
 - [FR-095](../07-reserveren.md) — Form backend submission
 - [FR-096](../07-reserveren.md) — Dutch submit button label
 - [FR-097](../07-reserveren.md) — Real contact info alongside form
+
+## Status
+
+- [x] Implemented — 2026-07-03

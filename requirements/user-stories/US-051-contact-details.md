@@ -24,3 +24,7 @@
 ## Related Requirements
 
 - [FR-085](../06-contact.md) — Real contact information
+
+## Status
+
+- [x] Implemented — 2026-07-03

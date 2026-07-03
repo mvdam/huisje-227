@@ -32,8 +32,8 @@
 | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | FR-014 | The system shall display a check-availability form with fields: Aankomst (check-in date), Vertrek (check-out date), Volwassenen (adults), and Kinderen (children) | [index.html](../html/index.html#L106-L152) |
 | FR-015 | The check-in and check-out date fields shall use a datepicker with format `d MM, yyyy` and autoclose enabled                                                      | [main.js](../html/js/main.js#L163-L166)    |
-| FR-016 | The adults select shall offer options: 1, 2 (maximum 2 adults)                                                                                              | [index.html](../html/index.html#L129-L134) |
-| FR-017 | The children select shall offer options: 0, 1, 2 (maximum 2 children) and a separate baby field with options: 0, 1                                               | [index.html](../html/index.html#L142-L147) |
+| FR-016 | The adults select shall offer options: 1, 2 (maximum 2 adults)                                                                                                    | [index.html](../html/index.html#L129-L134) |
+| FR-017 | The children select shall offer options: 0, 1, 2 (maximum 2 children) and a separate baby field with options: 0, 1                                                | [index.html](../html/index.html#L142-L147) |
 | FR-018 | The form shall submit to a real backend or navigate to the reservation page with the selected parameters                                                          | [index.html](../html/index.html#L105)      |
 | FR-019 | The submit button shall be labeled "Bekijk beschikbaarheid"                                                                                                       | [index.html](../html/index.html#L151-L153) |
 

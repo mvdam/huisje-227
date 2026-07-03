@@ -24,3 +24,10 @@ This is a vacation rental website for a holiday house at Capfun De Bongerd (plot
 - All website text, labels, headings, buttons, and alt text must be in Dutch.
 - The site is branded as "Capfun De Bongerd 227" — do not use the original template name "Sogo Hotel".
 - Template placeholder content (lorem ipsum, English text, fake addresses/names) must not appear in production.
+
+## Workflow
+
+- Commit and push after each noteworthy change — do not batch everything into one large commit.
+- Use conventional commit messages (`feat:`, `fix:`, `docs:`, etc.).
+- Run tests before committing when possible.
+- Push to remote after committing.

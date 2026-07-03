@@ -8,8 +8,8 @@ const navItems = [
   { to: "/aankomst-vertrek", label: "Aankomst & Vertrek" },
   { to: "/tarieven", label: "Tarieven & Voorwaarden" },
   { to: "/het-park", label: "Het Park" },
-  { to: "/contact", label: "Contact" },
   { to: "/reserveren", label: "Reserveren" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export default function Navigation() {

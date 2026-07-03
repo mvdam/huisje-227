@@ -75,3 +75,7 @@ When implementing fixes:
 - **@react-engineer**: Delegate component markup changes (ARIA attributes, semantic HTML, focus management, skip links) and complex CSS that requires component restructuring
 - **@qa-engineer**: Request verification of accessibility fixes against acceptance criteria in `requirements/user-stories/US-095-*`, `US-096-*`, `US-097-*`
 - Accessibility requirements live in `requirements/11-accessibility.md` — always check these before auditing
+
+## Design Guidance
+
+When creating new UI, redesigning pages, or making aesthetic/typography/palette decisions, follow the `/frontend-design` skill for distinctive visual direction grounded in the subject matter.

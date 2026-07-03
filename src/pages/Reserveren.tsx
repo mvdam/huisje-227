@@ -25,11 +25,11 @@ const MONTH_ABBR = [
   "dec",
 ];
 
-function getWeeks(): { start: Date; end: Date }[] {
+function getWeeks(year: number): { start: Date; end: Date }[] {
   const weeks: { start: Date; end: Date }[] = [];
-  let current = new Date(2026, 5, 1);
+  let current = new Date(year, 4, 1); // May 1
   while (current.getDay() !== 6) current.setDate(current.getDate() + 1);
-  const endDate = new Date(2026, 8, 1);
+  const endDate = new Date(year, 9, 1); // October 1 (not including)
   while (current < endDate) {
     const weekEnd = new Date(current);
     weekEnd.setDate(weekEnd.getDate() + 7);
@@ -72,6 +72,7 @@ export default function Reserveren() {
   const [kinderen, setKinderen] = useState(searchParams.get("kinderen") || "0");
   const [baby, setBaby] = useState(searchParams.get("baby") || "0");
   const [submitted, setSubmitted] = useState(false);
+  const [calendarYear, setCalendarYear] = useState(2026);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -115,8 +116,20 @@ export default function Reserveren() {
           gewenste aankomst- en vertrekdatum in het formulier om te controleren
           of deze periode vrij is.
         </p>
+        <div className="reserveren-year-tabs">
+          {[2026, 2027].map((year) => (
+            <button
+              key={year}
+              type="button"
+              className={`reserveren-year-tab${calendarYear === year ? " active" : ""}`}
+              onClick={() => setCalendarYear(year)}
+            >
+              {year}
+            </button>
+          ))}
+        </div>
         <div className="reserveren-calendar">
-          {getWeeks().map((week, i) => {
+          {getWeeks(calendarYear).map((week, i) => {
             const booked = isWeekBooked(week.start, week.end);
             return (
               <div

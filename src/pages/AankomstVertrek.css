@@ -188,7 +188,6 @@
   font-size: 1.1rem;
   border: none;
   box-shadow: var(--neu-shadow-raised);
-  min-height: 44px;
   transition: all 0.25s ease;
 }
 

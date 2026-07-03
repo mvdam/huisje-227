@@ -10,7 +10,20 @@ const RESERVED_PERIODS = [
   { start: "2026-08-08", end: "2026-08-15" },
 ];
 
-const MONTH_ABBR = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+const MONTH_ABBR = [
+  "jan",
+  "feb",
+  "mrt",
+  "apr",
+  "mei",
+  "jun",
+  "jul",
+  "aug",
+  "sep",
+  "okt",
+  "nov",
+  "dec",
+];
 
 function getWeeks(): { start: Date; end: Date }[] {
   const weeks: { start: Date; end: Date }[] = [];
@@ -30,7 +43,7 @@ function hasConflict(start: string, end: string): boolean {
   if (!start || !end) return false;
   const s = new Date(start);
   const e = new Date(end);
-  return RESERVED_PERIODS.some(period => {
+  return RESERVED_PERIODS.some((period) => {
     const ps = new Date(period.start);
     const pe = new Date(period.end);
     return s < pe && e > ps;
@@ -38,7 +51,7 @@ function hasConflict(start: string, end: string): boolean {
 }
 
 function isWeekBooked(weekStart: Date, weekEnd: Date): boolean {
-  return RESERVED_PERIODS.some(period => {
+  return RESERVED_PERIODS.some((period) => {
     const ps = new Date(period.start);
     const pe = new Date(period.end);
     return weekStart < pe && weekEnd > ps;
@@ -98,15 +111,22 @@ export default function Reserveren() {
       <section className="reserveren-availability">
         <h2>Beschikbaarheid</h2>
         <p className="reserveren-availability-intro">
-          Hieronder zie je welke weken nog beschikbaar zijn. Selecteer je gewenste aankomst- en vertrekdatum in het formulier om te controleren of deze periode vrij is.
+          Hieronder zie je welke weken nog beschikbaar zijn. Selecteer je
+          gewenste aankomst- en vertrekdatum in het formulier om te controleren
+          of deze periode vrij is.
         </p>
         <div className="reserveren-calendar">
           {getWeeks().map((week, i) => {
             const booked = isWeekBooked(week.start, week.end);
             return (
-              <div key={i} className={`week-block ${booked ? "booked" : "available"}`}>
+              <div
+                key={i}
+                className={`week-block ${booked ? "booked" : "available"}`}
+              >
                 {formatDate(week.start)} – {formatDate(week.end)}
-                <span className="week-block-label">{booked ? "bezet" : "beschikbaar"}</span>
+                <span className="week-block-label">
+                  {booked ? "bezet" : "beschikbaar"}
+                </span>
               </div>
             );
           })}
@@ -158,6 +178,7 @@ export default function Reserveren() {
                     type="date"
                     id="reserveren-aankomst"
                     required
+                    min={new Date().toISOString().split("T")[0]}
                     value={aankomst}
                     onChange={(e) => setAankomst(e.target.value)}
                   />
@@ -168,17 +189,23 @@ export default function Reserveren() {
                     type="date"
                     id="reserveren-vertrek"
                     required
+                    min={aankomst || new Date().toISOString().split("T")[0]}
                     value={vertrek}
                     onChange={(e) => setVertrek(e.target.value)}
                   />
                 </div>
-                {aankomst && vertrek && (
-                  hasConflict(aankomst, vertrek) ? (
-                    <p className="reserveren-conflict" role="alert">⚠️ Helaas, de gekozen periode overlapt met een bestaande reservering.</p>
+                {aankomst &&
+                  vertrek &&
+                  (hasConflict(aankomst, vertrek) ? (
+                    <p className="reserveren-conflict" role="alert">
+                      ⚠️ Helaas, de gekozen periode overlapt met een bestaande
+                      reservering.
+                    </p>
                   ) : (
-                    <p className="reserveren-available" role="status">✓ De gekozen periode is beschikbaar!</p>
-                  )
-                )}
+                    <p className="reserveren-available" role="status">
+                      ✓ De gekozen periode is beschikbaar!
+                    </p>
+                  ))}
                 <div className="reserveren-form-field">
                   <label htmlFor="reserveren-volwassenen">Volwassenen</label>
                   <select

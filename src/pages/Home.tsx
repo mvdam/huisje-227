@@ -603,6 +603,7 @@ export default function Home() {
               id="aankomst"
               value={aankomst}
               onChange={(e) => setAankomst(e.target.value)}
+              min={new Date().toISOString().split("T")[0]}
               required
             />
           </div>
@@ -613,6 +614,7 @@ export default function Home() {
               id="vertrek"
               value={vertrek}
               onChange={(e) => setVertrek(e.target.value)}
+              min={aankomst || new Date().toISOString().split("T")[0]}
               required
             />
           </div>

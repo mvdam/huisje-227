@@ -18,6 +18,8 @@
 | FR-095 | The form shall submit to a real backend endpoint or email service (currently `action="#"`) | [reservation.html](../html/reservation.html#L92) |
 | FR-096 | The submit button shall be labeled in Dutch ("Reserveer nu") | [reservation.html](../html/reservation.html#L160) |
 | FR-097 | The page shall display the real property contact information alongside the form | [reservation.html](../html/reservation.html#L165-L171) |
+| FR-098 | The page shall display an availability overview showing which weeks are already booked and which are available | [reservations.md](../website-content/reservations.md) |
+| FR-099 | When the user selects a date range, the system shall indicate whether the selected dates are available or conflict with existing reservations | [reservations.md](../website-content/reservations.md) |
 
 ## Observations
 

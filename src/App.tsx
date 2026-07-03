@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import HetHuisje from "./pages/HetHuisje";
 import AankomstVertrek from "./pages/AankomstVertrek";
@@ -29,6 +30,7 @@ function App() {
             <Route path="*" element={<h1>Pagina niet gevonden</h1>} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );

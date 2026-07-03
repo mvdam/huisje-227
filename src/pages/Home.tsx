@@ -723,16 +723,31 @@ export default function Home() {
         <p className="home-section-subtext">
           Proef de sfeer van ons huisje en het park!
         </p>
-        <div
-          className="home-gallery-track"
-          ref={galleryRef}
-          onMouseEnter={() => {
-            galleryPaused.current = true;
-          }}
-          onMouseLeave={() => {
-            galleryPaused.current = false;
-          }}
-        >
+        <div className="home-gallery-wrapper">
+          <button
+            type="button"
+            className="home-gallery-nav home-gallery-nav--prev"
+            onClick={() => {
+              const el = galleryRef.current;
+              if (!el) return;
+              const item = el.querySelector(".home-gallery-item") as HTMLElement | null;
+              if (!item) return;
+              el.scrollBy({ left: -(item.offsetWidth + 16), behavior: "smooth" });
+            }}
+            aria-label="Vorige foto's"
+          >
+            &#8249;
+          </button>
+          <div
+            className="home-gallery-track"
+            ref={galleryRef}
+            onMouseEnter={() => {
+              galleryPaused.current = true;
+            }}
+            onMouseLeave={() => {
+              galleryPaused.current = false;
+            }}
+          >
           {SLIDER_IMAGES.map((src, i) => (
             <div
               className="home-gallery-item"
@@ -781,6 +796,21 @@ export default function Home() {
               />
             </div>
           ))}
+          </div>
+          <button
+            type="button"
+            className="home-gallery-nav home-gallery-nav--next"
+            onClick={() => {
+              const el = galleryRef.current;
+              if (!el) return;
+              const item = el.querySelector(".home-gallery-item") as HTMLElement | null;
+              if (!item) return;
+              el.scrollBy({ left: item.offsetWidth + 16, behavior: "smooth" });
+            }}
+            aria-label="Volgende foto's"
+          >
+            &#8250;
+          </button>
         </div>
       </section>
 

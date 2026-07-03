@@ -2,6 +2,53 @@ import { useState, FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import "./Reserveren.css";
 
+const RESERVED_PERIODS = [
+  { start: "2026-06-15", end: "2026-06-22" },
+  { start: "2026-07-11", end: "2026-07-25" },
+  { start: "2026-07-25", end: "2026-08-01" },
+  { start: "2026-08-01", end: "2026-08-08" },
+  { start: "2026-08-08", end: "2026-08-15" },
+];
+
+const MONTH_ABBR = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+
+function getWeeks(): { start: Date; end: Date }[] {
+  const weeks: { start: Date; end: Date }[] = [];
+  let current = new Date(2026, 5, 1);
+  while (current.getDay() !== 1) current.setDate(current.getDate() + 1);
+  const endDate = new Date(2026, 8, 1);
+  while (current < endDate) {
+    const weekEnd = new Date(current);
+    weekEnd.setDate(weekEnd.getDate() + 7);
+    weeks.push({ start: new Date(current), end: weekEnd });
+    current = weekEnd;
+  }
+  return weeks;
+}
+
+function hasConflict(start: string, end: string): boolean {
+  if (!start || !end) return false;
+  const s = new Date(start);
+  const e = new Date(end);
+  return RESERVED_PERIODS.some(period => {
+    const ps = new Date(period.start);
+    const pe = new Date(period.end);
+    return s < pe && e > ps;
+  });
+}
+
+function isWeekBooked(weekStart: Date, weekEnd: Date): boolean {
+  return RESERVED_PERIODS.some(period => {
+    const ps = new Date(period.start);
+    const pe = new Date(period.end);
+    return weekStart < pe && weekEnd > ps;
+  });
+}
+
+function formatDate(d: Date): string {
+  return `${d.getDate()} ${MONTH_ABBR[d.getMonth()]}`;
+}
+
 export default function Reserveren() {
   const [searchParams] = useSearchParams();
   const [aankomst, setAankomst] = useState(searchParams.get("aankomst") || "");
@@ -44,6 +91,25 @@ export default function Reserveren() {
               </li>
             </ol>
           </nav>
+        </div>
+      </section>
+
+      {/* Availability Overview */}
+      <section className="reserveren-availability">
+        <h2>Beschikbaarheid</h2>
+        <p className="reserveren-availability-intro">
+          Hieronder zie je welke weken nog beschikbaar zijn. Selecteer je gewenste aankomst- en vertrekdatum in het formulier om te controleren of deze periode vrij is.
+        </p>
+        <div className="reserveren-calendar">
+          {getWeeks().map((week, i) => {
+            const booked = isWeekBooked(week.start, week.end);
+            return (
+              <div key={i} className={`week-block ${booked ? "booked" : "available"}`}>
+                {formatDate(week.start)} – {formatDate(week.end)}
+                <span className="week-block-label">{booked ? "bezet" : "beschikbaar"}</span>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -106,6 +172,13 @@ export default function Reserveren() {
                     onChange={(e) => setVertrek(e.target.value)}
                   />
                 </div>
+                {aankomst && vertrek && (
+                  hasConflict(aankomst, vertrek) ? (
+                    <p className="reserveren-conflict" role="alert">⚠️ Helaas, de gekozen periode overlapt met een bestaande reservering.</p>
+                  ) : (
+                    <p className="reserveren-available" role="status">✓ De gekozen periode is beschikbaar!</p>
+                  )
+                )}
                 <div className="reserveren-form-field">
                   <label htmlFor="reserveren-volwassenen">Volwassenen</label>
                   <select

@@ -62,6 +62,71 @@
   color: var(--color-text-light);
 }
 
+/* ===== Availability Section ===== */
+.reserveren-availability {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 0;
+}
+
+.reserveren-availability-intro {
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.reserveren-calendar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.week-block {
+  padding: 0.75rem;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.week-block.available {
+  background: rgba(92, 130, 0, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(92, 130, 0, 0.3);
+}
+
+.week-block.booked {
+  background: rgba(200, 50, 50, 0.1);
+  color: #8b3030;
+  border: 1px solid rgba(200, 50, 50, 0.3);
+}
+
+.week-block-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+}
+
+.reserveren-conflict {
+  color: #8b3030;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(200, 50, 50, 0.08);
+  border-radius: 8px;
+}
+
+.reserveren-available {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(92, 130, 0, 0.08);
+  border-radius: 8px;
+}
+
 /* ===== Reserveren Section ===== */
 .reserveren-section {
   max-width: 1200px;

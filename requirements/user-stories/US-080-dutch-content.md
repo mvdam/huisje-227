@@ -28,3 +28,7 @@
 - [FR-TC-003](../09-template-cleanup.md) — SEO meta tags
 - [FR-TC-010](../09-template-cleanup.md) — Navigation localization
 - [FR-TC-020 through FR-TC-073](../09-template-cleanup.md) — Per-page content localization
+
+## Status
+
+- [x] Implemented — 2026-07-03

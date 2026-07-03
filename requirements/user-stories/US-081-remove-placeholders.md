@@ -33,3 +33,7 @@
 - [FR-TC-042](../09-template-cleanup.md) — Remove "Leadership" section
 - [FR-TC-070](../09-template-cleanup.md) — Replace lorem ipsum reviews
 - [FR-TC-073](../09-template-cleanup.md) — Replace placeholder alt text
+
+## Status
+
+- [x] Implemented — 2026-07-03

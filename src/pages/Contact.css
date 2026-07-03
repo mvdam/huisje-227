@@ -176,6 +176,27 @@
   color: var(--color-primary-dark);
 }
 
+/* ===== Map Section ===== */
+.contact-map-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.contact-map-heading {
+  margin-bottom: 1rem;
+}
+
+.contact-map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.contact-map-container iframe {
+  display: block;
+}
+
 /* ===== CTA ===== */
 .contact-cta {
   position: relative;

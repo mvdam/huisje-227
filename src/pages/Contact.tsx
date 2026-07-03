@@ -119,6 +119,22 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Map */}
+      <section className="contact-map-section">
+        <h2 className="contact-map-heading">Locatie</h2>
+        <div className="contact-map-container">
+          <iframe
+            title="Locatie Capfun De Bongerd"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=4.7711%2C52.7144%2C4.7911%2C52.7244&layer=mapnik&marker=52.7194%2C4.7811"
+            width="100%"
+            height="400"
+            style={{ border: 0, borderRadius: '15px' }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </section>
+
       {/* CTA */}
       <section
         className="contact-cta"

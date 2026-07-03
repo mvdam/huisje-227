@@ -18,12 +18,14 @@
 - The park phone number is displayed: 022-6391481
 - Contact persons are listed with phone numbers: Nikki (0653308199) and Martin (0651190382)
 - A real email address is displayed
+- An OpenStreetMap embed shows the park location (Bongerdlaan 3, Tuitjenhorn)
 - All labels and headings are in Dutch
 - No template placeholder data is shown
 
 ## Related Requirements
 
 - [FR-085](../06-contact.md) — Real contact information
+- [FR-086](../06-contact.md) — OpenStreetMap embed
 
 ## Status
 

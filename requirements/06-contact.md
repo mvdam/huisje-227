@@ -17,7 +17,7 @@
 | FR-083 | The form submit button shall be labeled in Dutch ("Verstuur bericht")                                                                                                                                       | [contact.html](../html/contact.html#L120)                                                             |
 | FR-084 | All form labels shall be in Dutch                                                                                                                                                                           | [contact.html](../html/contact.html#L94-L115)                                                         |
 | FR-085 | The page shall display real contact information: address (Bongerdlaan 3, 1747 CA Tuitjenhorn), park phone (022-6391481), contact persons Nikki (0653308199) and Martin (0651190382), and real email address | [contact.html](../html/contact.html#L129-L135), [booking-info.md](../website-content/booking-info.md) |
-| FR-086 | The page shall display an OpenStreetMap embed showing the location of Capfun De Bongerd (coordinates: 52.7194, 4.7811)                                                                                      | New requirement                                                                                       |
+| FR-086 | The page shall display an OpenStreetMap embed showing the location of Capfun De Bongerd (coordinates: 52.7363, 4.7740)                                                                                      | New requirement                                                                                       |
 
 ## Observations
 

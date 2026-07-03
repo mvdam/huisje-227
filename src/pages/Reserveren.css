@@ -1,0 +1,227 @@
+/* ===== Hero Section ===== */
+.reserveren-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: -90px;
+  padding-top: 90px;
+}
+
+.reserveren-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+}
+
+.reserveren-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+.reserveren-hero-heading {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: var(--color-text-light);
+}
+
+.reserveren-breadcrumb {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.reserveren-breadcrumb a {
+  color: var(--color-text-light-80);
+  text-decoration: none;
+}
+
+.reserveren-breadcrumb a:hover {
+  color: var(--color-text-light);
+  text-decoration: underline;
+}
+
+.reserveren-breadcrumb-separator {
+  color: var(--color-text-light-60);
+}
+
+.reserveren-breadcrumb-current {
+  color: var(--color-text-light);
+}
+
+/* ===== Reserveren Section ===== */
+.reserveren-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.reserveren-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 4rem;
+}
+
+/* ===== Reservation Form ===== */
+.reserveren-form h2,
+.reserveren-details h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+.reserveren-form-field {
+  margin-bottom: 1.5rem;
+}
+
+.reserveren-form-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+}
+
+.reserveren-form-field input,
+.reserveren-form-field textarea,
+.reserveren-form-field select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  background: var(--color-bg-base);
+  box-shadow: var(--neu-shadow-pressed);
+  color: var(--color-text-primary);
+  min-height: 44px;
+  font-family: inherit;
+}
+
+.reserveren-form-field input:focus-visible,
+.reserveren-form-field textarea:focus-visible,
+.reserveren-form-field select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.reserveren-form-field textarea {
+  resize: vertical;
+}
+
+.reserveren-btn-primary {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: var(--neu-shadow-raised);
+  min-height: 44px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.reserveren-btn-primary:hover {
+  background: var(--color-primary-dark);
+  box-shadow: var(--neu-shadow-pressed);
+  transform: translateY(1px);
+}
+
+.reserveren-success {
+  background: var(--color-primary-10);
+  border-radius: 16px;
+  padding: 2rem;
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ===== Contact Details ===== */
+.reserveren-details address {
+  font-style: normal;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.reserveren-details-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 2.2;
+}
+
+.reserveren-details-links a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.reserveren-details-links a:hover {
+  text-decoration: underline;
+  color: var(--color-primary-dark);
+}
+
+/* ===== CTA ===== */
+.reserveren-cta {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.reserveren-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+}
+
+.reserveren-cta-inner {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 1.5rem;
+}
+
+.reserveren-cta h2 {
+  color: var(--color-text-light);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .reserveren-hero-heading {
+    font-size: 2.2rem;
+  }
+
+  .reserveren-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (hover: none) {
+  .reserveren-hero,
+  .reserveren-cta {
+    background-attachment: scroll;
+  }
+}

@@ -26,3 +26,7 @@
 - [FR-101](../08-footer.md) — Real phone number
 - [FR-102](../08-footer.md) — Real email address
 - [FR-108](../08-footer.md) — Footer consistency across pages
+
+## Status
+
+- [x] Implemented — 2026-07-03

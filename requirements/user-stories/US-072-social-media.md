@@ -23,3 +23,7 @@
 ## Related Requirements
 
 - [FR-105](../08-footer.md) — Social media links with real URLs
+
+## Status
+
+- [x] Implemented — 2026-07-03

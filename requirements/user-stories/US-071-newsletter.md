@@ -24,3 +24,7 @@
 
 - [FR-103](../08-footer.md) — Newsletter form UI
 - [FR-104](../08-footer.md) — Newsletter form backend
+
+## Status
+
+- [x] Implemented — 2026-07-03

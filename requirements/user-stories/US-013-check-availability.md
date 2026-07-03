@@ -17,7 +17,7 @@
 - A form is displayed with fields: Aankomst (check-in), Vertrek (check-out), Volwassenen (adults), Kinderen (children)
 - All form labels are in Dutch
 - Date fields use a datepicker component
-- Guest count fields offer options 1, 2, 3, 4+
+- Guest count fields reflect max occupancy: Volwassenen (1, 2), Kinderen (0, 1, 2), Baby (0, 1)
 - A "Bekijk beschikbaarheid" button submits the form (Dutch label)
 - The form submits to a functioning backend or navigates to the reservation page with parameters
 

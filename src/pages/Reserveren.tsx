@@ -6,8 +6,11 @@ export default function Reserveren() {
   const [searchParams] = useSearchParams();
   const [aankomst, setAankomst] = useState(searchParams.get("aankomst") || "");
   const [vertrek, setVertrek] = useState(searchParams.get("vertrek") || "");
-  const [volwassenen, setVolwassenen] = useState(searchParams.get("volwassenen") || "2");
+  const [volwassenen, setVolwassenen] = useState(
+    searchParams.get("volwassenen") || "2",
+  );
   const [kinderen, setKinderen] = useState(searchParams.get("kinderen") || "0");
+  const [baby, setBaby] = useState(searchParams.get("baby") || "0");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
@@ -30,7 +33,10 @@ export default function Reserveren() {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li className="reserveren-breadcrumb-separator" aria-hidden="true">
+              <li
+                className="reserveren-breadcrumb-separator"
+                aria-hidden="true"
+              >
                 &gt;
               </li>
               <li className="reserveren-breadcrumb-current" aria-current="page">
@@ -48,7 +54,8 @@ export default function Reserveren() {
             <h2>Boek ons huisje</h2>
             {submitted ? (
               <p className="reserveren-success" role="status">
-                Bedankt! Uw reserveringsaanvraag is verstuurd. We nemen zo snel mogelijk contact met u op.
+                Bedankt! Uw reserveringsaanvraag is verstuurd. We nemen zo snel
+                mogelijk contact met u op.
               </p>
             ) : (
               <form aria-label="Reserveringsformulier" onSubmit={handleSubmit}>
@@ -109,8 +116,6 @@ export default function Reserveren() {
                   >
                     <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4+">4+</option>
                   </select>
                 </div>
                 <div className="reserveren-form-field">
@@ -124,8 +129,18 @@ export default function Reserveren() {
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4+">4+</option>
+                  </select>
+                </div>
+                <div className="reserveren-form-field">
+                  <label htmlFor="reserveren-baby">Baby</label>
+                  <select
+                    id="reserveren-baby"
+                    required
+                    value={baby}
+                    onChange={(e) => setBaby(e.target.value)}
+                  >
+                    <option value="0">0</option>
+                    <option value="1">1</option>
                   </select>
                 </div>
                 <div className="reserveren-form-field">

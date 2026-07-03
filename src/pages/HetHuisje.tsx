@@ -93,6 +93,7 @@ export default function HetHuisje() {
   const [vertrek, setVertrek] = useState("");
   const [volwassenen, setVolwassenen] = useState("2");
   const [kinderen, setKinderen] = useState("2");
+  const [baby, setBaby] = useState("0");
 
   const handleAvailability = (e: FormEvent) => {
     e.preventDefault();
@@ -101,6 +102,7 @@ export default function HetHuisje() {
       vertrek,
       volwassenen,
       kinderen,
+      baby,
     });
     navigate(`/reserveren?${params.toString()}`);
   };
@@ -166,8 +168,6 @@ export default function HetHuisje() {
             >
               <option value="1">1</option>
               <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
             </select>
           </div>
           <div className="huisje-availability-field">
@@ -177,10 +177,20 @@ export default function HetHuisje() {
               value={kinderen}
               onChange={(e) => setKinderen(e.target.value)}
             >
+              <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
+            </select>
+          </div>
+          <div className="huisje-availability-field">
+            <label htmlFor="h-baby">Baby</label>
+            <select
+              id="h-baby"
+              value={baby}
+              onChange={(e) => setBaby(e.target.value)}
+            >
+              <option value="0">0</option>
+              <option value="1">1</option>
             </select>
           </div>
           <button type="submit" className="huisje-availability-btn">

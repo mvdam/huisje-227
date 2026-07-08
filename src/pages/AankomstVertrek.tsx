@@ -79,12 +79,12 @@ export default function AankomstVertrek() {
             <p>
               Aankomst is op maandag na 12:00. Als we zelf niet bij de aankomst
               aanwezig zijn kan het sleutelkastje aan de schuur geopend worden
-              met code 0512.
+              met code XXXX.
             </p>
             <p>
               Eén auto kan achter de slagboom geparkeerd worden. Toets de code
-              310014 in en druk op ENT. Mocht de slagboom niet open willen dan
-              kan je naar de receptie bellen:{" "}
+              XXXX in en druk op ENT. Mocht de slagboom niet open willen dan kan
+              je naar de receptie bellen:{" "}
               <a href="tel:0226391481">022-6391481</a>. Geef het chaletnummer
               door en dan wordt er open gedaan. (227)
             </p>
@@ -115,7 +115,7 @@ export default function AankomstVertrek() {
             <h3>WiFi</h3>
             <p>
               Gebruik voor de wifi: <strong>WIFI-227</strong> en wachtwoord:{" "}
-              <strong>vakantieopdebongerd</strong>
+              <strong>XXXX</strong>
             </p>
           </div>
 

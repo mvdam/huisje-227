@@ -730,9 +730,14 @@ export default function Home() {
             onClick={() => {
               const el = galleryRef.current;
               if (!el) return;
-              const item = el.querySelector(".home-gallery-item") as HTMLElement | null;
+              const item = el.querySelector(
+                ".home-gallery-item",
+              ) as HTMLElement | null;
               if (!item) return;
-              el.scrollBy({ left: -(item.offsetWidth + 16), behavior: "smooth" });
+              el.scrollBy({
+                left: -(item.offsetWidth + 16),
+                behavior: "smooth",
+              });
             }}
             aria-label="Vorige foto's"
           >
@@ -748,54 +753,54 @@ export default function Home() {
               galleryPaused.current = false;
             }}
           >
-          {SLIDER_IMAGES.map((src, i) => (
-            <div
-              className="home-gallery-item"
-              key={i}
-              onClick={() => {
-                galleryTriggerRef.current = document.activeElement;
-                setLightboxIndex(i);
-              }}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
+            {SLIDER_IMAGES.map((src, i) => (
+              <div
+                className="home-gallery-item"
+                key={i}
+                onClick={() => {
                   galleryTriggerRef.current = document.activeElement;
                   setLightboxIndex(i);
-                } else if (e.key === "ArrowRight") {
-                  e.preventDefault();
-                  const next = (e.currentTarget as HTMLElement)
-                    .nextElementSibling as HTMLElement | null;
-                  if (next) {
-                    next.focus();
-                    next.scrollIntoView({
-                      behavior: "smooth",
-                      block: "nearest",
-                      inline: "center",
-                    });
+                }}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    galleryTriggerRef.current = document.activeElement;
+                    setLightboxIndex(i);
+                  } else if (e.key === "ArrowRight") {
+                    e.preventDefault();
+                    const next = (e.currentTarget as HTMLElement)
+                      .nextElementSibling as HTMLElement | null;
+                    if (next) {
+                      next.focus();
+                      next.scrollIntoView({
+                        behavior: "smooth",
+                        block: "nearest",
+                        inline: "center",
+                      });
+                    }
+                  } else if (e.key === "ArrowLeft") {
+                    e.preventDefault();
+                    const prev = (e.currentTarget as HTMLElement)
+                      .previousElementSibling as HTMLElement | null;
+                    if (prev) {
+                      prev.focus();
+                      prev.scrollIntoView({
+                        behavior: "smooth",
+                        block: "nearest",
+                        inline: "center",
+                      });
+                    }
                   }
-                } else if (e.key === "ArrowLeft") {
-                  e.preventDefault();
-                  const prev = (e.currentTarget as HTMLElement)
-                    .previousElementSibling as HTMLElement | null;
-                  if (prev) {
-                    prev.focus();
-                    prev.scrollIntoView({
-                      behavior: "smooth",
-                      block: "nearest",
-                      inline: "center",
-                    });
-                  }
-                }
-              }}
-            >
-              <img
-                src={src}
-                alt={`Foto ${i + 1} van het vakantiehuis en park`}
-              />
-            </div>
-          ))}
+                }}
+              >
+                <img
+                  src={src}
+                  alt={`Foto ${i + 1} van het vakantiehuis en park`}
+                />
+              </div>
+            ))}
           </div>
           <button
             type="button"
@@ -803,7 +808,9 @@ export default function Home() {
             onClick={() => {
               const el = galleryRef.current;
               if (!el) return;
-              const item = el.querySelector(".home-gallery-item") as HTMLElement | null;
+              const item = el.querySelector(
+                ".home-gallery-item",
+              ) as HTMLElement | null;
               if (!item) return;
               el.scrollBy({ left: item.offsetWidth + 16, behavior: "smooth" });
             }}

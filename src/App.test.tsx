@@ -1,11 +1,14 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Navigation from "./components/Navigation";
 
 test("renders navigation with all menu labels and logo", () => {
   render(
-    <MemoryRouter>
+    <MemoryRouter
+      initialEntries={["/het-park"]}
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+    >
       <Navigation />
     </MemoryRouter>,
   );
@@ -25,4 +28,15 @@ test("renders navigation with all menu labels and logo", () => {
   });
 
   expect(screen.getByText("Capfun De Bongerd 227")).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "Het Park" })).toHaveClass("active");
+  expect(document.querySelectorAll(".site-nav a.active")).toHaveLength(1);
+
+  const toggle = screen.getByRole("button", { name: "Navigatiemenu" });
+  expect(toggle).toHaveAttribute("aria-expanded", "false");
+  fireEvent.click(toggle);
+  expect(toggle).toHaveAttribute("aria-expanded", "true");
+  fireEvent.keyDown(screen.getByRole("navigation", { name: "Hoofdnavigatie" }), {
+    key: "Escape",
+  });
+  expect(toggle).toHaveAttribute("aria-expanded", "false");
 });

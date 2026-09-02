@@ -27,7 +27,7 @@
 }
 
 .tarieven-hero-heading {
-  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-family: "DM Serif Display", Georgia, serif;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
   margin: 0 0 1rem;
@@ -89,7 +89,7 @@
 }
 
 .tarieven-price-amount {
-  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-family: "DM Serif Display", Georgia, serif;
   font-size: 3.5rem;
   font-weight: 700;
   margin: 0;
@@ -149,7 +149,7 @@
 }
 
 .tarieven-contact-item a {
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   text-decoration: none;
 }
 
@@ -189,7 +189,7 @@
 .tarieven-btn-primary {
   display: inline-block;
   padding: 0.9rem 2.5rem;
-  background: var(--color-accent);
+  background: var(--color-accent-action);
   color: var(--color-text-light);
   text-decoration: none;
   border-radius: 24px;
@@ -201,7 +201,7 @@
 }
 
 .tarieven-btn-primary:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-accent-action-hover);
   box-shadow: var(--neu-shadow-pressed);
   transform: translateY(1px);
   color: var(--color-text-light);

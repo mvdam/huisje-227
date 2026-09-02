@@ -21,7 +21,7 @@
 - Sleutelkluisje procedure is explained (code provided on booking confirmation)
 - Parking procedure is explained (code for slagboom, reception phone number as fallback)
 - Linen policy is stated: bedlinnen en keukenlinnen zelf meenemen, dekbedden en kussens aanwezig
-- WiFi information is provided: netwerknaam en wachtwoord
+- The WiFi network name is provided and guests are told where to find the password securely
 - Swimming band policy is stated: bandjes inbegrepen, verloren bandje kost €20
 - Cleaning policy is stated: eindschoonmaak door huurder, of €50 extra door verhuurder
 - The page has a hero with Dutch heading and breadcrumb trail

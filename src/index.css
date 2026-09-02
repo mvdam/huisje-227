@@ -9,17 +9,19 @@
   --color-secondary-dark: #2a2521;
   --color-accent: #c4703e;
   --color-accent-dark: #a85c30;
+  --color-accent-action: #a85c30;
+  --color-accent-action-hover: #8c4923;
   --color-text-primary: #3b3630;
-  --color-text-secondary: #7a7267;
+  --color-text-secondary: #6f675d;
   --color-text-light: #ffffff;
   --color-shadow-dark: rgba(59, 54, 48, 0.08);
   --color-shadow-dark-sm: rgba(59, 54, 48, 0.05);
-  --color-border: #e8e3de;
+  --color-border: #8d857b;
   --color-overlay: rgba(59, 54, 48, 0.7);
 
-  --color-text-light-80: rgba(255, 255, 255, 0.9);
-  --color-text-light-60: rgba(255, 255, 255, 0.75);
-  --color-text-light-70: rgba(255, 255, 255, 0.85);
+  --color-text-light-80: #ffffff;
+  --color-text-light-60: #ffffff;
+  --color-text-light-70: #ffffff;
   --color-primary-10: rgba(74, 124, 89, 0.1);
   --color-primary-20: rgba(74, 124, 89, 0.2);
   --color-overlay-heavy: rgba(59, 54, 48, 0.92);
@@ -80,24 +82,31 @@ h3 {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-secondary-dark);
   text-decoration: underline;
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 3px solid var(--color-secondary-dark);
   outline-offset: 2px;
 }
 
 button:focus-visible,
 [type="submit"]:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 3px solid var(--color-secondary-dark);
   outline-offset: 2px;
+}
+
+button,
+[role="button"],
+a[class$="-btn-primary"] {
+  min-height: 44px;
+  box-sizing: border-box;
 }
 
 ::selection {

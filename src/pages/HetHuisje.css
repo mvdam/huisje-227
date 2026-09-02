@@ -27,7 +27,7 @@
 }
 
 .huisje-hero-heading {
-  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-family: "DM Serif Display", Georgia, serif;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
   margin: 0 0 1rem;
@@ -93,7 +93,7 @@
 .huisje-availability-field input,
 .huisje-availability-field select {
   padding: 0.7rem 1rem;
-  border: none;
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   font-size: 1rem;
   background: var(--color-bg-base);
@@ -110,7 +110,7 @@
 
 .huisje-availability-btn {
   padding: 0.65rem 1.8rem;
-  background: var(--color-accent);
+  background: var(--color-accent-action);
   color: var(--color-text-light);
   border: none;
   border-radius: 24px;
@@ -124,7 +124,7 @@
 }
 
 .huisje-availability-btn:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-accent-action-hover);
   box-shadow: var(--neu-shadow-pressed);
   transform: translateY(1px);
 }
@@ -263,7 +263,7 @@
 .huisje-btn-primary {
   display: inline-block;
   padding: 0.9rem 2.5rem;
-  background: var(--color-accent);
+  background: var(--color-accent-action);
   color: var(--color-text-light);
   text-decoration: none;
   border-radius: 24px;
@@ -275,7 +275,7 @@
 }
 
 .huisje-btn-primary:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-accent-action-hover);
   box-shadow: var(--neu-shadow-pressed);
   transform: translateY(1px);
   color: var(--color-text-light);

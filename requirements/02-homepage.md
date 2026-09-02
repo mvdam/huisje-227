@@ -78,7 +78,7 @@
 | ID     | Requirement                                                                                                         | Source                                     |
 | ------ | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | FR-036 | When at least two real reviews are available, the system shall display them in an accessible React carousel headed "Recensies"; with one review it shall render an honest static review block | Modern replacement for [index.html](../html/index.html#L789-L867) |
-| FR-037 | Each review shall display an author image (rounded circle), a blockquote with the review text, and the guest's name | [index.html](../html/index.html#L796-L814) |
+| FR-037 | Each review shall display a blockquote with the review text and the guest's name; a rounded author image is optional and may only be used when a real guest photo is available | Modern replacement for [index.html](../html/index.html#L796-L814) |
 | FR-038 | A multi-review carousel shall loop, support manual and keyboard navigation, pause on hover/focus, show 1/2/3 items at mobile/tablet/desktop breakpoints and disable autoplay under reduced-motion preferences | Modern replacement for [main.js](../html/js/main.js#L101-L130) |
 | FR-039 | All testimonials shall contain real guest reviews (not placeholder lorem ipsum text)                                | [index.html](../html/index.html#L815-L866) |
 | FR-040 | All testimonial author images shall be real guest photos or removed if not available                                | [index.html](../html/index.html#L797-L802) |

@@ -14,6 +14,42 @@ const SLIDER_IMAGES = Array.from(
   (_, i) => `/images/slider/slider-${i + 1}.jpeg`,
 );
 
+const SLIDER_ALT_TEXTS = [
+  "Tuin van het vakantiehuis met terras en grasveld",
+  "Terras en overdekte loungehoek bij het vakantiehuis",
+  "Loungebank en vuurtafel onder de partytent",
+  "Woonkamer met hoekbank en openslaande tuindeuren",
+  "Lichte woon- en eetkamer van het vakantiehuis",
+  "Keuken van het vakantiehuis",
+  "Slaapkamer met stapelbed",
+  "Tweede slaapkamer van het vakantiehuis",
+  "Slaapkamer met tweepersoons boxspring",
+  "Badkamer met douche en toilet",
+  "Schuur met koelkast, wasmachine en droger",
+  "Entree van vakantiepark Capfun De Bongerd",
+  "Restaurantgebouw op Capfun De Bongerd",
+  "Entree van speelparadijs Holle Bolle Boom",
+  "Entree van het buitenwaterpark",
+  "Buitenzwembad met overkapping en ligweide",
+  "Ondiep kinderbad onder een rieten parasol",
+  "Waterspeeltuin met glijbanen",
+  "Parkmascotte bij de waterglijbaan",
+  "Piraten-speeltuin op de ligweide",
+  "Speelkasteel met glijbanen",
+  "Pumptrackbaan op het vakantiepark",
+  "Speelvijver en groene ligweide",
+  "Balie van de parkshop",
+  "Luchtfoto van het waterpark en vakantiepark",
+  "Klimtoestel in de binnenspeeltuin",
+  "Speelgedeelte voor jonge kinderen in de binnenspeeltuin",
+  "Speelvijver met boomvormige glijbaan",
+  "Avondvoorstelling met verlichte parkfiguren",
+  "Podium van het animatietheater",
+  "Glijbanen in het binnenzwembad",
+  "Waterspeeltoestel in het binnenzwembad",
+  "Parkmascotte aan tafel tijdens kinderanimatie",
+];
+
 function VideoLightbox({ src, onClose }: { src: string; onClose: () => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -149,7 +185,7 @@ function ImageLightbox({
       </button>
       <img
         src={images[index]}
-        alt={`Foto ${index + 1} van het vakantiehuis en park`}
+        alt={SLIDER_ALT_TEXTS[index]}
         className="home-lightbox-img"
         onClick={(e) => e.stopPropagation()}
       />
@@ -328,8 +364,8 @@ const TAB_PARK_RIGHT = [
   {
     title: "Snackbar & Pizzeria",
     items: [
-      "Snackbar CaraHoedje",
-      "Pizzeria CaraHoedje",
+      "CaraHoedje Snack",
+      "CaraHoedje Pizza",
       "(Soft) ijs",
       "Zitgelegenheid binnen en buiten",
       "Sportcafé voor voetbal of F1",
@@ -797,7 +833,7 @@ export default function Home() {
               >
                 <img
                   src={src}
-                  alt={`Foto ${i + 1} van het vakantiehuis en park`}
+                  alt={SLIDER_ALT_TEXTS[i]}
                 />
               </div>
             ))}
@@ -949,7 +985,7 @@ export default function Home() {
         <p className="home-section-subtext">
           Op Capfun de Bongerd is van alles te beleven. Naast een zwem-,
           speelvijver, voetbalveld en dierenweide zijn er ook diverse
-          speeltuintjes en speeltoestellen vlakbij de ons huisje. Alsof dat nog
+          speeltuintjes en speeltoestellen vlak bij ons huisje. Alsof dat nog
           niet genoeg is, kunnen de kids zich helemaal uitleven in de
           binnenspeeltuin de Holle Bolle Boom waar in het Waterpark een Spetter-
           en Spatbad, Fonteinplein, te gekke glijbanen en openluchtzwembaden

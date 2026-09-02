@@ -78,13 +78,13 @@ export default function AankomstVertrek() {
             <h3>Aankomst</h3>
             <p>
               Aankomst is op maandag na 12:00. Als we zelf niet bij de aankomst
-              aanwezig zijn kan het sleutelkastje aan de schuur geopend worden
-              met code XXXX.
+              aanwezig zijn, kan het sleutelkastje aan de schuur geopend worden
+              met de code uit de boekingsbevestiging.
             </p>
             <p>
-              Eén auto kan achter de slagboom geparkeerd worden. Toets de code
-              XXXX in en druk op ENT. Mocht de slagboom niet open willen dan kan
-              je naar de receptie bellen:{" "}
+              Eén auto kan achter de slagboom geparkeerd worden. Gebruik de
+              slagboomcode uit de boekingsbevestiging en druk op ENT. Mocht de
+              slagboom niet opengaan, bel dan de receptie:{" "}
               <a href="tel:0226391481">022-6391481</a>. Geef het chaletnummer
               door en dan wordt er open gedaan. (227)
             </p>
@@ -114,8 +114,9 @@ export default function AankomstVertrek() {
           <div className="aankomst-card">
             <h3>WiFi</h3>
             <p>
-              Gebruik voor de wifi: <strong>WIFI-227</strong> en wachtwoord:{" "}
-              <strong>XXXX</strong>
+              Het wifinetwerk heet <strong>WIFI-227</strong>. Het wachtwoord
+              staat in de boekingsbevestiging en in het informatieschrift in
+              het huisje.
             </p>
           </div>
 

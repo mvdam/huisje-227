@@ -34,7 +34,7 @@
 }
 
 .home-hero-heading {
-  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-family: "DM Serif Display", Georgia, serif;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
   margin: 0;
@@ -102,7 +102,7 @@
 .home-availability-field input,
 .home-availability-field select {
   padding: 0.7rem 1rem;
-  border: none;
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   font-size: 1rem;
   background: var(--color-bg-base);
@@ -119,7 +119,7 @@
 
 .home-availability-btn {
   padding: 0.65rem 1.8rem;
-  background: var(--color-accent);
+  background: var(--color-accent-action);
   color: var(--color-text-light);
   border: none;
   border-radius: 24px;
@@ -133,7 +133,7 @@
 }
 
 .home-availability-btn:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-accent-action-hover);
   box-shadow: var(--neu-shadow-pressed);
   transform: translateY(1px);
 }
@@ -192,7 +192,7 @@
 .home-btn-primary {
   display: inline-block;
   padding: 0.7rem 1.6rem;
-  background: var(--color-accent);
+  background: var(--color-accent-action);
   color: var(--color-text-light);
   text-decoration: none;
   border-radius: 24px;
@@ -203,7 +203,7 @@
 }
 
 .home-btn-primary:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-accent-action-hover);
   box-shadow: var(--neu-shadow-pressed);
   transform: translateY(1px);
   color: var(--color-text-light);
@@ -493,7 +493,7 @@
 }
 
 .home-tab-column h4 {
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   margin-top: 1.5rem;
@@ -627,10 +627,6 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 992px) {
-  .home-gallery-item {
-    flex: 0 0 calc(50% - 0.5rem);
-  }
-
   .home-highlights-grid,
   .home-activities-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -672,10 +668,6 @@
     margin-bottom: 0.3rem;
   }
 
-  .home-gallery-item {
-    flex: 0 0 85%;
-  }
-
   .home-highlights-grid,
   .home-activities-grid {
     grid-template-columns: 1fr;
@@ -688,6 +680,23 @@
   .home-availability-field {
     flex: 1 1 100%;
   }
+}
+
+@media (max-width: 999px) {
+  .home-gallery-item {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 599px) {
+  .home-gallery-item {
+    flex: 0 0 100%;
+  }
+}
+
+.home-tabs button:focus-visible,
+.home-lightbox-overlay button:focus-visible {
+  outline-color: var(--color-text-light);
 }
 
 @media (hover: none) {

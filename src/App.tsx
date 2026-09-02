@@ -12,7 +12,9 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+    >
       <div className="App">
         <a href="#main-content" className="skip-link">
           Ga naar hoofdinhoud

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { publicAssetUrl } from "../utils/publicAsset";
 import "./Tarieven.css";
 
 export default function Tarieven() {
@@ -7,7 +8,7 @@ export default function Tarieven() {
       {/* Hero */}
       <section
         className="tarieven-hero"
-        style={{ backgroundImage: "url(/images/slider/slider-1.jpeg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/slider/slider-1.jpeg") }}
       >
         <div className="tarieven-hero-overlay" />
         <div className="tarieven-hero-content">
@@ -92,7 +93,7 @@ export default function Tarieven() {
       {/* CTA */}
       <section
         className="tarieven-cta"
-        style={{ backgroundImage: "url(/images/hero_4.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_4.jpg") }}
       >
         <div className="tarieven-cta-overlay" />
         <div className="tarieven-cta-inner">

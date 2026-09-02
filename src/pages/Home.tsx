@@ -7,11 +7,12 @@ import {
   KeyboardEvent as ReactKeyboardEvent,
 } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { publicAsset, publicAssetUrl } from "../utils/publicAsset";
 import "./Home.css";
 
 const SLIDER_IMAGES = Array.from(
   { length: 33 },
-  (_, i) => `/images/slider/slider-${i + 1}.jpeg`,
+  (_, i) => publicAsset(`images/slider/slider-${i + 1}.jpeg`),
 );
 
 const SLIDER_ALT_TEXTS = [
@@ -558,17 +559,17 @@ function TabColumn({
 
 const HIGHLIGHT_CARDS = [
   {
-    img: "/images/img_1.jpg",
+    img: publicAsset("images/img_1.jpg"),
     title: "Ruime zonnige tuin",
     sub: "Loungen & BBQ",
   },
   {
-    img: "/images/img_2.jpg",
+    img: publicAsset("images/img_2.jpg"),
     title: "Comfortabele woonkamer",
     sub: "Heerlijk relaxen",
   },
   {
-    img: "/images/img_3.jpg",
+    img: publicAsset("images/img_3.jpg"),
     title: "Ruime keuken",
     sub: "Van alle gemakken voorzien",
   },
@@ -576,17 +577,17 @@ const HIGHLIGHT_CARDS = [
 
 const ACTIVITY_CARDS = [
   {
-    img: "/images/slider/slider-17.jpeg",
+    img: publicAsset("images/slider/slider-17.jpeg"),
     title: "Zwemmen",
     desc: "Leef je helemaal uit in het binnenzwembad met groot peuterbad en diverse glijbanen. Of ga je van de trechterglijbaan in het (buiten) Waterpark?",
   },
   {
-    img: "/images/slider/slider-21.jpeg",
+    img: publicAsset("images/slider/slider-21.jpeg"),
     title: "Spelen",
     desc: "Lekker klimmmen en klauteren in het Kasteel? Of is de pumptrack meer jouw ding? Of het speel/klimeiland? Of heb je meer zin in midgetgolf? Het kan allemaal!",
   },
   {
-    img: "/images/slider/slider-33.jpeg",
+    img: publicAsset("images/slider/slider-33.jpeg"),
     title: "Eten",
     desc: "Lekker pannenkoeken eten in Pannenkoekenhuis Wafelien? Of kies je voor Cafe/Restaurant het Klokhuis? En anders kun je altijd terecht bij de snackbar of de pizzeria. Voor elk wat wils!",
   },
@@ -726,7 +727,7 @@ export default function Home() {
       <section
         className="home-hero"
         style={{
-          backgroundImage: "url(/images/hero_4.jpg)",
+          backgroundImage: publicAssetUrl("images/hero_4.jpg"),
           backgroundPosition: `center calc(50% + ${heroOffset}px)`,
         }}
       >
@@ -836,12 +837,12 @@ export default function Home() {
           </div>
           <div className="home-welcome-images">
             <img
-              src="/images/img_1.jpg"
+              src={publicAsset("images/img_1.jpg")}
               alt="Vakantiehuis op Capfun De Bongerd"
               className="home-welcome-img-main"
             />
             <img
-              src="/images/food-1.jpg"
+              src={publicAsset("images/food-1.jpg")}
               alt="Barbecue in de tuin"
               className="home-welcome-img-accent"
             />
@@ -987,7 +988,7 @@ export default function Home() {
 
       {videoOpen && (
         <VideoLightbox
-          src="/images/bongerd.mp4"
+          src={publicAsset("images/bongerd.mp4")}
           onClose={() => {
             const trigger = videoTriggerRef.current as HTMLElement | null;
             setVideoOpen(false);
@@ -1020,7 +1021,7 @@ export default function Home() {
       <section
         className="home-amenities"
         data-reveal
-        style={{ backgroundImage: "url(/images/hero_3.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_3.jpg") }}
       >
         <div className="home-amenities-overlay" />
         <div className="home-amenities-inner">
@@ -1137,7 +1138,7 @@ export default function Home() {
       <section
         className="home-cta"
         data-reveal
-        style={{ backgroundImage: "url(/images/hero_4.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_4.jpg") }}
       >
         <div className="home-cta-overlay" />
         <div className="home-cta-inner">

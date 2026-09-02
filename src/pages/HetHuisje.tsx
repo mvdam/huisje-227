@@ -1,5 +1,6 @@
 import { useState, FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { publicAsset, publicAssetUrl } from "../utils/publicAsset";
 import "./HetHuisje.css";
 
 const FACILITIES = [
@@ -112,7 +113,7 @@ export default function HetHuisje() {
       {/* 1. Hero */}
       <section
         className="huisje-hero"
-        style={{ backgroundImage: "url(/images/hero_3.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_3.jpg") }}
       >
         <div className="huisje-hero-overlay" />
         <div className="huisje-hero-content">
@@ -215,7 +216,7 @@ export default function HetHuisje() {
           </div>
           <div className="huisje-intro-image">
             <img
-              src="/images/img_1.jpg"
+              src={publicAsset("images/img_1.jpg")}
               alt="Vakantiehuis op Capfun De Bongerd"
             />
           </div>
@@ -275,7 +276,7 @@ export default function HetHuisje() {
       {/* 5. CTA */}
       <section
         className="huisje-cta"
-        style={{ backgroundImage: "url(/images/hero_4.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_4.jpg") }}
       >
         <div className="huisje-cta-overlay" />
         <div className="huisje-cta-inner">

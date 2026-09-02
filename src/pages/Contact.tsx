@@ -1,5 +1,6 @@
 import { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
+import { publicAssetUrl } from "../utils/publicAsset";
 import "./Contact.css";
 
 export default function Contact() {
@@ -15,7 +16,7 @@ export default function Contact() {
       {/* Hero */}
       <section
         className="contact-hero"
-        style={{ backgroundImage: "url(/images/hero_3.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_3.jpg") }}
       >
         <div className="contact-hero-overlay" />
         <div className="contact-hero-content">
@@ -144,7 +145,7 @@ export default function Contact() {
       {/* CTA */}
       <section
         className="contact-cta"
-        style={{ backgroundImage: "url(/images/hero_4.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_4.jpg") }}
       >
         <div className="contact-cta-overlay" />
         <div className="contact-cta-inner">

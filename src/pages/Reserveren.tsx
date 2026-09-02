@@ -5,6 +5,7 @@ import {
   getAvailabilityStatus,
   parseLocalDate,
 } from "../data/reservations";
+import { publicAssetUrl } from "../utils/publicAsset";
 import "./Reserveren.css";
 
 const MONTH_ABBR = [
@@ -77,7 +78,7 @@ export default function Reserveren() {
       {/* Hero */}
       <section
         className="reserveren-hero"
-        style={{ backgroundImage: "url(/images/hero_3.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_3.jpg") }}
       >
         <div className="reserveren-hero-overlay" />
         <div className="reserveren-hero-content">
@@ -299,7 +300,7 @@ export default function Reserveren() {
       {/* CTA */}
       <section
         className="reserveren-cta"
-        style={{ backgroundImage: "url(/images/hero_4.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_4.jpg") }}
       >
         <div className="reserveren-cta-overlay" />
         <div className="reserveren-cta-inner">

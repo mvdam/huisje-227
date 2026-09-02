@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { publicAssetUrl } from "../utils/publicAsset";
 import "./AankomstVertrek.css";
 
 export default function AankomstVertrek() {
@@ -7,7 +8,7 @@ export default function AankomstVertrek() {
       {/* Hero */}
       <section
         className="aankomst-hero"
-        style={{ backgroundImage: "url(/images/slider/slider-12.jpeg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/slider/slider-12.jpeg") }}
       >
         <div className="aankomst-hero-overlay" />
         <div className="aankomst-hero-content">
@@ -147,7 +148,7 @@ export default function AankomstVertrek() {
       {/* CTA */}
       <section
         className="aankomst-cta"
-        style={{ backgroundImage: "url(/images/hero_4.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_4.jpg") }}
       >
         <div className="aankomst-cta-overlay" />
         <div className="aankomst-cta-inner">

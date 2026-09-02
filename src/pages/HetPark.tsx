@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { publicAssetUrl } from "../utils/publicAsset";
 import "./HetPark.css";
 
 export default function HetPark() {
@@ -7,7 +8,7 @@ export default function HetPark() {
       {/* 1. Hero */}
       <section
         className="park-hero"
-        style={{ backgroundImage: "url(/images/hero_3.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_3.jpg") }}
       >
         <div className="park-hero-overlay" />
         <div className="park-hero-content">
@@ -279,7 +280,7 @@ export default function HetPark() {
       {/* 4. CTA */}
       <section
         className="park-cta"
-        style={{ backgroundImage: "url(/images/hero_4.jpg)" }}
+        style={{ backgroundImage: publicAssetUrl("images/hero_4.jpg") }}
       >
         <div className="park-cta-overlay" />
         <div className="park-cta-inner">

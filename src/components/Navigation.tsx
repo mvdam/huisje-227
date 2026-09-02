@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { SITE_NAME } from "../config/site";
 import "./Navigation.css";
 
 const navItems = [
@@ -38,7 +39,7 @@ export default function Navigation() {
           className="site-logo"
           onClick={() => setMenuOpen(false)}
         >
-          Capfun De Bongerd 227
+          {SITE_NAME}
         </NavLink>
         <button
           className="menu-toggle"

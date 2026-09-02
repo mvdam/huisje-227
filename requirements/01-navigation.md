@@ -16,7 +16,7 @@
 | FR-002 | The system shall mark the current page's menu item with an `active` class | [Navigation.tsx](../src/components/Navigation.tsx) |
 | FR-003 | The system shall show/hide the navigation menu on mobile via a toggle button with fade animation (400ms) | [Navigation.tsx](../src/components/Navigation.tsx) |
 | FR-004 | The system shall apply a `scrolled` class to the site header when the user scrolls past 200px | [Navigation.tsx](../src/components/Navigation.tsx) |
-| FR-005 | The site logo shall link to the home route (`/`) and display the text "Capfun De Bongerd 227" | [Navigation.tsx](../src/components/Navigation.tsx) |
+| FR-005 | The site logo shall link to the home route (`/`) and display the text "Vakantie op de Bongerd" | [Navigation.tsx](../src/components/Navigation.tsx) |
 | FR-006 | The navigation menu shall be consistent across all pages, using the same Dutch labels and link targets | [Navigation.tsx](../src/components/Navigation.tsx) |
 | FR-007 | "Aankomst & Vertrek" and "Tarieven & Voorwaarden" shall each link to their own dedicated React route | [Navigation.tsx](../src/components/Navigation.tsx) |
 

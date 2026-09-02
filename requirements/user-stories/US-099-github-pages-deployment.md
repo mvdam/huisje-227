@@ -30,7 +30,7 @@ focus_track: "quality"
 - **AC-5:** Alleen de gegenereerde map `build/` wordt als Pages-artifact geüpload; de broncode en repository-root worden niet gepubliceerd.
 - **AC-6:** De officiële GitHub Pages Actions publiceren het artifact naar de `github-pages` environment.
 - **AC-7:** Bij een fout tijdens installatie of build wordt geen nieuwe versie gepubliceerd.
-- **AC-8:** De gepubliceerde project-URL laadt de React-app met werkende JavaScript-, CSS-, media- en navigatieroutes.
+- **AC-8:** `https://www.vakantieopdebongerd.nl` laadt de React-app met werkende JavaScript-, CSS-, media- en navigatieroutes.
 - **AC-9:** De workflow behoudt uitsluitend de benodigde rechten: `contents: read`, `pages: write` en `id-token: write`.
 
 ## Gerelateerde requirements
@@ -48,7 +48,7 @@ focus_track: "quality"
 ## Verificatie
 
 - `npm test -- --watchAll=false` — 2 suites en 12 tests geslaagd.
-- `PUBLIC_URL=/huisje-227 npm run build` — productiebuild succesvol.
-- De gegenereerde asset-URL's gebruiken `/huisje-227/` als basispad.
+- `PUBLIC_URL=/ npm run build` — productiebuild voor het eigen domein succesvol.
+- `public/CNAME` bevat `www.vakantieopdebongerd.nl` en wordt in het Pages-artifact opgenomen.
 - De workflow-YAML is succesvol lokaal geparset.
 - De live deployment blijft afhankelijk van uitvoering van de workflow op GitHub na een push naar `main`.

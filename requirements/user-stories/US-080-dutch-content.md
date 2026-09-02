@@ -14,7 +14,7 @@
 
 ## Acceptance Criteria
 
-- All page titles read "Capfun De Bongerd 227" (or page-specific variant)
+- All page titles use "Vakantie op de Bongerd" with a page-specific variant
 - All navigation labels are in Dutch across all pages
 - All form labels and buttons are in Dutch
 - All content text is in Dutch

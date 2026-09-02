@@ -24,7 +24,7 @@ De React-applicatie moet automatisch worden gebouwd en gepubliceerd via GitHub P
 | --- | --- | --- |
 | FR-D-006 | Alleen de gegenereerde React-buildmap `build/` mag als GitHub Pages-artifact worden geüpload; de broncode en volledige repository mogen niet worden gepubliceerd | [static.yml](../.github/workflows/static.yml) |
 | FR-D-007 | De workflow moet het Pages-artifact met de officiële GitHub Pages Actions publiceren naar de `github-pages` environment | [static.yml](../.github/workflows/static.yml) |
-| FR-D-008 | De gebouwde applicatie moet vanaf de GitHub Pages-project-URL laden met werkende assets en client-side routes | [App.tsx](../src/App.tsx), [package.json](../package.json) |
+| FR-D-008 | De gebouwde applicatie moet op `https://www.vakantieopdebongerd.nl` laden met werkende assets en client-side routes | [CNAME](../public/CNAME), [App.tsx](../src/App.tsx) |
 | FR-D-009 | De workflow moet uitsluitend de minimaal benodigde tokenrechten gebruiken: `contents: read`, `pages: write` en `id-token: write` | [static.yml](../.github/workflows/static.yml) |
 
 ## Status
@@ -37,5 +37,5 @@ De React-applicatie moet automatisch worden gebouwd en gepubliceerd via GitHub P
 - `PUBLIC_URL` wordt gevuld vanuit de door GitHub Pages bepaalde `base_path`.
 - Alleen `build/` wordt met `actions/upload-pages-artifact@v4` aangeboden.
 - `build/404.html` ondersteunt directe navigatie naar client-side routes.
-- De workflow-YAML is lokaal geparset en de productiebuild voor `/huisje-227` is succesvol gegenereerd.
+- De workflow-YAML is lokaal geparset en de productiebuild voor het eigen domein is succesvol gegenereerd.
 - De daadwerkelijke Pages-publicatie wordt na push door GitHub Actions uitgevoerd en is lokaal niet te verifiëren.

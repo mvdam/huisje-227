@@ -49,7 +49,7 @@ test("videomodal is modaal, blokkeert achtergrondscroll en sluit met Escape", as
   const opener = screen.getByRole("button", { name: /Bekijk de video/ });
   fireEvent.click(opener);
   const dialog = screen.getByRole("dialog", {
-    name: "Video van vakantiehuis Capfun De Bongerd 227",
+    name: "Video van Vakantie op de Bongerd",
   });
   expect(dialog).toHaveAttribute("aria-modal", "true");
   expect(document.body).toHaveStyle({ overflow: "hidden" });
@@ -170,13 +170,21 @@ test("footer bevat contact, Nederlandse links en echte sociale bestemmingen", ()
 test("routegebonden metadata gebruikt Nederlandse titels en een auteur", () => {
   renderRoute(<RouteMetadata />, "/tarieven");
 
-  expect(document.title).toBe("Tarieven & voorwaarden | Capfun De Bongerd 227");
+  expect(document.title).toBe("Tarieven & voorwaarden | Vakantie op de Bongerd");
   expect(document.head.querySelector('meta[name="description"]')).toHaveAttribute(
     "content",
     expect.stringContaining("betaalvoorwaarden"),
   );
   expect(document.head.querySelector('meta[name="author"]')).toHaveAttribute(
     "content",
-    "Capfun De Bongerd 227",
+    "Vakantie op de Bongerd",
+  );
+  expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute(
+    "href",
+    "https://www.vakantieopdebongerd.nl/tarieven",
+  );
+  expect(document.querySelector('meta[property="og:url"]')).toHaveAttribute(
+    "content",
+    "https://www.vakantieopdebongerd.nl/tarieven",
   );
 });

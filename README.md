@@ -1,6 +1,8 @@
-# huisje-227
+# Vakantie op de Bongerd
 
-Website voor ons huisje op vakantiepark Capfun De Bongerd, 227.
+Website voor vakantiehuis 227 op vakantiepark Capfun De Bongerd.
+
+Publieke website: [www.vakantieopdebongerd.nl](https://www.vakantieopdebongerd.nl)
 
 Vibe coded using Github Copilot Agents:
 
@@ -10,12 +12,4 @@ Vibe coded using Github Copilot Agents:
   - Secure Code Reviewer
   - QA Engineer
 
-TODOs:
-
-- Create Visual Design Agent which works toghether with Requirement Engineer
-- CI/CD
-- Unit tests
-- E2E / Integration tests
-- Documentation
-- Use correct Photos
-- Slider should use buttons and should be touch-capable
+De React-app wordt met GitHub Actions gebouwd en via GitHub Pages gepubliceerd.

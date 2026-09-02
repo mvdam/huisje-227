@@ -27,7 +27,7 @@ test("renders navigation with all menu labels and logo", () => {
     expect(screen.getByText(label)).toBeInTheDocument();
   });
 
-  expect(screen.getByText("Capfun De Bongerd 227")).toBeInTheDocument();
+  expect(screen.getAllByText("Vakantie op de Bongerd").length).toBeGreaterThan(0);
   expect(screen.getByRole("link", { name: "Het Park" })).toHaveClass("active");
   expect(document.querySelectorAll(".site-nav a.active")).toHaveLength(1);
 

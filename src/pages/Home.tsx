@@ -8,6 +8,7 @@ import {
 } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { publicAsset, publicAssetUrl } from "../utils/publicAsset";
+import { SITE_NAME } from "../config/site";
 import "./Home.css";
 
 const SLIDER_IMAGES = Array.from(
@@ -139,7 +140,7 @@ function VideoLightbox({ src, onClose }: { src: string; onClose: () => void }) {
       aria-labelledby="video-dialog-title"
     >
       <h2 id="video-dialog-title" className="sr-only">
-        Video van vakantiehuis Capfun De Bongerd 227
+        Video van {SITE_NAME}
       </h2>
       <button
         ref={closeRef}

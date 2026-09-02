@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { SITE_NAME, SITE_URL } from "../config/site";
 import "./Footer.css";
 
 function Footer() {
@@ -16,7 +17,7 @@ function Footer() {
         <div className="footer-grid">
           <div>
             <h3 className="footer-heading">Contact</h3>
-            <p>Capfun De Bongerd 227</p>
+            <p>{SITE_NAME}</p>
             <p>Bongerdlaan 3</p>
             <p>1747 CA Tuitjenhorn</p>
             <p>Noord-Holland</p>
@@ -96,7 +97,8 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>&copy; 2026 Capfun De Bongerd 227</span>
+          <span>&copy; 2026 {SITE_NAME}</span>
+          <a href={SITE_URL}>www.vakantieopdebongerd.nl</a>
           <span>
             Template door{" "}
             <a

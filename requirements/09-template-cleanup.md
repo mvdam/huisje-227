@@ -1,6 +1,6 @@
-# Feature Area: Template Cleanup (Sogo Hotel → Capfun De Bongerd 227)
+# Feature Area: Template Cleanup (Sogo Hotel → Vakantie op de Bongerd)
 
-This document captures all remaining Colorlib "Sogo Hotel" template defaults that must be replaced with real content for the Capfun De Bongerd 227 property website.
+This document captures all remaining Colorlib "Sogo Hotel" template defaults that must be replaced with real content for the Vakantie op de Bongerd website.
 
 ## User Stories
 
@@ -13,8 +13,8 @@ This document captures all remaining Colorlib "Sogo Hotel" template defaults tha
 
 | ID | Requirement | Source |
 |----|------------|--------|
-| FR-TC-001 | All page `<title>` elements shall read "Capfun De Bongerd 227" (or page-specific variant) instead of "Sogo Hotel by Colorlib.com" | [HetHuisje.tsx](../src/pages/HetHuisje.tsx), [Reserveren.tsx](../src/pages/Reserveren.tsx), [Contact.tsx](../src/pages/Contact.tsx), [HetPark.tsx](../src/pages/HetPark.tsx), [AankomstVertrek.tsx](../src/pages/AankomstVertrek.tsx) |
-| FR-TC-002 | All page logos shall display "Capfun De Bongerd 227" instead of "Sogo Hotel" | [HetHuisje.tsx](../src/pages/HetHuisje.tsx), [Reserveren.tsx](../src/pages/Reserveren.tsx), [Contact.tsx](../src/pages/Contact.tsx), [HetPark.tsx](../src/pages/HetPark.tsx), [AankomstVertrek.tsx](../src/pages/AankomstVertrek.tsx) |
+| FR-TC-001 | All page `<title>` elements shall use "Vakantie op de Bongerd" with a page-specific variant | [RouteMetadata.tsx](../src/components/RouteMetadata.tsx) |
+| FR-TC-002 | The site logo shall display "Vakantie op de Bongerd" instead of "Sogo Hotel" | [Navigation.tsx](../src/components/Navigation.tsx) |
 | FR-TC-003 | SEO meta tags (`description`, `keywords`, `author`) shall be populated with real values on all pages | [Home.tsx](../src/pages/Home.tsx), and all other pages |
 
 ## Functional Requirements — Navigation Localization
@@ -82,8 +82,8 @@ This document captures all remaining Colorlib "Sogo Hotel" template defaults tha
 
 | Item | Current (Template) | Required (Real) |
 |------|-------------------|-----------------|
-| Page title | "Sogo Hotel by Colorlib.com" | "Capfun De Bongerd 227 - [Page]" |
-| Logo text | "Sogo Hotel" | "Capfun De Bongerd 227" |
+| Page title | "Sogo Hotel by Colorlib.com" | "[Page] | Vakantie op de Bongerd" |
+| Logo text | "Sogo Hotel" | "Vakantie op de Bongerd" |
 | Nav labels | English (Rooms, About, Events, etc.) | Dutch (Het huisje, Aankomst & Vertrek, etc.) |
 | Address | 98 West 21th Street, New York | Bongerdlaan 3, 1747 CA Tuitjenhorn |
 | Phone | (+1) 435 3533 / (+1) 234 4567 8910 | Real Dutch phone number |

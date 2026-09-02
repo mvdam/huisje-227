@@ -5,10 +5,7 @@ import Navigation from "./components/Navigation";
 
 test("renders navigation with all menu labels and logo", () => {
   render(
-    <MemoryRouter
-      initialEntries={["/het-park"]}
-      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-    >
+    <MemoryRouter initialEntries={["/het-park"]}>
       <Navigation />
     </MemoryRouter>,
   );

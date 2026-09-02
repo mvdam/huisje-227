@@ -9,7 +9,7 @@ This is a vacation rental website for a holiday house at Capfun De Bongerd (plot
 - `react-app/` — **Ignore this directory.** Do not read, modify, or reference files in `react-app/`.
 - `requirements/` — Functional requirements organized by feature area.
 - `requirements/user-stories/` — Individual user story files with acceptance criteria and traceability to source code.
-- `src/` — React application source code (Create React App) and the only production implementation.
+- `src/` — React application source code (Vite) and the only production implementation.
 - `website-content/` — Contains content about the property, including descriptions, images, and contact info. Use this content to populate the React app.
 
 ## Requirements
@@ -21,7 +21,7 @@ This is a vacation rental website for a holiday house at Capfun De Bongerd (plot
 ## Conventions
 
 - All website text, labels, headings, buttons, and alt text must be in Dutch.
-- The site is branded as "Capfun De Bongerd 227" — do not use the original template name "Sogo Hotel".
+- The site is branded as "Vakantie op de Bongerd" — do not use the original template name "Sogo Hotel".
 - Template placeholder content (lorem ipsum, English text, fake addresses/names) must not appear in production.
 
 ## Workflow

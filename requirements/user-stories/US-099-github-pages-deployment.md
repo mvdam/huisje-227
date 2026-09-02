@@ -27,7 +27,7 @@ focus_track: "quality"
 - **AC-2:** De workflow start bij een push naar `main` en kan handmatig worden gestart met `workflow_dispatch`.
 - **AC-3:** De workflow configureert Node.js 24 en installeert dependencies met `npm ci`.
 - **AC-4:** De workflow voert `npm run build` succesvol uit voordat een artifact wordt geüpload.
-- **AC-5:** Alleen de gegenereerde map `build/` wordt als Pages-artifact geüpload; de broncode en repository-root worden niet gepubliceerd.
+- **AC-5:** Alleen de gegenereerde map `dist/` wordt als Pages-artifact geüpload; de broncode en repository-root worden niet gepubliceerd.
 - **AC-6:** De officiële GitHub Pages Actions publiceren het artifact naar de `github-pages` environment.
 - **AC-7:** Bij een fout tijdens installatie of build wordt geen nieuwe versie gepubliceerd.
 - **AC-8:** `https://www.vakantieopdebongerd.nl` laadt de React-app met werkende JavaScript-, CSS-, media- en navigatieroutes.
@@ -48,7 +48,7 @@ focus_track: "quality"
 ## Verificatie
 
 - `npm test -- --watchAll=false` — 2 suites en 12 tests geslaagd.
-- `PUBLIC_URL=/ npm run build` — productiebuild voor het eigen domein succesvol.
+- `VITE_BASE_PATH=/ npm run build` — productiebuild voor het eigen domein succesvol.
 - `public/CNAME` bevat `www.vakantieopdebongerd.nl` en wordt in het Pages-artifact opgenomen.
 - De workflow-YAML is succesvol lokaal geparset.
 - De live deployment blijft afhankelijk van uitvoering van de workflow op GitHub na een push naar `main`.

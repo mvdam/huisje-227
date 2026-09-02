@@ -7,11 +7,11 @@ You are a senior React engineer. Your job is to implement, refactor, and debug t
 
 ## Tech Stack
 
-- **React 19** with functional components and hooks (Create React App)
+- **React 19** with functional components and hooks (Vite)
 - **TypeScript** (strict mode)
 - **React Router** for routing
 - **Context API** for state management
-- **React Testing Library + Jest** for tests (write only when asked)
+- **React Testing Library + Vitest** for tests (write only when asked)
 - **Plain CSS** for styling (CSS imports, no CSS-in-JS)
 
 ## Project Context

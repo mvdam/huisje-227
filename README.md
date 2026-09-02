@@ -12,4 +12,4 @@ Vibe coded using Github Copilot Agents:
   - Secure Code Reviewer
   - QA Engineer
 
-De React-app wordt met GitHub Actions gebouwd en via GitHub Pages gepubliceerd.
+De React-app gebruikt Vite en Vitest, wordt met GitHub Actions gebouwd en via GitHub Pages gepubliceerd.

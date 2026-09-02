@@ -14,8 +14,7 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter
-      basename={process.env.PUBLIC_URL || "/"}
-      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      basename={import.meta.env.BASE_URL}
     >
       <RouteMetadata />
       <div className="App">

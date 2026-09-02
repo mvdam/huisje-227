@@ -1,4 +1,4 @@
-const publicUrl = (process.env.PUBLIC_URL || "").replace(/\/$/, "");
+const publicUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export function publicAsset(path: string): string {
   return `${publicUrl}/${path.replace(/^\/+/, "")}`;

@@ -13,10 +13,7 @@ import Tarieven from "./pages/Tarieven";
 
 function renderRoute(component: React.ReactElement, initialEntry = "/") {
   return render(
-    <MemoryRouter
-      initialEntries={[initialEntry]}
-      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-    >
+    <MemoryRouter initialEntries={[initialEntry]}>
       {component}
     </MemoryRouter>,
   );

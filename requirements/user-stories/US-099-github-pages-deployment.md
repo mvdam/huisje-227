@@ -1,7 +1,7 @@
 ---
 id: "US-099"
 title: "React-app publiceren via GitHub Pages"
-status: "accepted"
+status: "implemented"
 implements_fr:
   - "FR-D-001"
   - "FR-D-002"
@@ -43,4 +43,12 @@ focus_track: "quality"
 
 ## Status
 
-- [ ] Geaccepteerd, nog te implementeren — 2026-09-02
+- [x] Geïmplementeerd en lokaal geverifieerd — 2026-09-02
+
+## Verificatie
+
+- `npm test -- --watchAll=false` — 2 suites en 12 tests geslaagd.
+- `PUBLIC_URL=/huisje-227 npm run build` — productiebuild succesvol.
+- De gegenereerde asset-URL's gebruiken `/huisje-227/` als basispad.
+- De workflow-YAML is succesvol lokaal geparset.
+- De live deployment blijft afhankelijk van uitvoering van de workflow op GitHub na een push naar `main`.

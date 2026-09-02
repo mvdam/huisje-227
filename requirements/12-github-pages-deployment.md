@@ -29,5 +29,13 @@ De React-applicatie moet automatisch worden gebouwd en gepubliceerd via GitHub P
 
 ## Status
 
-- [ ] Nog te implementeren
+- [x] Geïmplementeerd en lokaal geverifieerd — 2026-09-02
 
+## Verificatie
+
+- De bestaande workflow bouwt met Node.js 20, `npm ci` en `npm run build`.
+- `PUBLIC_URL` wordt gevuld vanuit de door GitHub Pages bepaalde `base_path`.
+- Alleen `build/` wordt met `actions/upload-pages-artifact@v4` aangeboden.
+- `build/404.html` ondersteunt directe navigatie naar client-side routes.
+- De workflow-YAML is lokaal geparset en de productiebuild voor `/huisje-227` is succesvol gegenereerd.
+- De daadwerkelijke Pages-publicatie wordt na push door GitHub Actions uitgevoerd en is lokaal niet te verifiëren.

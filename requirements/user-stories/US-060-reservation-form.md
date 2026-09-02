@@ -16,10 +16,11 @@
 
 - A reservation form is displayed with fields: Naam, Telefoon, E-mail, Aankomst, Vertrek, Volwassenen, Kinderen, Opmerkingen
 - All labels are in Dutch
-- Date fields use a datepicker component (format: `d MM, yyyy`)
+- Date fields use accessible native or React date controls, prevent departure before arrival and use ISO dates internally
 - Adults and children selects have actual form values
 - The submit button reads "Reserveer nu"
-- The form submits to a functioning backend/email endpoint
+- When a backend is available, the form submits to a functioning backend/email endpoint
+- Until then, the form clearly identifies itself as a non-sending prototype and never claims that a request was sent
 - Real property contact information is displayed alongside the form
 
 ## Related Requirements
@@ -35,4 +36,6 @@
 
 ## Status
 
-- [x] Implemented — 2026-07-03
+- [x] Form UI, validation and availability feedback implemented — 2026-07-03
+- [ ] Non-sending prototype message and authoritative reservation data still need implementation
+- [ ] Backend delivery deferred by product decision — 2026-09-02

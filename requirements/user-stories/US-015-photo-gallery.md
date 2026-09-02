@@ -26,11 +26,11 @@
 
 - [FR-026](../02-homepage.md) — Carousel with 33 images
 - [FR-027](../02-homepage.md) — Responsive item counts and autoplay
-- [FR-028](../02-homepage.md) — Fancybox lightbox gallery
+- [FR-028](../02-homepage.md) — Accessible React lightbox gallery
 - [FR-029](../02-homepage.md) — Hidden carousel dots
 - [FR-030](../02-homepage.md) — Pause on hover
 
 ## Status
 
-- [x] Implemented — 2026-04-08
-- Note: Uses CSS scroll-snap with auto-scroll instead of Owl Carousel
+- [x] React/CSS scroll-snap gallery and lightbox implemented — 2026-04-08
+- [ ] Complete modal semantics, background isolation and reduced-motion behavior still need implementation

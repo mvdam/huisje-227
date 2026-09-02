@@ -14,12 +14,12 @@
 
 ## Acceptance Criteria
 
-- Guest reviews ("Recensies") are displayed in a carousel slider
+- With one real review, "Recensies" is displayed as a static review block; with at least two real reviews, they are displayed in an accessible carousel
 - The section heading is in Dutch ("Recensies")
 - Each review shows a blockquote with review text and the guest's name
 - Reviews optionally include a guest photo (rounded circle)
 - All displayed reviews are real guest reviews in Dutch (no placeholder text)
-- The carousel autoplays and is responsive (1/2/3 items at breakpoints)
+- A multi-review carousel supports manual and keyboard navigation, pauses on hover/focus, is responsive (1/2/3 items at breakpoints) and respects reduced-motion preferences
 
 ## Related Requirements
 

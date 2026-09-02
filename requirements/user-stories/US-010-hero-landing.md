@@ -24,8 +24,9 @@
 
 - [FR-010](../02-homepage.md) — Hero section with background image and overlay
 - [FR-011](../02-homepage.md) — Tagline and heading display
-- [FR-013](../02-homepage.md) — Parallax scrolling via Stellar.js
+- [FR-013](../02-homepage.md) — Reduced-motion-aware React/CSS parallax
 
 ## Status
 
-- [x] Implemented — 2026-04-08
+- [x] Hero content and imagery implemented — 2026-04-08
+- [ ] React/CSS parallax and reduced-motion behavior still need implementation

@@ -31,4 +31,5 @@
 
 ## Status
 
-- [x] Implemented — 2026-07-03
+- [x] Dutch content and template cleanup implemented — 2026-07-03
+- [ ] Author metadata and route-specific metadata still need verification

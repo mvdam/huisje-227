@@ -17,8 +17,8 @@
 - A contact form is displayed with fields: Naam, Telefoon, E-mail, Bericht
 - All labels are in Dutch
 - The submit button reads "Verstuur bericht"
-- The form submits to a functioning backend/email endpoint
-- The user receives confirmation that the message was sent
+- When a backend is available, the form submits to a functioning endpoint and confirms successful delivery
+- Until then, the form clearly states that online sending is unavailable and never claims that a message was sent
 
 ## Related Requirements
 
@@ -29,4 +29,6 @@
 
 ## Status
 
-- [x] Implemented — 2026-07-03
+- [x] Form UI and validation implemented — 2026-07-03
+- [ ] Non-sending prototype message still needs implementation
+- [ ] Backend delivery deferred by product decision — 2026-09-02

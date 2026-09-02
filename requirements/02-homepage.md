@@ -24,14 +24,14 @@
 | FR-010 | The system shall display a full-width hero section with a background image (`hero_4.jpg`), parallax scrolling (ratio 0.5), and a dark overlay | [index.html](../html/index.html#L80-L83)                                          |
 | FR-011 | The hero shall display the tagline "Vakantie begint hier!" and heading "Capfun De Bongerd"                                                    | [index.html](../html/index.html#L89-L91)                                          |
 | FR-012 | The hero shall include an animated mouse scroll indicator that smooth-scrolls to the `#next` section                                          | [index.html](../html/index.html#L93-L97), [main.js](../html/js/main.js#L148-L156) |
-| FR-013 | The system shall use Stellar.js for parallax background scrolling effects                                                                     | [main.js](../html/js/main.js#L133-L141)                                           |
+| FR-013 | The homepage hero shall use a lightweight React/CSS parallax effect. The implementation shall not depend on the legacy Stellar.js/jQuery plugin and shall disable the effect when `prefers-reduced-motion: reduce` is active | Modern replacement for [main.js](../html/js/main.js#L133-L141) |
 
 ### Availability Check
 
 | ID     | Requirement                                                                                                                                                       | Source                                     |
 | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | FR-014 | The system shall display a check-availability form with fields: Aankomst (check-in date), Vertrek (check-out date), Volwassenen (adults), and Kinderen (children) | [index.html](../html/index.html#L106-L152) |
-| FR-015 | The check-in and check-out date fields shall use a datepicker with format `d MM, yyyy` and autoclose enabled                                                      | [main.js](../html/js/main.js#L163-L166)    |
+| FR-015 | The check-in and check-out fields shall use accessible native or React date controls, prevent invalid date ranges and pass ISO-formatted dates to the reservation route | Modern replacement for [main.js](../html/js/main.js#L163-L166) |
 | FR-016 | The adults select shall offer options: 1, 2 (maximum 2 adults)                                                                                                    | [index.html](../html/index.html#L129-L134) |
 | FR-017 | The children select shall offer options: 0, 1, 2 (maximum 2 children) and a separate baby field with options: 0, 1                                                | [index.html](../html/index.html#L142-L147) |
 | FR-018 | The form shall submit to a real backend or navigate to the reservation page with the selected parameters                                                          | [index.html](../html/index.html#L105)      |
@@ -42,7 +42,7 @@
 | ID     | Requirement                                                                                                                 | Source                                     |
 | ------ | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | FR-020 | The system shall display a welcome section with heading "Welkom!", descriptive text, a "Lees meer" button, and a video link | [index.html](../html/index.html#L175-L191) |
-| FR-021 | The video link shall open `images/bongerd.mp4` in a Fancybox lightbox overlay                                               | [index.html](../html/index.html#L185-L189) |
+| FR-021 | The video link shall open `images/bongerd.mp4` in an accessible React modal with focus trapping, Escape-to-close, focus return and `aria-modal="true"` | Modern replacement for [index.html](../html/index.html#L185-L189) |
 | FR-022 | The welcome section shall include two images (`food-1.jpg` as an overlapping accent, `img_1.jpg` as the main image)         | [index.html](../html/index.html#L167-L173) |
 | FR-023 | The "Lees meer" button shall link to the "Het huisje" page (`rooms.html`)                                                   | [index.html](../html/index.html#L182-L184) |
 
@@ -57,9 +57,9 @@
 
 | ID     | Requirement                                                                                                             | Source                                     |
 | ------ | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| FR-026 | The system shall display a photo carousel (Owl Carousel) with 33 images (`slider-1.jpeg` through `slider-33.jpeg`)      | [index.html](../html/index.html#L265-L515) |
+| FR-026 | The system shall display a React photo carousel with 33 images (`slider-1.jpeg` through `slider-33.jpeg`) | Modern replacement for [index.html](../html/index.html#L265-L515) |
 | FR-027 | The carousel shall autoplay with loop enabled, showing 1 item on mobile, 2 on tablet (600px), and 3 on desktop (1000px) | [main.js](../html/js/main.js#L46-L66)      |
-| FR-028 | Clicking a carousel image shall open it in a Fancybox lightbox gallery (grouped by `data-fancybox="images"`)            | [index.html](../html/index.html#L267-L274) |
+| FR-028 | Clicking a carousel image shall open it in an accessible React lightbox with previous/next controls, keyboard navigation, focus trapping, Escape-to-close, focus return and `aria-modal="true"` | Modern replacement for [index.html](../html/index.html#L267-L274) |
 | FR-029 | The carousel dots (pagination indicators) shall be hidden via CSS                                                       | [index.html](../html/index.html#L46-L48)   |
 | FR-030 | The carousel shall pause autoplay on hover                                                                              | [main.js](../html/js/main.js#L52)          |
 
@@ -77,9 +77,9 @@
 
 | ID     | Requirement                                                                                                         | Source                                     |
 | ------ | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| FR-036 | The system shall display guest reviews ("Recensies") in an Owl Carousel slider                                      | [index.html](../html/index.html#L789-L867) |
+| FR-036 | When at least two real reviews are available, the system shall display them in an accessible React carousel headed "Recensies"; with one review it shall render an honest static review block | Modern replacement for [index.html](../html/index.html#L789-L867) |
 | FR-037 | Each review shall display an author image (rounded circle), a blockquote with the review text, and the guest's name | [index.html](../html/index.html#L796-L814) |
-| FR-038 | The testimonial carousel shall autoplay, loop, and show 1/2/3 items at 0/600/1000px breakpoints                     | [main.js](../html/js/main.js#L101-L130)    |
+| FR-038 | A multi-review carousel shall loop, support manual and keyboard navigation, pause on hover/focus, show 1/2/3 items at mobile/tablet/desktop breakpoints and disable autoplay under reduced-motion preferences | Modern replacement for [main.js](../html/js/main.js#L101-L130) |
 | FR-039 | All testimonials shall contain real guest reviews (not placeholder lorem ipsum text)                                | [index.html](../html/index.html#L815-L866) |
 | FR-040 | All testimonial author images shall be real guest photos or removed if not available                                | [index.html](../html/index.html#L797-L802) |
 
@@ -101,7 +101,7 @@
 
 | ID     | Requirement                                                                                                        | Source                                |
 | ------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------- |
-| FR-045 | The system shall use AOS (Animate On Scroll) library with 1000ms duration for scroll-triggered entrance animations | [main.js](../html/js/main.js#L38-L40) |
+| FR-045 | The homepage shall use restrained scroll-triggered entrance animations implemented with React and/or the Intersection Observer API, with an approximately 1000ms duration. Animations shall be disabled when `prefers-reduced-motion: reduce` is active; the legacy AOS dependency is not required | Modern replacement for [main.js](../html/js/main.js#L38-L40) |
 
 ## Observations
 

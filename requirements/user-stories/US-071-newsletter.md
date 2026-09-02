@@ -17,8 +17,8 @@
 - A newsletter subscription form is displayed in the footer
 - The form has an email input field and a submit button
 - All labels, placeholder text, and button text are in Dutch
-- The form submits to a real email marketing service or backend
-- The subscription works from any page
+- When an integration is available, the form submits to a real email marketing service or backend from every page
+- Until then, the UI clearly states that subscription is unavailable and never shows a successful subscription
 
 ## Related Requirements
 
@@ -27,4 +27,6 @@
 
 ## Status
 
-- [x] Implemented — 2026-07-03
+- [x] Newsletter UI implemented — 2026-07-03
+- [ ] Integration-unavailable message still needs implementation
+- [ ] Newsletter integration deferred by product decision — 2026-09-02

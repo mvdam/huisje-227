@@ -16,7 +16,7 @@
 | FR-101 | The footer shall display real phone numbers: park reception 022-6391481, and/or owner contact numbers Nikki (0653308199) / Martin (0651190382)                                                 | [booking-info.md](../website-content/booking-info.md) |
 | FR-102 | The footer shall display a real email address (replace template placeholder "info@domain.com")                                                                                                 | [index.html](../html/index.html#L1011)                |
 | FR-103 | The footer shall include a newsletter subscription form with an email input and submit button                                                                                                  | [index.html](../html/index.html#L1015-L1023)          |
-| FR-104 | The newsletter form shall submit to a real email marketing service or backend                                                                                                                  | [index.html](../html/index.html#L1016)                |
+| FR-104 | The newsletter form shall submit to a real email marketing service or backend. Until that integration exists, the UI shall clearly state that subscription is unavailable and shall not claim that the visitor subscribed | [index.html](../html/index.html#L1016) |
 | FR-105 | The footer shall display social media links with real URLs (currently all link to `#`)                                                                                                         | [index.html](../html/index.html#L1033-L1039)          |
 | FR-106 | The footer link columns shall contain relevant links in Dutch (replace English template links "About Us", "Terms & Conditions", "Privacy Policy", "Rooms", "The Rooms & Suites", "Restaurant") | [index.html](../html/index.html#L976-L990)            |
 | FR-107 | The footer shall display the Colorlib attribution as required by the CC BY 3.0 license                                                                                                         | [index.html](../html/index.html#L1027-L1032)          |
@@ -28,3 +28,7 @@
 - Sub-page footers still show the full template address: "198 West 21th Street, Suite 721 New York NY 10016".
 - Footer quick links ("About Us", "Terms & Conditions", etc.) are English and link to `#` — either localize and link to real pages, or remove.
 - Social media icons shown: TripAdvisor, Facebook, Twitter, LinkedIn, Vimeo — determine which are actually used.
+
+## Deferred Requirements
+
+- **FR-104 newsletter integration** — deferred by product decision on 2 September 2026. The newsletter UI may remain visible as a prototype, but it may not show a successful subscription.

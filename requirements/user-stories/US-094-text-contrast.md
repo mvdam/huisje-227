@@ -12,9 +12,9 @@
 
 - All normal text meets WCAG 2.1 AA minimum contrast ratio of 4.5:1 against its background
 - All large text (18px+ or 14px+ bold) meets a minimum contrast ratio of 3:1
-- Text overlaid on images uses a dark semi-transparent overlay (`rgba(33,41,52,0.7)`) to guarantee contrast
+- Text overlaid on images uses a sufficiently dark warm-charcoal overlay (normally `rgba(59,54,48,0.7)` or stronger)
 - Interactive elements (links, buttons) have distinguishable hover, focus, and active states not relying on color alone
-- The primary link color (#5c8200) achieves at least 4.5:1 contrast on cream (#fffaf0) backgrounds
+- Link and button color combinations are measured against their actual backgrounds and meet the applicable contrast threshold
 - Contrast ratios are verified for every text/background combination in the brand palette
 
 ## Related Requirements

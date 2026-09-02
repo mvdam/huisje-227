@@ -23,11 +23,11 @@
 ## Related Requirements
 
 - [FR-020](../02-homepage.md) — Welcome section content
-- [FR-021](../02-homepage.md) — Video lightbox (Fancybox)
+- [FR-021](../02-homepage.md) — Accessible React video modal
 - [FR-022](../02-homepage.md) — Welcome section images
 - [FR-023](../02-homepage.md) — "Lees meer" link target
 
 ## Status
 
-- [x] Implemented — 2026-04-08
-- Note: Video opens in custom React modal (not Fancybox, which is a jQuery plugin)
+- [x] Welcome content and React video modal implemented — 2026-04-08
+- [ ] Complete modal semantics and background isolation still need implementation

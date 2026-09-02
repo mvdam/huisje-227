@@ -11,12 +11,12 @@
 ## Acceptance Criteria
 
 - The site defines the brand color palette using CSS custom properties on `:root`
-- The background base color is warm cream (`#fffaf0`) with white (`#ffffff`) surfaces for cards
-- The primary accent color is Capfun green (`#5c8200`) used for buttons, links, and highlights
-- A lighter green (`#9acd32`) is available for accents on dark backgrounds
-- Primary text uses dark blue-gray (`#212934`); secondary text uses medium gray (`#4a4e57`)
+- The background base color is warm sand (`#F5F1EC`) with white (`#FFFFFF`) surfaces for cards
+- Moss green (`#4A7C59`) is used for primary navigation, links and highlights
+- Dark moss (`#365A40`) supports high-contrast states; clay (`#C4703E`) is reserved for prominent CTAs
+- Primary text uses warm charcoal (`#3B3630`); secondary text uses an accessible supporting tone
 - The color palette is applied consistently across all pages and components
-- The overall impression matches the Capfun de Bongerd park's branding (bongerd.nl)
+- The overall impression reflects the property's Buitenleven identity and natural holiday-park setting
 
 ## Related Requirements
 

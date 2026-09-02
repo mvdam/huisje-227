@@ -30,3 +30,4 @@
 ## Status
 
 - [x] Implemented — 2026-07-03
+- [ ] Dialogs still require complete modal semantics (`aria-modal`) and background isolation

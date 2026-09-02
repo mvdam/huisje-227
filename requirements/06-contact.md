@@ -13,7 +13,7 @@
 | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | FR-080 | The page shall display a hero section with heading "Contact" and breadcrumb trail (Home > Contact)                                                                                                          | [contact.html](../html/contact.html#L63-L75)                                                          |
 | FR-081 | The page shall display a contact form with fields: Naam (Name), Telefoon (Phone), E-mail, and Bericht (Message)                                                                                             | [contact.html](../html/contact.html#L92-L121)                                                         |
-| FR-082 | The contact form shall submit to a real backend endpoint (currently `action="#"`)                                                                                                                           | [contact.html](../html/contact.html#L92)                                                              |
+| FR-082 | The contact form shall submit to a real backend endpoint. Until a backend is introduced, the UI shall clearly state that online sending is unavailable and shall not claim that a message was sent | [contact.html](../html/contact.html#L92) |
 | FR-083 | The form submit button shall be labeled in Dutch ("Verstuur bericht")                                                                                                                                       | [contact.html](../html/contact.html#L120)                                                             |
 | FR-084 | All form labels shall be in Dutch                                                                                                                                                                           | [contact.html](../html/contact.html#L94-L115)                                                         |
 | FR-085 | The page shall display real contact information: address (Bongerdlaan 3, 1747 CA Tuitjenhorn), park phone (022-6391481), contact persons Nikki (0653308199) and Martin (0651190382), and real email address | [contact.html](../html/contact.html#L129-L135), [booking-info.md](../website-content/booking-info.md) |
@@ -26,3 +26,7 @@
   - Contact info shows template placeholder: "98 West 21th Street, Suite 721 New York NY 10016", "(+1) 234 4567 8910", "info@domain.com".
 - The testimonials section on this page is completely unmodified (English heading "People Says", lorem ipsum reviews).
 - The CTA section is English: "A Best Place To Stay. Reserve Now!".
+
+## Deferred Requirements
+
+- **FR-082 backend submission** — deferred by product decision on 2 September 2026. The local form UI and validation remain in scope; production delivery and a genuine sent confirmation do not.

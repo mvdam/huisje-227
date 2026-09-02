@@ -11,8 +11,8 @@
 ## Acceptance Criteria
 
 - The overall visual tone is relaxed and holiday-inspired without being overly playful or kitschy
-- Photography is displayed prominently with generous spacing and soft rounded frames (15px radius)
-- Typography uses Poppins for headings and Open Sans for body text
+- Photography is displayed prominently with generous spacing and soft rounded frames from the shared radius scale
+- Typography uses DM Serif Display for restrained display headings and Inter for body and utility text
 - Whitespace is generous throughout the layout, creating an open and airy feel
 - The design supports a warm, inviting mood through color, imagery, and layout choices
 
@@ -20,7 +20,7 @@
 
 - [FR-VD-040](../10-visual-design.md) — Holiday atmosphere with clean modern design
 - [FR-VD-041](../10-visual-design.md) — Prominent photography with card shadow depth
-- [FR-VD-042](../10-visual-design.md) — Poppins + Open Sans font pairing
+- [FR-VD-042](../10-visual-design.md) — DM Serif Display + Inter font pairing
 - [FR-VD-043](../10-visual-design.md) — Generous whitespace for airy feel
 
 ## Status

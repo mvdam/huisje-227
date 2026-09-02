@@ -7,7 +7,7 @@ export default function AankomstVertrek() {
       {/* Hero */}
       <section
         className="aankomst-hero"
-        style={{ backgroundImage: "url(/images/hero_1.jpg)" }}
+        style={{ backgroundImage: "url(/images/slider/slider-12.jpeg)" }}
       >
         <div className="aankomst-hero-overlay" />
         <div className="aankomst-hero-content">

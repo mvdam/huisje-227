@@ -63,6 +63,9 @@ test("parkpagina bevat alle afgevinkte voorzieningen en prijzen", () => {
 test("aankomstpagina toont praktische informatie zonder placeholdercodes", () => {
   const { container } = renderRoute(<AankomstVertrek />);
 
+  expect(container.querySelector(".aankomst-hero")).toHaveStyle({
+    backgroundImage: "url(/images/slider/slider-12.jpeg)",
+  });
   expect(screen.getByText(/maandag na 12:00/)).toBeInTheDocument();
   expect(screen.getByText(/maandag voor 10:00/)).toBeInTheDocument();
   expect(screen.getByText(/WIFI-227/)).toBeInTheDocument();
@@ -71,8 +74,11 @@ test("aankomstpagina toont praktische informatie zonder placeholdercodes", () =>
 });
 
 test("tarievenpagina toont prijs, borg en betaalvoorwaarden", () => {
-  renderRoute(<Tarieven />);
+  const { container } = renderRoute(<Tarieven />);
 
+  expect(container.querySelector(".tarieven-hero")).toHaveStyle({
+    backgroundImage: "url(/images/slider/slider-1.jpeg)",
+  });
   expect(screen.getByText("€1300")).toBeInTheDocument();
   expect(screen.getByText(/€300 borg/)).toBeInTheDocument();
   expect(screen.getByText(/Aanbetaling 20%/)).toBeInTheDocument();

@@ -7,7 +7,7 @@ export default function Tarieven() {
       {/* Hero */}
       <section
         className="tarieven-hero"
-        style={{ backgroundImage: "url(/images/hero_1.jpg)" }}
+        style={{ backgroundImage: "url(/images/slider/slider-1.jpeg)" }}
       >
         <div className="tarieven-hero-overlay" />
         <div className="tarieven-hero-content">

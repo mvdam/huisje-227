@@ -25,7 +25,7 @@ focus_track: "quality"
 
 - **AC-1:** De bestaande workflow `.github/workflows/static.yml` is aangepast; er wordt geen afzonderlijke tweede deploymentworkflow toegevoegd.
 - **AC-2:** De workflow start bij een push naar `main` en kan handmatig worden gestart met `workflow_dispatch`.
-- **AC-3:** De workflow configureert een ondersteunde Node.js-versie en installeert dependencies met `npm ci`.
+- **AC-3:** De workflow configureert Node.js 24 en installeert dependencies met `npm ci`.
 - **AC-4:** De workflow voert `npm run build` succesvol uit voordat een artifact wordt geüpload.
 - **AC-5:** Alleen de gegenereerde map `build/` wordt als Pages-artifact geüpload; `html/` en de repository-root worden niet gepubliceerd.
 - **AC-6:** De officiële GitHub Pages Actions publiceren het artifact naar de `github-pages` environment.

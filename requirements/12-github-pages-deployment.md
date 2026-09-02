@@ -14,7 +14,7 @@ De React-applicatie moet automatisch worden gebouwd en gepubliceerd via GitHub P
 | --- | --- | --- |
 | FR-D-001 | De bestaande GitHub Pages-workflow in `.github/workflows/static.yml` moet worden aangepast en behouden als deploymentworkflow | [static.yml](../.github/workflows/static.yml) |
 | FR-D-002 | De workflow moet bij iedere push naar `main` en via handmatige `workflow_dispatch` kunnen worden gestart | [static.yml](../.github/workflows/static.yml) |
-| FR-D-003 | De workflow moet een ondersteunde Node.js-versie configureren en de vastgelegde npm-dependencies reproduceerbaar installeren met `npm ci` | [package.json](../package.json), [package-lock.json](../package-lock.json) |
+| FR-D-003 | De workflow moet Node.js 24 configureren en de vastgelegde npm-dependencies reproduceerbaar installeren met `npm ci` | [package.json](../package.json), [package-lock.json](../package-lock.json) |
 | FR-D-004 | De workflow moet de React-productiebuild genereren met `npm run build` | [package.json](../package.json) |
 | FR-D-005 | Een mislukte dependency-installatie of productiebuild moet de deployment stoppen | [static.yml](../.github/workflows/static.yml) |
 
@@ -33,7 +33,7 @@ De React-applicatie moet automatisch worden gebouwd en gepubliceerd via GitHub P
 
 ## Verificatie
 
-- De bestaande workflow bouwt met Node.js 20, `npm ci` en `npm run build`.
+- De bestaande workflow bouwt met Node.js 24, `npm ci` en `npm run build`.
 - `PUBLIC_URL` wordt gevuld vanuit de door GitHub Pages bepaalde `base_path`.
 - Alleen `build/` wordt met `actions/upload-pages-artifact@v4` aangeboden.
 - `build/404.html` ondersteunt directe navigatie naar client-side routes.

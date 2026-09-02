@@ -6,8 +6,8 @@
 
 ## Source
 
-- [index.html](../../html/index.html#L71)
-- [index.html](../../html/index.html#L1-L6)
+- [Tarieven.tsx](../../src/pages/Tarieven.tsx)
+- [Tarieven.tsx](../../src/pages/Tarieven.tsx)
 
 ## Feature Area
 

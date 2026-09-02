@@ -6,12 +6,11 @@ This is a vacation rental website for a holiday house at Capfun De Bongerd (plot
 
 ## Project Structure
 
-- `html/` — Partially implemented static HTML site based on a Colorlib template. Many pages still contain English template placeholder content that needs to be replaced. This folder will be removed once the implementation is migrated.
 - `react-app/` — **Ignore this directory.** Do not read, modify, or reference files in `react-app/`.
 - `requirements/` — Functional requirements organized by feature area.
 - `requirements/user-stories/` — Individual user story files with acceptance criteria and traceability to source code.
-- `src/` — React application source code (Create React App).
-- `website-content/` — Contains content about the property, including descriptions, images, and contact info. Use this content to replace template placeholders in the HTML files and to populate the React app.
+- `src/` — React application source code (Create React App) and the only production implementation.
+- `website-content/` — Contains content about the property, including descriptions, images, and contact info. Use this content to populate the React app.
 
 ## Requirements
 

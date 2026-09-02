@@ -6,7 +6,7 @@
 
 ## Source
 
-- All HTML files
+- All React routes and shared components
 
 ## Feature Area
 

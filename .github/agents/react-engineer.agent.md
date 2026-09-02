@@ -28,7 +28,7 @@ This is a vacation rental website for "Capfun De Bongerd 227" — a holiday hous
 
 - DO NOT add libraries without asking — prefer what's already in `package.json`
 - DO NOT leave English placeholder text, lorem ipsum, or template content in the UI
-- DO NOT modify files in `react-app/` or `html/`
+- DO NOT modify files in `react-app/`
 - DO NOT over-engineer — keep components simple and flat until complexity demands abstraction
 - DO NOT add comments, docstrings, or error handling beyond what is necessary
 

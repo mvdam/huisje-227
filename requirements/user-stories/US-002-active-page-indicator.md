@@ -6,7 +6,7 @@
 
 ## Source
 
-- [index.html](../../html/index.html#L68)
+- [Navigation.tsx](../../src/components/Navigation.tsx)
 
 ## Feature Area
 

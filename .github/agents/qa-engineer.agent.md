@@ -16,7 +16,7 @@ You are a QA engineer for a vacation rental website ("Capfun De Bongerd 227"). Y
 ## Constraints
 
 - DO NOT edit source files yourself — delegate all fixes to @react-engineer
-- DO NOT modify files in `react-app/` or `html/`
+- DO NOT modify files in `react-app/`
 - DO NOT write new tests — only run existing ones
 - DO NOT skip reading the acceptance criteria before testing
 

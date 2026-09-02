@@ -6,7 +6,7 @@
 
 ## Source
 
-- [index.html](../../html/index.html#L993-L1012)
+- [Footer.tsx](../../src/components/Footer.tsx)
 
 ## Feature Area
 

@@ -6,7 +6,7 @@
 
 ## Source
 
-- [index.html](../../html/index.html#L950-L971)
+- [Home.tsx](../../src/pages/Home.tsx)
 
 ## Feature Area
 
@@ -16,7 +16,7 @@
 
 - A visually prominent CTA section is displayed near the bottom of the homepage
 - The text reads "Wil je ook van ons huisje gebruik maken?" (in Dutch)
-- A "Reserveer nu!" button links to the reservation page (`reservation.html`) (Dutch label)
+- A "Reserveer nu!" button links to the React reservation route (`/reserveren`) (Dutch label)
 - The section uses a background image with dark overlay for visual impact
 - All CTA text and button labels are in Dutch on every page
 

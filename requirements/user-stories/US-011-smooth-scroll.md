@@ -6,8 +6,8 @@
 
 ## Source
 
-- [index.html](../../html/index.html#L93-L97)
-- [main.js](../../html/js/main.js#L148-L156)
+- [Home.tsx](../../src/pages/Home.tsx)
+- [Home.tsx](../../src/pages/Home.tsx)
 
 ## Feature Area
 

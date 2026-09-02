@@ -4,20 +4,20 @@
 
 | ID | User Story | Source |
 |----|-----------|--------|
-| US-060 | As a visitor, I want to fill out a reservation form with my details and preferred dates, so that I can book the holiday house | [reservation.html](../html/reservation.html#L89-L168) |
+| US-060 | As a visitor, I want to fill out a reservation form with my details and preferred dates, so that I can book the holiday house | [Reserveren.tsx](../src/pages/Reserveren.tsx) |
 
 ## Functional Requirements
 
 | ID | Requirement | Source |
 |----|------------|--------|
-| FR-090 | The page shall display a hero section with heading "Reserveren" and breadcrumb trail (Home > Reserveren) | [reservation.html](../html/reservation.html#L71-L79) |
-| FR-091 | The page shall display a reservation form with fields: Naam (Name), Telefoon (Phone), E-mail, Aankomst (Check In), Vertrek (Check Out), Volwassenen (Adults), Kinderen (Children), and Opmerkingen (Notes) | [reservation.html](../html/reservation.html#L92-L161) |
-| FR-092 | All form labels shall be in Dutch | [reservation.html](../html/reservation.html#L94-L157) |
-| FR-093 | The date fields shall use accessible native or React date controls, prevent departure before arrival and use ISO dates internally for reliable availability checks | Modern replacement for [main.js](../html/js/main.js#L163-L166) |
-| FR-094 | The adults and children selects shall have actual `value` attributes (not empty strings) | [reservation.html](../html/reservation.html#L127-L147) |
-| FR-095 | The form shall submit to a real backend endpoint or email service. Until a backend is introduced, the UI shall clearly identify the form as a non-sending prototype and shall not claim that a request was sent | [reservation.html](../html/reservation.html#L92) |
-| FR-096 | The submit button shall be labeled in Dutch ("Reserveer nu") | [reservation.html](../html/reservation.html#L160) |
-| FR-097 | The page shall display the real property contact information alongside the form | [reservation.html](../html/reservation.html#L165-L171) |
+| FR-090 | The page shall display a hero section with heading "Reserveren" and breadcrumb trail (Home > Reserveren) | [Reserveren.tsx](../src/pages/Reserveren.tsx) |
+| FR-091 | The page shall display a reservation form with fields: Naam (Name), Telefoon (Phone), E-mail, Aankomst (Check In), Vertrek (Check Out), Volwassenen (Adults), Kinderen (Children), and Opmerkingen (Notes) | [Reserveren.tsx](../src/pages/Reserveren.tsx) |
+| FR-092 | All form labels shall be in Dutch | [Reserveren.tsx](../src/pages/Reserveren.tsx) |
+| FR-093 | The date fields shall use accessible native or React date controls, prevent departure before arrival and use ISO dates internally for reliable availability checks | Modern replacement for [Home.tsx](../src/pages/Home.tsx) |
+| FR-094 | The adults and children selects shall have actual `value` attributes (not empty strings) | [Reserveren.tsx](../src/pages/Reserveren.tsx) |
+| FR-095 | The form shall submit to a real backend endpoint or email service. Until a backend is introduced, the UI shall clearly identify the form as a non-sending prototype and shall not claim that a request was sent | [Reserveren.tsx](../src/pages/Reserveren.tsx) |
+| FR-096 | The submit button shall be labeled in Dutch ("Reserveer nu") | [Reserveren.tsx](../src/pages/Reserveren.tsx) |
+| FR-097 | The page shall display the real property contact information alongside the form | [Reserveren.tsx](../src/pages/Reserveren.tsx) |
 | FR-098 | The page shall display an availability overview showing which weeks are already booked and which are available | [reservations.md](../website-content/reservations.md) |
 | FR-099 | When the user selects a date range, the system shall indicate whether the selected dates are available or conflict with existing reservations | [reservations.md](../website-content/reservations.md) |
 

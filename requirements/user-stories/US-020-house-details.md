@@ -6,7 +6,7 @@
 
 ## Source
 
-- [rooms.html](../../html/rooms.html#L80-L300)
+- [HetHuisje.tsx](../../src/pages/HetHuisje.tsx)
 
 ## Feature Area
 

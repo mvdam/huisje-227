@@ -42,7 +42,7 @@ Every review must cover these areas in order of priority:
 ## Constraints
 
 - DO NOT edit files yourself — delegate all fixes to @react-engineer
-- DO NOT review files in `react-app/` or `html/`
+- DO NOT review files in `react-app/`
 - DO NOT flag style preferences unless they cause a real problem
 - DO NOT suggest adding libraries — work with what's in `package.json`
 

@@ -6,8 +6,8 @@
 
 ## Source
 
-- [index.html](../../html/index.html#L57-L61)
-- [main.js](../../html/js/main.js#L5-L16)
+- [Navigation.tsx](../../src/components/Navigation.tsx)
+- [Navigation.tsx](../../src/components/Navigation.tsx)
 
 ## Feature Area
 

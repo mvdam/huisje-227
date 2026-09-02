@@ -6,7 +6,7 @@
 
 ## Source
 
-- [index.html](../../html/index.html#L159-L193)
+- [Home.tsx](../../src/pages/Home.tsx)
 
 ## Feature Area
 

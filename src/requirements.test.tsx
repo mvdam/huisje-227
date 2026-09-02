@@ -1,6 +1,8 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Footer from "./components/Footer";
+import RouteMetadata from "./components/RouteMetadata";
+import { getAvailabilityStatus } from "./data/reservations";
 import AankomstVertrek from "./pages/AankomstVertrek";
 import Contact from "./pages/Contact";
 import HetHuisje from "./pages/HetHuisje";
@@ -9,9 +11,10 @@ import Home from "./pages/Home";
 import Reserveren from "./pages/Reserveren";
 import Tarieven from "./pages/Tarieven";
 
-function renderRoute(component: React.ReactElement) {
+function renderRoute(component: React.ReactElement, initialEntry = "/") {
   return render(
     <MemoryRouter
+      initialEntries={[initialEntry]}
       future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
       {component}
@@ -38,6 +41,24 @@ test("homepage bevat de afgevinkte kerninhoud en 33 beschrijvende galerijbeelden
   expect(
     screen.getByAltText("Parkmascotte aan tafel tijdens kinderanimatie"),
   ).toBeInTheDocument();
+});
+
+test("videomodal is modaal, blokkeert achtergrondscroll en sluit met Escape", async () => {
+  renderRoute(<Home />);
+
+  const opener = screen.getByRole("button", { name: /Bekijk de video/ });
+  fireEvent.click(opener);
+  const dialog = screen.getByRole("dialog", {
+    name: "Video van vakantiehuis Capfun De Bongerd 227",
+  });
+  expect(dialog).toHaveAttribute("aria-modal", "true");
+  expect(document.body).toHaveStyle({ overflow: "hidden" });
+  expect(screen.getByRole("button", { name: "Sluiten" })).toHaveFocus();
+
+  fireEvent.keyDown(document, { key: "Escape" });
+  expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  expect(document.body).not.toHaveStyle({ overflow: "hidden" });
+  await waitFor(() => expect(opener).toHaveFocus());
 });
 
 test("woningpagina bevat alle vereiste ruimtes en bezettingskeuzes", () => {
@@ -94,6 +115,9 @@ test("contactpagina bevat het Nederlandse formulier en echte contactgegevens", (
   expect(screen.getByRole("button", { name: "Verstuur bericht" })).toBeInTheDocument();
   expect(screen.getByText(/Nikki:/)).toBeInTheDocument();
   expect(screen.getByTitle("Locatie Capfun De Bongerd")).toBeInTheDocument();
+  fireEvent.submit(screen.getByRole("form", { name: "Contactformulier" }));
+  expect(screen.getByRole("status")).toHaveTextContent("Er is niets verstuurd");
+  expect(screen.queryByText(/bericht is verstuurd/i)).not.toBeInTheDocument();
 });
 
 test("reserveringspagina bevat alle velden en geeft beschikbaarheidsfeedback", () => {
@@ -109,6 +133,15 @@ test("reserveringspagina bevat alle velden en geeft beschikbaarheidsfeedback", (
     target: { value: "2026-07-19" },
   });
   expect(screen.getByRole("alert")).toHaveTextContent("overlapt");
+  fireEvent.submit(screen.getByRole("form", { name: "Reserveringsformulier" }));
+  expect(screen.getByText(/Er is niets verstuurd/)).toBeInTheDocument();
+});
+
+test("beschikbaarheidsbron onderscheidt vrij, bezet, ongeldig en onbekend", () => {
+  expect(getAvailabilityStatus("2026-07-12", "2026-07-19")).toBe("booked");
+  expect(getAvailabilityStatus("2026-09-05", "2026-09-12")).toBe("available");
+  expect(getAvailabilityStatus("2026-09-12", "2026-09-05")).toBe("invalid");
+  expect(getAvailabilityStatus("2027-07-12", "2027-07-19")).toBe("unknown");
 });
 
 test("footer bevat contact, Nederlandse links en echte sociale bestemmingen", () => {
@@ -126,5 +159,24 @@ test("footer bevat contact, Nederlandse links en echte sociale bestemmingen", ()
   expect(screen.getByRole("link", { name: /Instagram/ })).toHaveAttribute(
     "target",
     "_blank",
+  );
+  fireEvent.change(screen.getByLabelText("E-mailadres"), {
+    target: { value: "gast@example.nl" },
+  });
+  fireEvent.submit(screen.getByRole("form", { name: "Nieuwsbrief aanmelding" }));
+  expect(screen.getByRole("status")).toHaveTextContent("Er is niets verstuurd");
+});
+
+test("routegebonden metadata gebruikt Nederlandse titels en een auteur", () => {
+  renderRoute(<RouteMetadata />, "/tarieven");
+
+  expect(document.title).toBe("Tarieven & voorwaarden | Capfun De Bongerd 227");
+  expect(document.head.querySelector('meta[name="description"]')).toHaveAttribute(
+    "content",
+    expect.stringContaining("betaalvoorwaarden"),
+  );
+  expect(document.head.querySelector('meta[name="author"]')).toHaveAttribute(
+    "content",
+    "Capfun De Bongerd 227",
   );
 });

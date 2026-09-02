@@ -30,5 +30,5 @@
 ## Status
 
 - [x] Form UI and validation implemented — 2026-07-03
-- [ ] Non-sending prototype message still needs implementation
+- [x] Honest non-sending prototype message implemented — 2026-09-02
 - [ ] Backend delivery deferred by product decision — 2026-09-02

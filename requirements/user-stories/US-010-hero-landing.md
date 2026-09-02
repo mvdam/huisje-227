@@ -29,4 +29,4 @@
 ## Status
 
 - [x] Hero content and imagery implemented — 2026-04-08
-- [ ] React/CSS parallax and reduced-motion behavior still need implementation
+- [x] React/CSS parallax and reduced-motion behavior implemented — 2026-09-02

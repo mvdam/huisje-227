@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import RouteMetadata from "./components/RouteMetadata";
 import Home from "./pages/Home";
 import HetHuisje from "./pages/HetHuisje";
 import AankomstVertrek from "./pages/AankomstVertrek";
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter
       future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
+      <RouteMetadata />
       <div className="App">
         <a href="#main-content" className="skip-link">
           Ga naar hoofdinhoud

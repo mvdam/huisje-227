@@ -74,6 +74,11 @@
   margin-bottom: 1.5rem;
 }
 
+.reserveren-calendar-year {
+  margin: 0 0 1rem;
+  color: var(--color-text-primary);
+}
+
 .reserveren-year-tabs {
   display: flex;
   gap: 0.5rem;
@@ -128,6 +133,12 @@
   border: 1px solid rgba(200, 50, 50, 0.3);
 }
 
+.week-block.expired {
+  background: var(--color-bg-base);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
 .week-block-label {
   display: block;
   font-size: 0.75rem;
@@ -152,6 +163,17 @@
   padding: 0.5rem;
   background: rgba(92, 130, 0, 0.08);
   border-radius: 8px;
+}
+
+.reserveren-unknown,
+.reserveren-notice {
+  color: var(--color-text-primary);
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-base);
+  border-left: 4px solid var(--color-accent-action);
+  border-radius: 12px;
+  line-height: 1.6;
 }
 
 /* ===== Reserveren Section ===== */

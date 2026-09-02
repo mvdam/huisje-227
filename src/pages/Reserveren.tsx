@@ -1,14 +1,11 @@
 import { useState, FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import {
+  AVAILABILITY,
+  getAvailabilityStatus,
+  parseLocalDate,
+} from "../data/reservations";
 import "./Reserveren.css";
-
-const RESERVED_PERIODS = [
-  { start: "2026-06-13", end: "2026-06-20" },
-  { start: "2026-07-11", end: "2026-07-25" },
-  { start: "2026-07-25", end: "2026-08-01" },
-  { start: "2026-08-01", end: "2026-08-08" },
-  { start: "2026-08-08", end: "2026-08-15" },
-];
 
 const MONTH_ABBR = [
   "jan",
@@ -25,41 +22,33 @@ const MONTH_ABBR = [
   "dec",
 ];
 
-function getWeeks(year: number): { start: Date; end: Date }[] {
+function getWeeks(): { start: Date; end: Date }[] {
   const weeks: { start: Date; end: Date }[] = [];
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  let current = new Date(year, 4, 1); // May 1
+  let current = parseLocalDate(AVAILABILITY.seasonStart);
   while (current.getDay() !== 6) current.setDate(current.getDate() + 1);
-  const endDate = new Date(year, 9, 1); // October 1 (not including)
+  const endDate = parseLocalDate(AVAILABILITY.seasonEnd);
   while (current < endDate) {
-    const weekEnd = new Date(current);
+    let weekEnd = new Date(current);
     weekEnd.setDate(weekEnd.getDate() + 7);
-    if (weekEnd > today) {
-      weeks.push({ start: new Date(current), end: weekEnd });
-    }
+    if (weekEnd > endDate) weekEnd = new Date(endDate);
+    weeks.push({ start: new Date(current), end: weekEnd });
     current = weekEnd;
   }
   return weeks;
 }
 
-function hasConflict(start: string, end: string): boolean {
-  if (!start || !end) return false;
-  const s = new Date(start);
-  const e = new Date(end);
-  return RESERVED_PERIODS.some((period) => {
-    const ps = new Date(period.start);
-    const pe = new Date(period.end);
-    return s < pe && e > ps;
+function isWeekBooked(weekStart: Date, weekEnd: Date): boolean {
+  return AVAILABILITY.reservedPeriods.some((period) => {
+    const ps = parseLocalDate(period.start);
+    const pe = parseLocalDate(period.end);
+    return weekStart < pe && weekEnd > ps;
   });
 }
 
-function isWeekBooked(weekStart: Date, weekEnd: Date): boolean {
-  return RESERVED_PERIODS.some((period) => {
-    const ps = new Date(period.start);
-    const pe = new Date(period.end);
-    return weekStart < pe && weekEnd > ps;
-  });
+function isWeekPast(weekEnd: Date): boolean {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return weekEnd <= today;
 }
 
 function formatDate(d: Date): string {
@@ -75,12 +64,12 @@ export default function Reserveren() {
   );
   const [kinderen, setKinderen] = useState(searchParams.get("kinderen") || "0");
   const [baby, setBaby] = useState(searchParams.get("baby") || "0");
-  const [submitted, setSubmitted] = useState(false);
-  const [calendarYear, setCalendarYear] = useState(2026);
+  const [submitAttempted, setSubmitAttempted] = useState(false);
+  const availabilityStatus = getAvailabilityStatus(aankomst, vertrek);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitAttempted(true);
   };
 
   return (
@@ -120,29 +109,19 @@ export default function Reserveren() {
           gewenste aankomst- en vertrekdatum in het formulier om te controleren
           of deze periode vrij is.
         </p>
-        <div className="reserveren-year-tabs">
-          {[2026, 2027].map((year) => (
-            <button
-              key={year}
-              type="button"
-              className={`reserveren-year-tab${calendarYear === year ? " active" : ""}`}
-              onClick={() => setCalendarYear(year)}
-            >
-              {year}
-            </button>
-          ))}
-        </div>
+        <h3 className="reserveren-calendar-year">Seizoen {AVAILABILITY.year}</h3>
         <div className="reserveren-calendar">
-          {getWeeks(calendarYear).map((week, i) => {
+          {getWeeks().map((week, i) => {
             const booked = isWeekBooked(week.start, week.end);
+            const expired = isWeekPast(week.end);
             return (
               <div
                 key={i}
-                className={`week-block ${booked ? "booked" : "available"}`}
+                className={`week-block ${booked ? "booked" : expired ? "expired" : "available"}`}
               >
                 {formatDate(week.start)} – {formatDate(week.end)}
                 <span className="week-block-label">
-                  {booked ? "bezet" : "beschikbaar"}
+                  {booked ? "bezet" : expired ? "verlopen" : "beschikbaar"}
                 </span>
               </div>
             );
@@ -155,13 +134,12 @@ export default function Reserveren() {
         <div className="reserveren-grid">
           <div className="reserveren-form">
             <h2>Boek ons huisje</h2>
-            {submitted ? (
-              <p className="reserveren-success" role="status">
-                Bedankt! Uw reserveringsaanvraag is verstuurd. We nemen zo snel
-                mogelijk contact met u op.
-              </p>
-            ) : (
-              <form aria-label="Reserveringsformulier" onSubmit={handleSubmit}>
+            <p className="reserveren-notice">
+              Online aanvragen versturen is nog niet beschikbaar. Vul het
+              formulier gerust in om je periode te controleren en neem daarna
+              telefonisch of per e-mail contact met ons op.
+            </p>
+            <form aria-label="Reserveringsformulier" onSubmit={handleSubmit}>
                 <div className="reserveren-form-field">
                   <label htmlFor="reserveren-naam">Naam</label>
                   <input
@@ -213,14 +191,23 @@ export default function Reserveren() {
                 </div>
                 {aankomst &&
                   vertrek &&
-                  (hasConflict(aankomst, vertrek) ? (
+                  (availabilityStatus === "booked" ? (
                     <p className="reserveren-conflict" role="alert">
                       ⚠️ Helaas, de gekozen periode overlapt met een bestaande
                       reservering.
                     </p>
-                  ) : (
+                  ) : availabilityStatus === "available" ? (
                     <p className="reserveren-available" role="status">
                       ✓ De gekozen periode is beschikbaar!
+                    </p>
+                  ) : availabilityStatus === "invalid" ? (
+                    <p className="reserveren-conflict" role="alert">
+                      De vertrekdatum moet na de aankomstdatum liggen.
+                    </p>
+                  ) : (
+                    <p className="reserveren-unknown" role="status">
+                      Voor deze periode is nog geen beschikbaarheid gepubliceerd.
+                      Neem contact met ons op voor een controle.
                     </p>
                   ))}
                 <div className="reserveren-form-field">
@@ -271,7 +258,12 @@ export default function Reserveren() {
                 <button type="submit" className="reserveren-btn-primary">
                   Reserveer nu
                 </button>
-              </form>
+            </form>
+            {submitAttempted && (
+              <p className="reserveren-unknown" role="status">
+                Er is niets verstuurd. Bel Nikki of Martin, of mail naar{" "}
+                <a href="mailto:bongerd227@gmail.com">bongerd227@gmail.com</a>.
+              </p>
             )}
           </div>
 

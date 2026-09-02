@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
-  const [subscribed, setSubscribed] = useState(false);
+  const [submitAttempted, setSubmitAttempted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubscribed(true);
+    setSubmitAttempted(true);
   };
 
   return (
@@ -51,15 +51,12 @@ function Footer() {
 
           <div>
             <h3 className="footer-heading">Nieuwsbrief</h3>
-            <p>Blijf op de hoogte van beschikbaarheid en aanbiedingen.</p>
-            {subscribed ? (
-              <p role="status">Bedankt voor uw aanmelding!</p>
-            ) : (
-              <form
-                className="footer-newsletter-form"
-                aria-label="Nieuwsbrief aanmelding"
-                onSubmit={handleSubmit}
-              >
+            <p>Nieuwsbriefinschrijving is nog niet beschikbaar.</p>
+            <form
+              className="footer-newsletter-form"
+              aria-label="Nieuwsbrief aanmelding"
+              onSubmit={handleSubmit}
+            >
                 <label htmlFor="footer-email" className="sr-only">
                   E-mailadres
                 </label>
@@ -70,7 +67,11 @@ function Footer() {
                   required
                 />
                 <button type="submit">Aanmelden</button>
-              </form>
+            </form>
+            {submitAttempted && (
+              <p role="status">
+                Er is niets verstuurd. Probeer het later opnieuw.
+              </p>
             )}
           </div>
         </div>

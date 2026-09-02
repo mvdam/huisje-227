@@ -31,7 +31,6 @@
 
 ## Status
 
-- [x] Partially implemented — 2026-04-08
+- [x] Implemented for the available verified review — 2026-09-02
 - Only 1 real review (Fam. Eshuis) is displayed as a static blockquote
-- Carousel not implemented — only 1 real review exists in source content
-- **Blocked**: Additional real guest reviews needed from property owners to build a carousel
+- A multi-review carousel becomes applicable when property owners provide additional real reviews

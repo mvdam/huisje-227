@@ -28,5 +28,5 @@
 ## Status
 
 - [x] Newsletter UI implemented — 2026-07-03
-- [ ] Integration-unavailable message still needs implementation
+- [x] Integration-unavailable message implemented — 2026-09-02
 - [ ] Newsletter integration deferred by product decision — 2026-09-02

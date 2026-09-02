@@ -37,5 +37,5 @@
 ## Status
 
 - [x] Form UI, validation and availability feedback implemented — 2026-07-03
-- [ ] Non-sending prototype message and authoritative reservation data still need implementation
+- [x] Honest non-sending prototype message and authoritative reservation data implemented — 2026-09-02
 - [ ] Backend delivery deferred by product decision — 2026-09-02

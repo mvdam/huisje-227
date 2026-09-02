@@ -84,6 +84,15 @@
   color: var(--color-text-primary);
 }
 
+.contact-notice {
+  padding: 1rem;
+  border-left: 4px solid var(--color-accent-action);
+  border-radius: 12px;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
 .contact-form-field {
   margin-bottom: 1.5rem;
 }

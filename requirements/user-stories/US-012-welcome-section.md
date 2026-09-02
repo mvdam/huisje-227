@@ -30,4 +30,4 @@
 ## Status
 
 - [x] Welcome content and React video modal implemented — 2026-04-08
-- [ ] Complete modal semantics and background isolation still need implementation
+- [x] Complete modal semantics, focus handling and background isolation implemented — 2026-09-02

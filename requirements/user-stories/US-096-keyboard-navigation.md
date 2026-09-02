@@ -30,4 +30,4 @@
 ## Status
 
 - [x] Implemented — 2026-07-03
-- [ ] Dialogs still require complete modal semantics (`aria-modal`) and background isolation
+- [x] Dialog modal semantics, focus trap, focus return and background isolation implemented — 2026-09-02

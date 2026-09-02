@@ -33,4 +33,4 @@
 ## Status
 
 - [x] React/CSS scroll-snap gallery and lightbox implemented — 2026-04-08
-- [ ] Complete modal semantics, background isolation and reduced-motion behavior still need implementation
+- [x] Complete modal semantics, background isolation and reduced-motion behavior implemented — 2026-09-02

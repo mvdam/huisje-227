@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import "./Contact.css";
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submitAttempted, setSubmitAttempted] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitAttempted(true);
   };
 
   return (
@@ -41,12 +41,12 @@ export default function Contact() {
         <div className="contact-grid">
           <div className="contact-form">
             <h2>Stuur ons een bericht</h2>
-            {submitted ? (
-              <p className="contact-success" role="status">
-                Bedankt! Uw bericht is verstuurd.
-              </p>
-            ) : (
-              <form aria-label="Contactformulier" onSubmit={handleSubmit}>
+            <p className="contact-notice">
+              Online versturen is nog niet beschikbaar. Vul het formulier
+              gerust in en neem daarna telefonisch of per e-mail contact met
+              ons op.
+            </p>
+            <form aria-label="Contactformulier" onSubmit={handleSubmit}>
                 <div className="contact-form-field">
                   <label htmlFor="contact-naam">Naam</label>
                   <input
@@ -86,7 +86,13 @@ export default function Contact() {
                 <button type="submit" className="contact-btn-primary">
                   Verstuur bericht
                 </button>
-              </form>
+            </form>
+            {submitAttempted && (
+              <p className="contact-notice" role="status">
+                Er is niets verstuurd. Mail je bericht naar{" "}
+                <a href="mailto:bongerd227@gmail.com">bongerd227@gmail.com</a>
+                , of bel Nikki of Martin.
+              </p>
             )}
           </div>
 

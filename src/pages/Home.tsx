@@ -50,11 +50,54 @@ const SLIDER_ALT_TEXTS = [
   "Parkmascotte aan tafel tijdens kinderanimatie",
 ];
 
+function usePrefersReducedMotion() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (!window.matchMedia) return;
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+    updatePreference();
+    mediaQuery.addEventListener?.("change", updatePreference);
+    return () => mediaQuery.removeEventListener?.("change", updatePreference);
+  }, []);
+
+  return prefersReducedMotion;
+}
+
+function isolatePageBackground() {
+  const elements = Array.from(
+    document.querySelectorAll<HTMLElement>(
+      ".site-header, .site-footer, #main-content > :not(.home-lightbox-overlay)",
+    ),
+  );
+  const previous = elements.map((element) => ({
+    element,
+    ariaHidden: element.getAttribute("aria-hidden"),
+    inert: element.hasAttribute("inert"),
+  }));
+  elements.forEach((element) => {
+    element.setAttribute("aria-hidden", "true");
+    element.setAttribute("inert", "");
+  });
+
+  return () => {
+    previous.forEach(({ element, ariaHidden, inert }) => {
+      if (ariaHidden === null) element.removeAttribute("aria-hidden");
+      else element.setAttribute("aria-hidden", ariaHidden);
+      if (!inert) element.removeAttribute("inert");
+    });
+  };
+}
+
 function VideoLightbox({ src, onClose }: { src: string; onClose: () => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     closeRef.current?.focus();
+    const restoreBackground = isolatePageBackground();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
       else if (e.key === "Tab") {
@@ -79,7 +122,11 @@ function VideoLightbox({ src, onClose }: { src: string; onClose: () => void }) {
       }
     };
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      restoreBackground();
+    };
   }, [onClose]);
 
   return (
@@ -87,8 +134,12 @@ function VideoLightbox({ src, onClose }: { src: string; onClose: () => void }) {
       className="home-lightbox-overlay"
       onClick={onClose}
       role="dialog"
-      aria-label="Video"
+      aria-modal="true"
+      aria-labelledby="video-dialog-title"
     >
+      <h2 id="video-dialog-title" className="sr-only">
+        Video van vakantiehuis Capfun De Bongerd 227
+      </h2>
       <button
         ref={closeRef}
         className="home-lightbox-close"
@@ -154,8 +205,15 @@ function ImageLightbox({
 
   useEffect(() => {
     closeRef.current?.focus();
+    const restoreBackground = isolatePageBackground();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      restoreBackground();
+    };
   }, [handleKeyDown]);
 
   return (
@@ -163,8 +221,12 @@ function ImageLightbox({
       className="home-lightbox-overlay"
       onClick={onClose}
       role="dialog"
-      aria-label="Foto galerij"
+      aria-modal="true"
+      aria-labelledby="gallery-dialog-title"
     >
+      <h2 id="gallery-dialog-title" className="sr-only">
+        Fotogalerij van het vakantiehuis en park
+      </h2>
       <button
         ref={closeRef}
         className="home-lightbox-close"
@@ -548,6 +610,9 @@ export default function Home() {
   );
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [heroOffset, setHeroOffset] = useState(0);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const motionBehavior: ScrollBehavior = prefersReducedMotion ? "auto" : "smooth";
   const galleryRef = useRef<HTMLDivElement>(null);
   const galleryPaused = useRef(false);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -588,24 +653,71 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const revealElements = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-reveal]"),
+    );
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
+    revealElements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, [prefersReducedMotion]);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setHeroOffset(0);
+      return;
+    }
+
+    let animationFrame = 0;
+    const updateParallax = () => {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(() => {
+        setHeroOffset(Math.min(window.scrollY * 0.5, 240));
+      });
+    };
+    updateParallax();
+    window.addEventListener("scroll", updateParallax, { passive: true });
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener("scroll", updateParallax);
+    };
+  }, [prefersReducedMotion]);
+
+  useEffect(() => {
     const el = galleryRef.current;
-    if (!el) return;
+    if (!el || prefersReducedMotion) return;
     const id = setInterval(() => {
       if (galleryPaused.current) return;
       const item = el.querySelector(".home-gallery-item") as HTMLElement | null;
       if (!item) return;
       const scrollAmount = item.offsetWidth + 16;
       if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) {
-        el.scrollTo({ left: 0, behavior: "smooth" });
+        el.scrollTo({ left: 0, behavior: motionBehavior });
       } else {
-        el.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        el.scrollBy({ left: scrollAmount, behavior: motionBehavior });
       }
     }, 3500);
     return () => clearInterval(id);
-  }, []);
+  }, [motionBehavior, prefersReducedMotion]);
 
   const handleScroll = () => {
-    document.getElementById("next")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("next")?.scrollIntoView({
+      behavior: motionBehavior,
+    });
   };
 
   return (
@@ -613,7 +725,10 @@ export default function Home() {
       {/* 1. Hero */}
       <section
         className="home-hero"
-        style={{ backgroundImage: "url(/images/hero_4.jpg)" }}
+        style={{
+          backgroundImage: "url(/images/hero_4.jpg)",
+          backgroundPosition: `center calc(50% + ${heroOffset}px)`,
+        }}
       >
         <div className="home-hero-overlay" />
         <div className="home-hero-content">
@@ -695,7 +810,7 @@ export default function Home() {
       </section>
 
       {/* 3. Welcome */}
-      <section className="home-section">
+      <section className="home-section" data-reveal>
         <div className="home-welcome">
           <div className="home-welcome-text">
             <h2>Welkom!</h2>
@@ -710,8 +825,8 @@ export default function Home() {
               <button
                 type="button"
                 className="home-video-link"
-                onClick={() => {
-                  videoTriggerRef.current = document.activeElement;
+                onClick={(event) => {
+                  videoTriggerRef.current = event.currentTarget;
                   setVideoOpen(true);
                 }}
               >
@@ -735,7 +850,7 @@ export default function Home() {
       </section>
 
       {/* 4. Property Highlights */}
-      <section className="home-section">
+      <section className="home-section" data-reveal>
         <h2 className="home-section-heading">Genieten</h2>
         <p className="home-section-subtext">
           Een lekker ruime tuin, knusse en comfortabele woonkamer en twee
@@ -754,7 +869,7 @@ export default function Home() {
       </section>
 
       {/* 5. Photo Gallery */}
-      <section className="home-section">
+      <section className="home-section" data-reveal>
         <h2 className="home-section-heading">Foto's</h2>
         <p className="home-section-subtext">
           Proef de sfeer van ons huisje en het park!
@@ -772,7 +887,7 @@ export default function Home() {
               if (!item) return;
               el.scrollBy({
                 left: -(item.offsetWidth + 16),
-                behavior: "smooth",
+                behavior: motionBehavior,
               });
             }}
             aria-label="Vorige foto's"
@@ -788,13 +903,23 @@ export default function Home() {
             onMouseLeave={() => {
               galleryPaused.current = false;
             }}
+            onFocus={() => {
+              galleryPaused.current = true;
+            }}
+            onBlur={(event) => {
+              if (
+                !event.currentTarget.contains(event.relatedTarget as Node | null)
+              ) {
+                galleryPaused.current = false;
+              }
+            }}
           >
             {SLIDER_IMAGES.map((src, i) => (
               <div
                 className="home-gallery-item"
                 key={i}
-                onClick={() => {
-                  galleryTriggerRef.current = document.activeElement;
+                onClick={(event) => {
+                  galleryTriggerRef.current = event.currentTarget;
                   setLightboxIndex(i);
                 }}
                 role="button"
@@ -802,7 +927,7 @@ export default function Home() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    galleryTriggerRef.current = document.activeElement;
+                    galleryTriggerRef.current = e.currentTarget;
                     setLightboxIndex(i);
                   } else if (e.key === "ArrowRight") {
                     e.preventDefault();
@@ -811,7 +936,7 @@ export default function Home() {
                     if (next) {
                       next.focus();
                       next.scrollIntoView({
-                        behavior: "smooth",
+                        behavior: motionBehavior,
                         block: "nearest",
                         inline: "center",
                       });
@@ -823,7 +948,7 @@ export default function Home() {
                     if (prev) {
                       prev.focus();
                       prev.scrollIntoView({
-                        behavior: "smooth",
+                        behavior: motionBehavior,
                         block: "nearest",
                         inline: "center",
                       });
@@ -848,7 +973,10 @@ export default function Home() {
                 ".home-gallery-item",
               ) as HTMLElement | null;
               if (!item) return;
-              el.scrollBy({ left: item.offsetWidth + 16, behavior: "smooth" });
+              el.scrollBy({
+                left: item.offsetWidth + 16,
+                behavior: motionBehavior,
+              });
             }}
             aria-label="Volgende foto's"
           >
@@ -861,8 +989,9 @@ export default function Home() {
         <VideoLightbox
           src="/images/bongerd.mp4"
           onClose={() => {
+            const trigger = videoTriggerRef.current as HTMLElement | null;
             setVideoOpen(false);
-            (videoTriggerRef.current as HTMLElement)?.focus();
+            window.setTimeout(() => trigger?.focus(), 0);
           }}
         />
       )}
@@ -872,8 +1001,9 @@ export default function Home() {
           images={SLIDER_IMAGES}
           index={lightboxIndex}
           onClose={() => {
+            const trigger = galleryTriggerRef.current as HTMLElement | null;
             setLightboxIndex(null);
-            (galleryTriggerRef.current as HTMLElement)?.focus();
+            window.setTimeout(() => trigger?.focus(), 0);
           }}
           onPrev={() =>
             setLightboxIndex(
@@ -889,6 +1019,7 @@ export default function Home() {
       {/* 6. Amenities */}
       <section
         className="home-amenities"
+        data-reveal
         style={{ backgroundImage: "url(/images/hero_3.jpg)" }}
       >
         <div className="home-amenities-overlay" />
@@ -966,7 +1097,7 @@ export default function Home() {
       </section>
 
       {/* 7. Reviews */}
-      <section className="home-section">
+      <section className="home-section" data-reveal>
         <h2 className="home-section-heading" style={{ textAlign: "center" }}>
           Recensies
         </h2>
@@ -980,7 +1111,7 @@ export default function Home() {
       </section>
 
       {/* 8. Park Activities */}
-      <section className="home-section">
+      <section className="home-section" data-reveal>
         <h2 className="home-section-heading">Op het park</h2>
         <p className="home-section-subtext">
           Op Capfun de Bongerd is van alles te beleven. Naast een zwem-,
@@ -1005,6 +1136,7 @@ export default function Home() {
       {/* 9. CTA */}
       <section
         className="home-cta"
+        data-reveal
         style={{ backgroundImage: "url(/images/hero_4.jpg)" }}
       >
         <div className="home-cta-overlay" />

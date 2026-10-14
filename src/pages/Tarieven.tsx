@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { publicAssetUrl } from "../utils/publicAsset";
 import "./Tarieven.css";
+import { WEEKLY_RATE, OFF_PEAK_WEEKLY_RATE, formatPrice } from "../data/pricing";
 
 export default function Tarieven() {
   return (
@@ -32,12 +33,15 @@ export default function Tarieven() {
       {/* Price Banner */}
       <section className="tarieven-price-banner">
         <h2 className="tarieven-price-label">Prijs per week</h2>
-        <p className="tarieven-price-amount">€1300</p>
+        <p>Zomervakantie</p>
+        <p className="tarieven-price-amount">{formatPrice(WEEKLY_RATE)}</p>
+        <p>Overige periodes: {formatPrice(OFF_PEAK_WEEKLY_RATE)} per week.</p>
       </section>
 
       {/* Info Cards */}
       <section className="tarieven-section">
         <h2 className="tarieven-section-heading">Voorwaarden &amp; contact</h2>
+        <p>Aankomst op zaterdag na 12:00. Vertrek op zaterdag voor 10:00.</p>
         <div className="tarieven-cards-grid">
           {/* Borg & Betaling */}
           <div className="tarieven-card">

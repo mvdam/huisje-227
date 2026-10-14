@@ -1,12 +1,16 @@
 import { useState, FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
-  AVAILABILITY,
+  RESERVATIONS_BY_YEAR,
+  RESERVATION_YEARS,
+  getDefaultReservationYear,
+  ReservationSeason,
   getAvailabilityStatus,
   parseLocalDate,
 } from "../data/reservations";
 import { publicAssetUrl } from "../utils/publicAsset";
 import "./Reserveren.css";
+import { formatPrice, getStayPrice } from "../data/pricing";
 
 const MONTH_ABBR = [
   "jan",
@@ -23,11 +27,11 @@ const MONTH_ABBR = [
   "dec",
 ];
 
-function getWeeks(): { start: Date; end: Date }[] {
+function getWeeks(season: ReservationSeason): { start: Date; end: Date }[] {
   const weeks: { start: Date; end: Date }[] = [];
-  let current = parseLocalDate(AVAILABILITY.seasonStart);
+  let current = parseLocalDate(season.seasonStart);
   while (current.getDay() !== 6) current.setDate(current.getDate() + 1);
-  const endDate = parseLocalDate(AVAILABILITY.seasonEnd);
+  const endDate = parseLocalDate(season.seasonEnd);
   while (current < endDate) {
     let weekEnd = new Date(current);
     weekEnd.setDate(weekEnd.getDate() + 7);
@@ -38,8 +42,8 @@ function getWeeks(): { start: Date; end: Date }[] {
   return weeks;
 }
 
-function isWeekBooked(weekStart: Date, weekEnd: Date): boolean {
-  return AVAILABILITY.reservedPeriods.some((period) => {
+function isWeekBooked(season: ReservationSeason, weekStart: Date, weekEnd: Date): boolean {
+  return season.reservedPeriods.some((period) => {
     const ps = parseLocalDate(period.start);
     const pe = parseLocalDate(period.end);
     return weekStart < pe && weekEnd > ps;
@@ -50,6 +54,10 @@ function isWeekPast(weekEnd: Date): boolean {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   return weekEnd <= today;
+}
+
+function toDateInputValue(date: Date): string {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 }
 
 function formatDate(d: Date): string {
@@ -66,6 +74,22 @@ export default function Reserveren() {
   const [kinderen, setKinderen] = useState(searchParams.get("kinderen") || "0");
   const [baby, setBaby] = useState(searchParams.get("baby") || "0");
   const [submitAttempted, setSubmitAttempted] = useState(false);
+  const visibleWeeksByYear = Object.fromEntries(
+    RESERVATION_YEARS.map((year) => [
+      year,
+      getWeeks(RESERVATIONS_BY_YEAR[year]).filter((week) => !isWeekPast(week.end)),
+    ]),
+  );
+  const visibleYears = RESERVATION_YEARS.filter(
+    (year) => visibleWeeksByYear[year].length > 0,
+  );
+  const [selectedYear, setSelectedYear] = useState(() =>
+    getDefaultReservationYear(searchParams.get("aankomst") || "", visibleYears),
+  );
+  const displayedYear = visibleYears.includes(selectedYear)
+    ? selectedYear : getDefaultReservationYear("", visibleYears);
+  const season = RESERVATIONS_BY_YEAR[displayedYear];
+  const stayPrice = getStayPrice(aankomst, vertrek);
   const availabilityStatus = getAvailabilityStatus(aankomst, vertrek);
 
   const handleSubmit = (e: FormEvent) => {
@@ -106,28 +130,47 @@ export default function Reserveren() {
       <section className="reserveren-availability">
         <h2>Beschikbaarheid</h2>
         <p className="reserveren-availability-intro">
-          Hieronder zie je welke weken nog beschikbaar zijn. Selecteer je
-          gewenste aankomst- en vertrekdatum in het formulier om te controleren
-          of deze periode vrij is.
+          Klik op een beschikbare periode om aankomst en vertrek automatisch
+          in te vullen. Je kunt de datums daarna aanpassen in het formulier.
         </p>
-        <h3 className="reserveren-calendar-year">Seizoen {AVAILABILITY.year}</h3>
-        <div className="reserveren-calendar">
-          {getWeeks().map((week, i) => {
-            const booked = isWeekBooked(week.start, week.end);
-            const expired = isWeekPast(week.end);
-            return (
-              <div
-                key={i}
-                className={`week-block ${booked ? "booked" : expired ? "expired" : "available"}`}
-              >
-                {formatDate(week.start)} – {formatDate(week.end)}
-                <span className="week-block-label">
-                  {booked ? "bezet" : expired ? "verlopen" : "beschikbaar"}
-                </span>
-              </div>
-            );
-          })}
-        </div>
+        {season ? (
+          <>
+            <label htmlFor="reserveren-seizoen">Seizoen</label>{" "}
+            <select id="reserveren-seizoen" value={displayedYear}
+              onChange={(event) => setSelectedYear(event.target.value)}>
+              {visibleYears.map((year) => <option key={year} value={year}>{year}</option>)}
+            </select>
+            <h3 className="reserveren-calendar-year">Seizoen {displayedYear}</h3>
+            <div className="reserveren-calendar">
+              {visibleWeeksByYear[displayedYear].map((week, i) => {
+                const booked = isWeekBooked(season, week.start, week.end);
+                const start = toDateInputValue(week.start);
+                const end = toDateInputValue(week.end);
+                const selected = aankomst === start && vertrek === end;
+                return (
+                  <button
+                    type="button"
+                    key={i}
+                    disabled={booked}
+                    aria-pressed={selected}
+                    onClick={() => {
+                      setAankomst(start);
+                      setVertrek(end);
+                    }}
+                    className={`week-block ${booked ? "booked" : "available"}${selected ? " selected" : ""}`}
+                  >
+                    {formatDate(week.start)} – {formatDate(week.end)}
+                    <span className="week-block-label">
+                      {booked ? "bezet" : selected ? "geselecteerd" : "Kies deze periode"}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <p>Er zijn geen toekomstige periodes gepubliceerd. Neem contact met ons op.</p>
+        )}
       </section>
 
       {/* Reservation Form + Details */}
@@ -135,6 +178,7 @@ export default function Reserveren() {
         <div className="reserveren-grid">
           <div className="reserveren-form">
             <h2>Boek ons huisje</h2>
+            <p>Aankomst op zaterdag na 12:00. Vertrek op zaterdag voor 10:00.</p>
             <p className="reserveren-notice">
               Online aanvragen versturen is nog niet beschikbaar. Vul het
               formulier gerust in om je periode te controleren en neem daarna
@@ -211,6 +255,22 @@ export default function Reserveren() {
                       Neem contact met ons op voor een controle.
                     </p>
                   ))}
+                {(stayPrice || (aankomst && vertrek && availabilityStatus !== "invalid")) && (
+                <div className="reserveren-price-summary" aria-live="polite" aria-atomic="true">
+                  {stayPrice && (
+                    <>
+                      <p className="reserveren-price-total">
+                        Totale huurprijs: {formatPrice(stayPrice.total)}
+                      </p>
+                      <p>{stayPrice.nights} {stayPrice.nights === 1 ? "nacht" : "nachten"}</p>
+                      <p>Exclusief €300 terugbetaalbare borg en eventuele eindschoonmaak (€50).</p>
+                    </>
+                  )}
+                  {aankomst && vertrek && !stayPrice && availabilityStatus !== "invalid" && (
+                    <p>Voor dit jaar is nog geen huurprijs beschikbaar. Neem contact met ons op.</p>
+                  )}
+                </div>
+                )}
                 <div className="reserveren-form-field">
                   <label htmlFor="reserveren-volwassenen">Volwassenen</label>
                   <select

@@ -84,8 +84,8 @@ test("aankomstpagina toont praktische informatie zonder placeholdercodes", () =>
   expect(container.querySelector(".aankomst-hero")).toHaveStyle({
     backgroundImage: "url(/images/slider/slider-12.jpeg)",
   });
-  expect(screen.getByText(/maandag na 12:00/)).toBeInTheDocument();
-  expect(screen.getByText(/maandag voor 10:00/)).toBeInTheDocument();
+  expect(screen.getByText(/zaterdag na 12:00/)).toBeInTheDocument();
+  expect(screen.getByText(/zaterdag voor 10:00/)).toBeInTheDocument();
   expect(screen.getByText(/WIFI-227/)).toBeInTheDocument();
   expect(screen.getAllByText(/boekingsbevestiging/)).toHaveLength(3);
   expect(container).not.toHaveTextContent("XXXX");
@@ -97,7 +97,7 @@ test("tarievenpagina toont prijs, borg en betaalvoorwaarden", () => {
   expect(container.querySelector(".tarieven-hero")).toHaveStyle({
     backgroundImage: "url(/images/slider/slider-1.jpeg)",
   });
-  expect(screen.getByText("€1300")).toBeInTheDocument();
+  expect(screen.getByText(/€\s*1\.400/)).toBeInTheDocument();
   expect(screen.getByText(/€300 borg/)).toBeInTheDocument();
   expect(screen.getByText(/Aanbetaling 20%/)).toBeInTheDocument();
   expect(screen.getByText(/maximaal 6 weken verhuren/)).toBeInTheDocument();
@@ -138,7 +138,8 @@ test("beschikbaarheidsbron onderscheidt vrij, bezet, ongeldig en onbekend", () =
   expect(getAvailabilityStatus("2026-07-12", "2026-07-19")).toBe("booked");
   expect(getAvailabilityStatus("2026-09-05", "2026-09-12")).toBe("available");
   expect(getAvailabilityStatus("2026-09-12", "2026-09-05")).toBe("invalid");
-  expect(getAvailabilityStatus("2027-07-12", "2027-07-19")).toBe("unknown");
+  expect(getAvailabilityStatus("2027-07-12", "2027-07-19")).toBe("available");
+  expect(getAvailabilityStatus("2029-07-12", "2029-07-19")).toBe("unknown");
 });
 
 test("footer bevat contact, Nederlandse links en echte sociale bestemmingen", () => {

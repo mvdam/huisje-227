@@ -7,7 +7,7 @@
 ## Source
 
 - [Tarieven.tsx](../../src/pages/Tarieven.tsx)
-- [Tarieven.tsx](../../src/pages/Tarieven.tsx)
+- [pricing.json](../../website-content/pricing.json)
 
 ## Feature Area
 
@@ -15,7 +15,9 @@
 
 ## Acceptance Criteria
 
-- Rate/tariff information is clearly displayed: €1300 per week
+- The page states arrival on Saturday after 12:00 and departure on Saturday before 10:00.
+
+- Rates come from the central pricing JSON: €1,400 per week during the combined Dutch summer holiday and €1,050 per week outside it; the page does not explain percentages or nightly calculation rules
 - Deposit ("borg") amount is stated: €300, teruggestort binnen 5 dagen na vertrek
 - Payment terms are explained: 20% aanbetaling bij boeking (via Tikkie of contant), restbedrag 6 weken voor aankomst
 - Cleaning fee option is stated: eindschoonmaak €50 extra (optioneel)
@@ -27,9 +29,13 @@
 
 ## Related Requirements
 
+- [FR-070](../05-aankomst-vertrek-tarieven.md) — Saturday arrival and departure policy
+
 - [FR-071](../05-aankomst-vertrek-tarieven.md) — Rates and deposit details
 - [FR-072](../05-aankomst-vertrek-tarieven.md) — Terms and conditions
 - [FR-073](../05-aankomst-vertrek-tarieven.md) — Hero and breadcrumb
+
+- [FR-PRICE-001–006](../16-central-pricing.md) — Central seasonal pricing
 
 ## Status
 

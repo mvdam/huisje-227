@@ -1,20 +1,29 @@
+import reservations from "../../website-content/reservations.json";
+
 export type ReservationPeriod = {
   start: string;
   end: string;
 };
 
-export const AVAILABILITY = {
-  year: 2026,
-  seasonStart: "2026-05-01",
-  seasonEnd: "2026-10-01",
-  reservedPeriods: [
-    { start: "2026-06-15", end: "2026-06-22" },
-    { start: "2026-07-11", end: "2026-07-25" },
-    { start: "2026-07-25", end: "2026-08-01" },
-    { start: "2026-08-01", end: "2026-08-08" },
-    { start: "2026-08-08", end: "2026-08-15" },
-  ] satisfies ReservationPeriod[],
-} as const;
+export type ReservationSeason = {
+  seasonStart: string;
+  seasonEnd: string;
+  reservedPeriods: ReservationPeriod[];
+};
+
+export const RESERVATIONS_BY_YEAR: Record<string, ReservationSeason> = reservations.years;
+export const RESERVATION_YEARS = Object.keys(RESERVATIONS_BY_YEAR).sort();
+
+export function getDefaultReservationYear(
+  arrival = "",
+  years = RESERVATION_YEARS,
+): string {
+  const arrivalYear = arrival.slice(0, 4);
+  if (years.includes(arrivalYear)) return arrivalYear;
+  const currentYear = String(new Date().getFullYear());
+  return years.find((year) => year >= currentYear)
+    ?? years.at(-1) ?? "";
+}
 
 export type AvailabilityStatus =
   | "available"
@@ -35,17 +44,30 @@ export function getAvailabilityStatus(
 
   const selectedStart = parseLocalDate(start);
   const selectedEnd = parseLocalDate(end);
-  if (selectedEnd <= selectedStart) return "invalid";
+  if (
+    !isValidDate(start) || !isValidDate(end) || selectedEnd <= selectedStart
+  ) return "invalid";
 
-  const seasonStart = parseLocalDate(AVAILABILITY.seasonStart);
-  const seasonEnd = parseLocalDate(AVAILABILITY.seasonEnd);
+  const season = RESERVATIONS_BY_YEAR[start.slice(0, 4)];
+  if (!season) return "unknown";
+
+  const seasonStart = parseLocalDate(season.seasonStart);
+  const seasonEnd = parseLocalDate(season.seasonEnd);
   if (selectedStart < seasonStart || selectedEnd > seasonEnd) return "unknown";
 
-  const conflict = AVAILABILITY.reservedPeriods.some((period) => {
+  const conflict = season.reservedPeriods.some((period) => {
     const periodStart = parseLocalDate(period.start);
     const periodEnd = parseLocalDate(period.end);
     return selectedStart < periodEnd && selectedEnd > periodStart;
   });
 
   return conflict ? "booked" : "available";
+}
+
+export function isValidDate(value: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const date = parseLocalDate(value);
+  return date.getFullYear() === Number(value.slice(0, 4))
+    && date.getMonth() + 1 === Number(value.slice(5, 7))
+    && date.getDate() === Number(value.slice(8, 10));
 }

@@ -78,7 +78,7 @@ export default function AankomstVertrek() {
           <div className="aankomst-card">
             <h3>Aankomst</h3>
             <p>
-              Aankomst is op maandag na 12:00. Als we zelf niet bij de aankomst
+              Aankomst is op zaterdag na 12:00. Als we zelf niet bij de aankomst
               aanwezig zijn, kan het sleutelkastje aan de schuur geopend worden
               met de code uit de boekingsbevestiging.
             </p>
@@ -125,7 +125,7 @@ export default function AankomstVertrek() {
           <div className="aankomst-card">
             <h3>Vertrek</h3>
             <p>
-              Vertrek op maandag voor 10:00. De eindschoonmaak wordt door de
+              Vertrek op zaterdag voor 10:00. De eindschoonmaak wordt door de
               huurder verzorgd. Op verzoek kan de verhuurder de eindschoonmaak
               verzorgen voor €50 extra. De sleutel kan achtergelaten worden in
               het sleutelkluisje aan de schuur.

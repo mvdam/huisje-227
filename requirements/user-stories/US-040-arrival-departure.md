@@ -16,8 +16,8 @@
 
 - A dedicated page (or section) provides arrival/departure details sourced from `website-content/booking-info.md`
 - All content, headings, and labels are in Dutch
-- Check-in time is stated: maandag na 12:00
-- Check-out time is stated: maandag voor 10:00
+- Check-in time is stated: zaterdag na 12:00
+- Check-out time is stated: zaterdag voor 10:00
 - Sleutelkluisje procedure is explained (code provided on booking confirmation)
 - Parking procedure is explained (code for slagboom, reception phone number as fallback)
 - Linen policy is stated: bedlinnen en keukenlinnen zelf meenemen, dekbedden en kussens aanwezig
